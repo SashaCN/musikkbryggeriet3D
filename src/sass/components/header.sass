@@ -1,0 +1,107 @@
+html 
+  font-size: 10px
+  
+body 
+  font-family: 'Open Sans', sans-serif
+  margin: 0
+
+h1, h2, h3, h4, h5, h6 
+  font-family: 'Roboto Mono', monospace
+  font-weight: 600
+
+header 
+  padding: 50px 0
+  background-image: linear-gradient(180deg, #000000 0%, #242424 100%)
+
+.wrapper 
+  width: 90%
+  margin: 0 auto
+
+.header-line,
+.header-menu ul,
+.header-content 
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.header-line
+  margin-bottom: 110px
+
+.header-menu 
+  width: 83%
+  li 
+    list-style: none
+    a 
+      position: relative
+      font-size: 1.8rem
+      line-height: 3.6rem
+      text-decoration: none
+      color: #fff
+      &:before
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: 0
+        height: 1px
+        width: 100%
+        background-color: $primary
+        transform: scaleX(0)
+        transition: all .5s ease
+      &:hover 
+        &::before
+          transform: scaleX(1)
+
+.header-content 
+  align-items: start
+
+.header-about 
+  padding: 30px 0
+
+h1 
+  font-size: 9rem
+  color: #ffcd00
+  margin: 0
+
+.subtitle 
+  font-size: 4.8rem
+  letter-spacing: 4px
+  color: #c2bcbc
+  margin: 0
+  margin-bottom: 70px
+
+.button 
+  font-size: 3rem
+  font-weight: 600
+  text-decoration: none
+  color: #fff
+  padding: 20px 65px
+  background-color: $primary
+  border: 3px solid $primary
+  box-sizing: border-box
+  transition: all .5s ease
+  &:hover
+    color: $primary
+    background-color: transparent
+
+.header-about,
+.header-slider 
+  width: 50%
+  img 
+    width: 100%
+    margin-bottom: 20px
+
+.slider-arrows 
+  display: flex
+  justify-content: center  
+
+.arrow-left,
+.arrow-right 
+  width: 26px
+  height: 18px
+  margin: 0 10rem
+  background-image: url(../img/arrow_blue.png)
+  &:hover 
+    background-image: url(../img/arrow_orange.png)
+
+.arrow-right
+  transform: rotate(180deg)
