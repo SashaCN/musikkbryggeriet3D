@@ -27,6 +27,9 @@ h2
     color: #fff
     background-color: $primary 
 
+.title-mb 
+  margin-bottom: 25px
+
 .events-line
   display: flex
   justify-content: space-between
@@ -40,9 +43,13 @@ h2
     width: 100%
     vertical-align: bottom
   figcaption 
+    position: relative
     padding: 15px 20px
     border: 3px solid #000000
     border-top: none
+  &:hover 
+    .event-button
+      opacity: 1
 
 
 .event-info 
@@ -67,3 +74,51 @@ h3
   font-size: 1.6rem
   line-height: 24px
   color: #555 
+
+.event-button 
+  position: absolute
+  left: -3px
+  bottom: -50px
+  width: calc(100% + 6px)
+  padding: 5px 0
+  font-size: 2.4rem
+  text-align: center
+  opacity: 0
+  transition: all .5s ease
+
+.video-bg 
+  display: flex
+  justify-content: space-between
+  width: 100%
+  padding: 50px 20px
+  margin: 0
+  box-sizing: border-box
+  background-color: #555
+  p 
+    font-size: 1.8rem
+    line-height: 2.8rem
+    letter-spacing: 1px
+    color: #fff
+
+.gallery-line 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 30px 0
+  div 
+    width: 25%
+    padding: 0 6px
+    box-sizing: border-box
+  img 
+    width: 100%
+    transition: all .5s ease
+    &:hover
+      transform: scale(1.05)
+
+.small-photo 
+  img:first-child 
+    margin-bottom: 10px
+
+.button-line 
+  width: 100%
+  text-align: center
