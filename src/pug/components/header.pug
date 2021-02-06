@@ -1,5 +1,5 @@
 header 
-  .wrapper 
+  .wrapper
     .header-line 
       .logo
         a(href="#")
@@ -22,19 +22,25 @@ header
             a(href="#") Shop
           li
             a(href="#") Kontakt oss
-      .profile
-        ul.sing-up 
-          li
-            a(href="#") SIGN&nbsp;UP
-          li
-            a(href="#") SIGN&nbsp;IN
+      .right-part
+        .profile
+          ul.sing-up 
+            li
+              a(href="#") SIGN&nbsp;UP
+            li
+              a(href="#") SIGN&nbsp;IN
+        .burger
+          span
     section.header-content 
       .header-about
         h1 MAIN TEXT
         p.header-subtitle One more text
         a.button(href="#") Button
       .header-slider
-        img(src="img/head_slide1.jpg", alt="Slider first photo")
+        .photos
+          img(src="img/head_slide1.jpg", alt="Slider first photo")
+          img(src="img/head_slide2.jpg", alt="Slider second photo")
+          img(src="img/head_slide3.jpg", alt="Slider third photo")
         .slider-arrows 
           .arrow-left
           .arrow-right

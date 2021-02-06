@@ -62,6 +62,33 @@ section
         &::before
           transform: scaleX(1)
 
+.right-part 
+  align-items: center
+
+.burger 
+  display: none
+  span
+    position: relative
+    display: inline-block
+    margin: 15px 0
+  span,
+  span:before,
+  span:after
+    width: 27px
+    height: 6px
+    background-color: $primary
+  span:before,
+  span:after
+    content: ''
+    position: absolute
+    left: 0
+  span:before
+    top: -8px
+  span:after
+    bottom: -8px
+  &:hover
+    cursor: pointer
+
 .profile
   position: relative
   width: 34px
@@ -69,8 +96,11 @@ section
   background-image: url(../img/profile.png)
   background-position: 0 0
   &:hover
-    background-position: 34px 0
     cursor: pointer
+
+.profile-menu-active 
+  background-position: 34px 0
+
 
 .sing-up 
   position: absolute
@@ -129,6 +159,9 @@ h1
     width: 100%
     margin-bottom: 20px
 
+.photos
+  overflow: hidden
+
 .slider-arrows 
   display: flex
   justify-content: center  
@@ -137,7 +170,7 @@ h1
 .arrow-right 
   width: 26px
   height: 18px
-  margin: 0 10rem
+  margin: 0 10%
   background-image: url(../img/arrow_blue.png)
   &:hover 
     background-image: url(../img/arrow_orange.png)
@@ -145,3 +178,14 @@ h1
 
 .arrow-right
   transform: rotate(180deg)
+
+.burger-menu 
+  background-color: #000
+
+.logo 
+  text-align: center
+
+// .js-transform 
+//   position: relative
+//   top: 0
+//   left: 80%

@@ -59,7 +59,8 @@ html(lang="no")
 					section.video 
 						h2.title-mb VIDEO 
 						figure.video-bg
-							video(src="https://www.youtube.com/watch?v=qv714UBCVg4") 
+							.video-block
+								<iframe width="100%" src="https://www.youtube.com/embed/qv714UBCVg4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							figcaption 
 								p This is Photoshop's version  of Lorem Ipsum.Proin gravida nibh vel velit auctor aliquet.
 								p Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
@@ -69,14 +70,44 @@ html(lang="no")
 						.gallery-line 
 							.big-photo
 								img(src="img/gallery_big.jpg", alt="Description")
+								.img-hover 
+									.text 
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+									a.more(href="#") more
 							.small-photo
 								img(src="img/gallery_small.jpg", alt="Description")
+								.img-hover.upper-hover 
+									.text 
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+									a.more(href="#") more
 								img(src="img/gallery_small.jpg", alt="Description")
+								.img-hover 
+									.text
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+									a.more(href="#") more
 							.big-photo
 								img(src="img/gallery_big.jpg", alt="Description")
+								.img-hover 
+									.text
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+									a.more(href="#") more
 							.small-photo
 								img(src="img/gallery_small.jpg", alt="Description")
+								.img-hover.upper-hover 
+									.text
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+									a.more(href="#") more
 								img(src="img/gallery_small.jpg", alt="Description")
+								.img-hover
+									.text 
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+									a.more(href="#") more
 						.button-line 
 							a.button.transparent-button(href="#") View more
 					.services-line
@@ -100,7 +131,7 @@ html(lang="no")
 				img(src="img/second_sponsor.png", alt="Rolls Consult")
 				img(src="img/third_sponsor.png", alt="Urban - sound studio")
 				img(src="img/second_sponsor.png", alt="Rolls Consult")
-			.wrapper.bg-black 
+			.wrapper.bg-black
 				section.shop 
 					h2 SHOP 
 					.shop-info 
