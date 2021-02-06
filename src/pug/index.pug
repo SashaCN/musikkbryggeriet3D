@@ -6,77 +6,157 @@ html(lang="no")
 		title Musikkbryggeriet3d
 		link(rel="stylesheet", href="css/style.css")
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
 	body
 		include helper/vars
 		include helper/mixin
 		include components/header
 		main
-		.bg-orange
-			.wrapper 
-				section.about-us
-					.section-content 
-						h2 INFORMATION ABOUT US 
-						p.subtitle You can read more detailed information about us by clicking on the button. 
-						a.button.transparent-button(href="#") Read more
-					.events-line 
-						figure.event
-							.event-info
-								address San-Francisco 
-								time Feb 03
-							img(src="img/event.jpg", alt="Event")
-							figcaption
-								h3 NAME OF EVENT
-								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
-								a.button.transparent-button.event-button(href="#") Read more 
-						figure.event
-							.event-info
-								address San-Francisco 
-								time Feb 03
-							img(src="img/event.jpg", alt="Event")
-							figcaption
-								h3 NAME OF EVENT
-								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel 
-								a.button.transparent-button.event-button(href="#") Read more
-						figure.event
-							.event-info
-								address San-Francisco 
-								time Feb 03
-							img(src="img/event.jpg", alt="Event")
-							figcaption
-								h3 NAME OF EVENT
-								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
-								a.button.transparent-button.event-button(href="#") Read more 
-						figure.event
-							.event-info
-								address San-Francisco 
-								time Feb 03
-							img(src="img/event.jpg", alt="Event")
-							figcaption
-								h3 NAME OF EVENT
-								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
-								a.button.transparent-button.event-button(href="#") Read more 
-				section.video 
-					h2.title-mb VIDEO 
-					figure.video-bg
-						video(src="https://www.youtube.com/watch?v=qv714UBCVg4") 
-						figcaption 
-							p This is Photoshop's version  of Lorem Ipsum.Proin gravida nibh vel velit auctor aliquet.
-							p Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-							p Morbi consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-				section.gallery 
-					h2.title-mb PHOTO GALLERY 
-					.gallery-line 
-						.big-photo
-							img(src="img/gallery_big.jpg", alt="Description")
-						.small-photo
-							img(src="img/gallery_small.jpg", alt="Description")
-							img(src="img/gallery_small.jpg", alt="Description")
-						.big-photo
-							img(src="img/gallery_big.jpg", alt="Description")
-						.small-photo
-							img(src="img/gallery_small.jpg", alt="Description")
-							img(src="img/gallery_small.jpg", alt="Description")
-					.button-line 
-						a.button.transparent-button(href="#") View more
+			.bg-orange
+				.wrapper 
+					section.about-us
+						.section-content 
+							h2 INFORMATION ABOUT US 
+							p.subtitle You can read more detailed information about us by clicking on the button. 
+							a.button.transparent-button(href="#") Read more
+						.events-line 
+							figure.event
+								.event-info
+									address San-Francisco 
+									time Feb 03
+								img(src="img/event.jpg", alt="Event")
+								figcaption
+									h3 NAME OF EVENT
+									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
+									a.button.transparent-button.event-button(href="#") Read more 
+							figure.event
+								.event-info
+									address San-Francisco 
+									time Feb 03
+								img(src="img/event.jpg", alt="Event")
+								figcaption
+									h3 NAME OF EVENT
+									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel 
+									a.button.transparent-button.event-button(href="#") Read more
+							figure.event
+								.event-info
+									address San-Francisco 
+									time Feb 03
+								img(src="img/event.jpg", alt="Event")
+								figcaption
+									h3 NAME OF EVENT
+									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
+									a.button.transparent-button.event-button(href="#") Read more 
+							figure.event
+								.event-info
+									address San-Francisco 
+									time Feb 03
+								img(src="img/event.jpg", alt="Event")
+								figcaption
+									h3 NAME OF EVENT
+									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
+									a.button.transparent-button.event-button(href="#") Read more 
+					section.video 
+						h2.title-mb VIDEO 
+						figure.video-bg
+							video(src="https://www.youtube.com/watch?v=qv714UBCVg4") 
+							figcaption 
+								p This is Photoshop's version  of Lorem Ipsum.Proin gravida nibh vel velit auctor aliquet.
+								p Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+								p Morbi consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+					section.gallery 
+						h2.title-mb PHOTO GALLERY 
+						.gallery-line 
+							.big-photo
+								img(src="img/gallery_big.jpg", alt="Description")
+							.small-photo
+								img(src="img/gallery_small.jpg", alt="Description")
+								img(src="img/gallery_small.jpg", alt="Description")
+							.big-photo
+								img(src="img/gallery_big.jpg", alt="Description")
+							.small-photo
+								img(src="img/gallery_small.jpg", alt="Description")
+								img(src="img/gallery_small.jpg", alt="Description")
+						.button-line 
+							a.button.transparent-button(href="#") View more
+					.services-line
+						.service
+							img(src="img/3d_printer.png", alt="3D Printer")
+							p 3D Printer
+						.service
+							img(src="img/chair.png", alt="Free sitting")
+							p Free sitting
+						.service
+							img(src="img/wifi.png", alt="Free wifi")
+							p Free wifi
+						.service
+							img(src="img/print.png", alt="Print")
+							p Print
+						.service
+							img(src="img/microwave.png", alt="Microwave")
+							p Microwave
+			.sponsor
+				img(src="img/first_sponsor.png", alt="Elvic Records")
+				img(src="img/second_sponsor.png", alt="Rolls Consult")
+				img(src="img/third_sponsor.png", alt="Urban - sound studio")
+				img(src="img/second_sponsor.png", alt="Rolls Consult")
+			.wrapper.bg-black 
+				section.shop 
+					h2 SHOP 
+					.shop-info 
+						span.balance 15$
+						span.basket 
+							img(src="img/basket.png", alt="Basket")
+						span.search
+							input#shop-search(type="search", name="shop-search" placeholder="Search")
+							label(for="shop-search")
+					.shop-products 
+						figure 
+							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
+							a.button.transparent-button.product-button(href="#") Donate
+							figcaption 
+								.bg-orange 
+									h4 NAME OF PRODUCT
+									span.price 10$ 
+								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis 
+						figure 
+							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
+							a.button.transparent-button.product-button(href="#") Donate
+							figcaption 
+								.bg-orange 
+									h4 NAME OF PRODUCT
+									span.price 10$ 
+								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
+						figure 
+							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
+							a.button.transparent-button.product-button(href="#") Donate
+							figcaption 
+								.bg-orange 
+									h4 NAME OF PRODUCT
+									span.price 10$ 
+								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
+						figure 
+							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
+							a.button.transparent-button.product-button(href="#") Donate
+							figcaption 
+								.bg-orange 
+									h4 NAME OF PRODUCT
+									span.price 10$ 
+								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
+						figure 
+							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
+							a.button.transparent-button.product-button(href="#") Donate
+							figcaption 
+								.bg-orange 
+									h4 NAME OF PRODUCT
+									span.price 10$ 
+								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
+						figure 
+							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
+							a.button.transparent-button.product-button(href="#") Donate
+							figcaption 
+								.bg-orange 
+									h4 NAME OF PRODUCT
+									span.price 10$ 
+								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
 		include components/footer

@@ -3,6 +3,10 @@
 @import components/header
 @import components/footer
 
+main,
+footer 
+  background-color: #000
+
 .bg-orange
   background-color: $second-primary
 
@@ -31,8 +35,6 @@ h2
   margin-bottom: 25px
 
 .events-line
-  display: flex
-  justify-content: space-between
   margin: 0 -15px
 
 .event
@@ -87,8 +89,6 @@ h3
   transition: all .5s ease
 
 .video-bg 
-  display: flex
-  justify-content: space-between
   width: 100%
   padding: 50px 20px
   margin: 0
@@ -101,8 +101,6 @@ h3
     color: #fff
 
 .gallery-line 
-  display: flex
-  justify-content: space-between
   align-items: center
   margin: 30px 0
   div 
@@ -122,3 +120,111 @@ h3
 .button-line 
   width: 100%
   text-align: center
+
+.services-line
+  margin-top: 50px
+
+.events-line,  
+.video-bg,  
+.gallery-line,  
+.services-line,
+.service,
+.sponsor,
+.shop-products,
+figure .bg-orange 
+  display: flex
+  justify-content: space-between
+
+.service 
+  align-items: center
+  flex-direction: column
+  width: 15%
+  padding: 15px 0
+  box-sizing: border-box
+  background-color: #555
+  transition: all .5s ease
+  p 
+    font-size: 1.8rem
+    color: #fff
+    margin: 10px 0 0
+  &:hover
+    transform: scale(1.05)
+    box-shadow: 0 0 10px rgba(49,48,48,0.5)
+
+.sponsor 
+  align-items: center
+  width: 100%
+  padding: 20px 5%
+  margin-top: 50px
+  box-sizing: border-box
+  background-color: $primary 
+
+.bg-black 
+  color: #fff
+
+.shop-info 
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  font-size: 3rem
+
+.basket 
+  margin: 0 15px
+.search 
+  width: 30%
+  margin-left: 15px
+  input 
+    width: 100%
+    padding: 15px 10px
+    border: 3px solid $second-primary
+    background-color: transparent
+    box-sizing: border-box
+    &::-webkit-input-placeholder
+      font: 2.4rem 'Open Sans', sans-serif
+      color: #fff
+
+.shop-products 
+  flex-wrap: wrap
+  padding: 30px 0
+  figure 
+    position: relative
+    width: 30%
+    padding: 15px 0
+    margin: 0
+    margin-bottom: 100px
+    box-sizing: border-box
+    border: 3px solid $second-primary
+    img 
+      width: 100%
+      padding: 15px 0
+    p 
+      font-size: 1.4rem
+      line-height: 1.8rem
+      text-align: center
+      margin: 15px 20px
+  .bg-orange 
+    align-items: center
+    padding: 0
+
+h4 
+  font-size: 1.8rem
+  letter-spacing: 1px
+  line-height: 2.5rem
+  color: #000
+  margin: 5px 20px
+
+.price 
+  font-size: 1.8rem
+  width: 75px
+  max-height: 25px
+  text-align: center
+  background-color: #000
+
+.product-button
+  position: absolute
+  bottom: -70px
+  left: 50%
+  font-size: 2.4rem
+  padding: 5px 35px
+  color: #fff
+  transform: translateX(-50%)
