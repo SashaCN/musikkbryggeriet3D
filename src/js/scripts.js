@@ -5,8 +5,10 @@ let profile = document.querySelector(".profile"),
     burgerMenu = document.querySelector(".header-menu"),
     menuLine = document.querySelector(".header-line"),
     //header slider (HS)
+    lineHS = document.querySelector(".header-slider"),
     leftHS = document.querySelector(".arrow-left"),
-    rightHS = document.querySelector(".arrow-right")
+    rightHS = document.querySelector(".arrow-right"),
+    imgHS = document.querySelectorAll(".header-slider-img")
 
 burger.dataset.activeCheck = "false"
 

@@ -89,7 +89,6 @@ h3
   transition: all .5s ease
 
 .video-bg 
-  width: 100%
   padding: 50px 20px
   margin: 0
   box-sizing: border-box
@@ -99,40 +98,60 @@ h3
     line-height: 2.8rem
     letter-spacing: 1px
     color: #fff
+    margin-top: 0
   figcaption 
-    width: 55%
+    display: inline-block
+    width: 60%
+    padding-left: 60px
+    box-sizing: border-box
+    vertical-align: top
+
+.video-wrap
+  display: inline-block
+  width: 40%
 
 .video-block 
-  width: 45%
+  position: relative
+  padding-top: 56.25%
+  iframe 
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+
 
 .gallery-line 
   align-items: center
   margin: 30px 0
   img 
     width: 100%
+    height: 100%
     vertical-align: bottom
-    transition: all .5s ease
-    &:hover
-      transform: scale(1.05)
-      
+    object-fit: cover   
 
 .small-photo 
-  img:first-child 
-    margin-bottom: 10px
   .img-hover
-    height: 22%
+    height: 40%
   .text 
     max-height: 40%
+
+.small-photo:first-child  
+  margin-bottom: 10px
+
+.big-phot,
+.small-photo-wrap
+  max-width: 25%
 
 .big-photo,
 .small-photo
   position: relative
-  max-width: 25%
   margin: 0 6px
-  box-sizing: border-box
+  box-sizing: border-box 
+  transition: all .5s ease
   &:hover
-    .img-hover
-        transform: scale(1.05)
+    box-shadow: -1px 10px 20px rgba(49,48,48,0.3)       
+    transform: scale(1.05)
 
 .img-hover 
   position: absolute
@@ -160,12 +179,6 @@ h3
   &:hover
     .gallery img
       transform: scale(1.05)
-   
-
-.upper-hover 
-  bottom: calc( 50% + 5px )
-
-
 
 .more 
   position: absolute
@@ -185,10 +198,15 @@ h3
   flex-wrap: wrap
   margin-top: 50px
 
+.service 
+  img 
+    width: 10vw
+    height: 10vw
+    object-fit: contain
+
 .right-part,
 .photos,
 .events-line,  
-.video-bg,  
 .gallery-line,  
 .services-line,
 .service,
@@ -232,7 +250,10 @@ figure .bg-orange
   font-size: 3rem
 
 .basket 
+  background-color: transparent 
+  border: none
   margin: 0 15px
+  cursor: pointer
 .search 
   width: 30%
   margin-left: 15px
@@ -242,8 +263,10 @@ figure .bg-orange
     border: 3px solid $second-primary
     background-color: transparent
     box-sizing: border-box
+    font: 2.4rem 'Open Sans', sans-serif
+    color: #fff
+    line-height: 2.5rem
     &::-webkit-input-placeholder
-      font: 2.4rem 'Open Sans', sans-serif
       color: #fff
 
 .shop-products 
@@ -301,7 +324,7 @@ h4
 
   .header-menu 
     position: fixed
-    top: 150px
+    top: 100px
     left: 8%
     display: none
     box-sizing: border-box
@@ -324,6 +347,6 @@ h4
     left: 0
     width: 100vw
     height: 100vh
-    padding: 7.5%
+    padding: 3% 7.5%
     box-sizing: border-box
     background-color: rgba(49,48,48,0.9)
