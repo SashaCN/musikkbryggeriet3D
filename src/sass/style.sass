@@ -3,6 +3,18 @@
 @import components/header
 @import components/footer
 
+.right-part,
+.photos,
+.events-line,  
+.gallery-line,  
+.services-line,
+.service,
+.sponsor,
+.shop-products,
+figure .bg-orange 
+  display: flex
+  justify-content: space-between
+
 main,
 footer 
   background-color: #000
@@ -20,6 +32,7 @@ h2
   letter-spacing: 2px
   line-height: 3.5rem
   color: #555
+  margin: 25px 0
 
 .section-content 
   margin-bottom: 50px
@@ -33,6 +46,10 @@ h2
 
 .title-mb 
   margin-bottom: 25px
+
+.about-us
+  .slider-arrows
+    display: none
 
 .events-line
   margin: 0 -15px
@@ -60,6 +77,7 @@ h2
   left: 0
   padding: 10px 15px
   width: 100%
+  box-sizing: border-box
   font-size: 1.8rem
   color: #fff
   line-height: 25px
@@ -195,32 +213,23 @@ h3
   text-align: center
 
 .services-line
+  justify-content: center
   flex-wrap: wrap
-  margin-top: 50px
+  margin: 50px -25px 0
 
 .service 
+  text-align: center
+  margin: 0 25px 25px
   img 
     width: 10vw
     height: 10vw
     object-fit: contain
 
-.right-part,
-.photos,
-.events-line,  
-.gallery-line,  
-.services-line,
-.service,
-.sponsor,
-.shop-products,
-figure .bg-orange 
-  display: flex
-  justify-content: space-between
-
 .service 
   align-items: center
   flex-direction: column
   width: 15%
-  padding: 15px 0
+  padding: 5px 20px
   box-sizing: border-box
   background-color: #555
   transition: all .5s ease
@@ -232,13 +241,23 @@ figure .bg-orange
     transform: scale(1.05)
     box-shadow: 0 0 10px rgba(49,48,48,0.5)
 
+.sponsor-wrap 
+  padding: 0 5%
+  background-color: $primary
+
 .sponsor 
   align-items: center
-  width: 100%
-  padding: 20px 5%
-  margin-top: 50px
+  padding: 20px 0
+  margin: 50px -10px 0
+  
+.sponsor-img-wrap
+  flex: 0 0 25%
+  padding: 0 10px
   box-sizing: border-box
-  background-color: $primary 
+  img 
+    width: 100%
+    height: 100%
+    object-fit: contain
 
 .bg-black 
   color: #fff
@@ -315,9 +334,27 @@ h4
   color: #fff
   transform: translateX(-50%)
 
+@media screen and ( max-width: 1200px )
+  h1 
+    font-size: 8rem
+
+  .header-subtitle 
+    font-size: 4.4rem
+    margin-bottom: 40px
+
 @media screen and ( max-width: 990px )
-  html
-    font-size: 10px
+  h1 
+    font-size: 6rem
+
+  .header-about 
+    margin-bottom: 35px
+
+  .header-subtitle 
+    font-size: 3.6rem
+    margin-bottom: 0
+
+  .button 
+    padding: 15px 50px
 
   .header-line
     align-items: flex-start
@@ -350,3 +387,155 @@ h4
     padding: 3% 7.5%
     box-sizing: border-box
     background-color: rgba(49,48,48,0.9)
+
+  .about-us 
+    .slider-arrows 
+      display: flex
+      justify-content: flex-end
+      order: 0
+      margin-bottom: 20px
+      div 
+        margin: 0
+        &:first-child
+          margin-right: 40px
+    .arrow-right,
+    .arrow-left 
+      background-image: url(../img/arrow_black.png)
+      &:hover 
+        background-image: url(../img/arrow_blue.png)
+
+  .event
+    img 
+      width: calc(45vw - 15px)
+
+  .service 
+    width: 20%
+
+@media screen and ( max-width: 768px )
+  section 
+    padding: 35px 0
+
+  .header-content
+    flex-wrap: wrap
+
+  .header-about,
+  .header-slider 
+    width: 100%
+
+  .header-about 
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .header-slider 
+    img 
+      margin-bottom: 0
+
+  .sponsor 
+    overflow: hidden
+    
+  .sponsor-img-wrap 
+    flex: 0 0 33%  
+
+@media screen and ( max-width: 630px )
+  .header-about 
+    display: block
+
+  .header-subtitle 
+    margin-bottom: 30px
+
+  .header-slider 
+    display: flex
+    flex-direction: column
+
+  .slider-arrows 
+    justify-content: flex-end
+    order: 0
+    margin-bottom: 20px
+    div 
+      margin: 0
+      &:first-child
+        margin-right: 40px
+
+  .photos 
+    order: 1
+
+@media screen and ( max-width: 580px )
+  header,
+  .bg-orange 
+    padding: 25px 0
+
+  section 
+    padding: 25px 0
+
+  .header-line 
+    margin-bottom: 25px
+
+  .header-content
+    padding: 25px 0
+
+  .events-line 
+    margin: 0
+
+  .event
+    margin: 0
+    img
+      object-fit: contain
+      width: 90vw
+    figcaption 
+      padding: 15px 0
+      border: none
+
+  .service-line 
+    margin: 0 -15px
+
+  .service 
+    font-size: 1.5rem
+    width: 30%
+    margin: 15px
+    img 
+      width: 15vw
+      height: 15vw
+
+  .sponsor-img-wrap 
+    flex: 0 0 50%
+
+@media screen and ( max-width: 425px )
+  h1 
+    font-size: 4.8rem
+
+  .header-subtitle
+    font-size: 2.4rem
+
+  .button 
+    font-size: 1.5rem
+    padding: 10px 25px
+
+  h2 
+    font-size: 3rem
+    line-height: 3.5rem
+
+  .subtitle 
+    font-size: 1.2rem 
+    line-height: 1.6rem
+    margin: 15px 0
+
+  .transparent-button 
+    padding: 10px 15px
+
+  h3 
+    font-size: 1.5rem
+
+  .event-subtitle 
+    font-size: 1.2rem
+    line-height: 1.6rem
+
+  .service-line 
+    margin: 0 -6px
+
+  .service 
+    width: 40%
+    margin: 6px
+    img 
+      width: 25vw
+      height: 25vw
