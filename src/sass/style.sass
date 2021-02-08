@@ -111,22 +111,43 @@ h3
   margin: 0
   box-sizing: border-box
   background-color: #555
+  &::after
+    content: ''
+    display: block
+    clear: both
   p 
     font-size: 1.8rem
     line-height: 2.8rem
     letter-spacing: 1px
     color: #fff
     margin-top: 0
-  figcaption 
+    float: left
     display: inline-block
-    width: 60%
-    padding-left: 60px
-    box-sizing: border-box
+    width: 55%
     vertical-align: top
+  .slider-arrows 
+    display: none
+    justify-content: flex-end
+    margin-bottom: 20px
+    div 
+      margin: 0
+      &:first-child
+        margin-right: 40px
+        
+.arrow-right-video,
+.arrow-left-video,
+.arrow-right-shop,
+.arrow-left-shop 
+  background-image: url(../img/arrow_orange.png)
+  &:hover 
+    background-image: url(../img/arrow_blue.png)
 
 .video-wrap
   display: inline-block
-  width: 40%
+  float: left
+  width: 45%
+  padding-right: 60px
+  box-sizing: border-box
 
 .video-block 
   position: relative
@@ -157,9 +178,7 @@ h3
 .small-photo:first-child  
   margin-bottom: 10px
 
-.big-phot,
-.small-photo-wrap
-  max-width: 25%
+
 
 .big-photo,
 .small-photo
@@ -207,6 +226,12 @@ h3
   color: #fff
   text-decoration: none
   background-color: $primary
+  border: 3px solid $primary
+  transition: all .5s ease
+  &:hover
+    color: $primary
+    text-shadow: 0 0 10px $primary
+    background-color: transparent 
 
 .button-line 
   width: 100%
@@ -229,7 +254,7 @@ h3
   align-items: center
   flex-direction: column
   width: 15%
-  padding: 5px 20px
+  padding: 10px 20px
   box-sizing: border-box
   background-color: #555
   transition: all .5s ease
@@ -262,6 +287,10 @@ h3
 .bg-black 
   color: #fff
 
+.shop 
+  .slider-arrows
+    display: none
+
 .shop-info 
   display: flex
   justify-content: flex-end
@@ -274,6 +303,7 @@ h3
   margin: 0 15px
   cursor: pointer
 .search 
+  position: relative
   width: 30%
   margin-left: 15px
   input 
@@ -288,12 +318,27 @@ h3
     &::-webkit-input-placeholder
       color: #fff
 
+#search-submit 
+  display: none
+  &+label 
+    position: absolute
+    top: 50%
+    right: 22px
+    width: 22px
+    height: 22px
+    background-image: url(../img/search.png)
+    background-size: cover
+    transform: translateY(-50%)
+  
+.shop-cabinet 
+  display: flex
+
 .shop-products 
   flex-wrap: wrap
   padding: 30px 0
   figure 
     position: relative
-    width: 30%
+    width: 31%
     padding: 15px 0
     margin: 0
     margin-bottom: 100px
@@ -310,6 +355,14 @@ h3
   .bg-orange 
     align-items: center
     padding: 0
+  .product-button
+    position: absolute
+    bottom: -70px
+    left: 50%
+    font-size: 2.4rem
+    padding: 5px 35px
+    color: #fff
+    transform: translateX(-50%)
 
 h4 
   font-size: 1.8rem
@@ -325,14 +378,7 @@ h4
   text-align: center
   background-color: #000
 
-.product-button
-  position: absolute
-  bottom: -70px
-  left: 50%
-  font-size: 2.4rem
-  padding: 5px 35px
-  color: #fff
-  transform: translateX(-50%)
+
 
 @media screen and ( max-width: 1200px )
   h1 
@@ -351,7 +397,7 @@ h4
 
   .header-subtitle 
     font-size: 3.6rem
-    margin-bottom: 0
+    margin-bottom: 35px
 
   .button 
     padding: 15px 50px
@@ -411,9 +457,57 @@ h4
   .service 
     width: 20%
 
+  .gallery-line 
+    overflow: hidden
+    img 
+      width: calc( 30vw - 8px )
+
+  .more 
+    font-size: 1.8rem
+    line-height: 1.8rem
+
+  .shop
+    .slider-arrows
+      display: flex
+      justify-content: flex-end
+      margin: 30px 0 0
+      div 
+        margin: 0
+        &:first-child
+          margin-right: 40px
+
+  .shop-info 
+    justify-content: space-between
+
+  .balance 
+    order: 1
+  
+  .basket 
+    order: 0
+    margin-left: 0
+
+  .shop-products 
+    flex-wrap: nowrap
+    overflow: hidden
+    margin: 0 -15px
+    figure 
+      margin: 0 15px 70px
+      img 
+        width: calc( 30vw - 26px )
+
+@media screen and ( max-width: 880px )
+  .search 
+    width: calc( 45vw - 15px )
+
+  .shop-products
+    figure 
+      width: 50%
+      img 
+        width: calc( 45vw - 21px )
+
 @media screen and ( max-width: 768px )
   section 
-    padding: 35px 0
+    padding: 37.5px 0
 
   .header-content
     flex-wrap: wrap
@@ -422,20 +516,43 @@ h4
   .header-slider 
     width: 100%
 
+  .header-slider 
+    img 
+      width: 90vw
+
   .header-about 
     display: flex
     justify-content: space-between
     align-items: center
 
-  .header-slider 
-    img 
-      margin-bottom: 0
+  h2 
+    font-size: 4.8rem
+
+  .subtitle 
+    margin: 20px 0
+
+  .video-wrap,
+  .video-bg p 
+    display: block
+    float: none
+    width: 100%
+    padding: 0
+
+  .video-wrap
+    margin-bottom: 30px
+
+  .video-bg
+    .slider-arrows
+      display: flex
 
   .sponsor 
     overflow: hidden
     
   .sponsor-img-wrap 
     flex: 0 0 33%  
+
+  .copy 
+    font-size: 1.8rem
 
 @media screen and ( max-width: 630px )
   .header-about 
@@ -460,6 +577,17 @@ h4
   .photos 
     order: 1
 
+  .gallery-line 
+    img 
+      width: calc( 50vw - 12px )
+
+  .more 
+    font-size: 1.8rem
+    line-height: 1.8rem
+
+  .search 
+    width: 60%
+
 @media screen and ( max-width: 580px )
   header,
   .bg-orange 
@@ -474,11 +602,7 @@ h4
   .header-content
     padding: 25px 0
 
-  .events-line 
-    margin: 0
-
   .event
-    margin: 0
     img
       object-fit: contain
       width: 90vw
@@ -499,6 +623,16 @@ h4
 
   .sponsor-img-wrap 
     flex: 0 0 50%
+
+@media screen and ( max-width: 525px )
+  .shop-products
+    figure 
+      width: 100%
+      img 
+        width: calc( 90vw - 6px )
+
+  .copy 
+    font-size: 1.2em
 
 @media screen and ( max-width: 425px )
   h1 

@@ -61,14 +61,16 @@ html(lang="no")
 									a.button.transparent-button.event-button(href="#") Read more 
 					section.video 
 						h2.title-mb VIDEO 
-						figure.video-bg
+						.video-bg
+							.slider-arrows 
+								.arrow-left.arrow-left-video
+								.arrow-right.arrow-right-video
 							.video-wrap
 								.video-block
-									<iframe src="https://www.youtube.com/embed/qv714UBCVg4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							figcaption 
-								p This is Photoshop's version  of Lorem Ipsum.Proin gravida nibh vel velit auctor aliquet.
-								p Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-								p Morbi consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+									<iframe class="yt-video" src="https://www.youtube.com/embed/qv714UBCVg4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							p This is Photoshop's version  of Lorem Ipsum.Proin gravida nibh vel velit auctor aliquet.
+							p Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+							p Morbi consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
 					section.gallery 
 						h2.title-mb PHOTO GALLERY 
 						.gallery-line 
@@ -148,14 +150,20 @@ html(lang="no")
 				section.shop 
 					h2 SHOP 
 					.shop-info 
-						span.balance 15$
-						button.basket 
-							img(src="img/basket.png", alt="Basket")
-						span.search
+						.shop-cabinet
+							span.balance 15$
+							button.basket 
+								img(src="img/basket.png", alt="Basket")
+						form.search(action="index.php")
 							input#shop-search(type="search", name="shop-search" placeholder="Search")
 							label(for="shop-search")
+							input#search-submit(type="submit")
+							label(for="#search-submit")
+					.slider-arrows 
+						.arrow-left.arrow-left-shop
+						.arrow-right.arrow-right-shop
 					.shop-products 
-						figure 
+						figure.shop-product 
 							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
 							a.button.transparent-button.product-button(href="#") Donate
 							figcaption 
@@ -163,7 +171,7 @@ html(lang="no")
 									h4 NAME OF PRODUCT
 									span.price 10$ 
 								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis 
-						figure 
+						figure.shop-product 
 							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
 							a.button.transparent-button.product-button(href="#") Donate
 							figcaption 
@@ -171,7 +179,7 @@ html(lang="no")
 									h4 NAME OF PRODUCT
 									span.price 10$ 
 								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-						figure 
+						figure.shop-product 
 							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
 							a.button.transparent-button.product-button(href="#") Donate
 							figcaption 
@@ -179,7 +187,7 @@ html(lang="no")
 									h4 NAME OF PRODUCT
 									span.price 10$ 
 								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-						figure 
+						figure.shop-product 
 							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
 							a.button.transparent-button.product-button(href="#") Donate
 							figcaption 
@@ -187,7 +195,7 @@ html(lang="no")
 									h4 NAME OF PRODUCT
 									span.price 10$ 
 								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-						figure 
+						figure.shop-product 
 							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
 							a.button.transparent-button.product-button(href="#") Donate
 							figcaption 
@@ -195,7 +203,7 @@ html(lang="no")
 									h4 NAME OF PRODUCT
 									span.price 10$ 
 								p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-						figure 
+						figure.shop-product 
 							img(src="img/shop_product.jpg", alt="NAME OF PRODUCT")
 							a.button.transparent-button.product-button(href="#") Donate
 							figcaption 
