@@ -56,7 +56,7 @@ h2
 
 .event
   position: relative
-  margin: 0 15px
+  margin: 0 15px 70px
   box-sizing: border-box
   img 
     width: 100%
@@ -97,6 +97,7 @@ h3
 
 .event-button 
   position: absolute
+  z-index: 1
   left: -3px
   bottom: -50px
   width: calc(100% + 6px)
@@ -332,6 +333,7 @@ h3
   
 .shop-cabinet 
   display: flex
+  align-items: center
 
 .shop-products 
   flex-wrap: wrap
@@ -454,6 +456,9 @@ h4
     img 
       width: calc(45vw - 15px)
 
+  .event-button 
+    bottom: -70px
+
   .service 
     width: 20%
 
@@ -470,7 +475,6 @@ h4
     .slider-arrows
       display: flex
       justify-content: flex-end
-      margin: 30px 0 0
       div 
         margin: 0
         &:first-child
@@ -478,6 +482,7 @@ h4
 
   .shop-info 
     justify-content: space-between
+    margin: 20px 0 30px
 
   .balance 
     order: 1
@@ -531,6 +536,14 @@ h4
   .subtitle 
     margin: 20px 0
 
+  .event
+    figcaption 
+      padding: 15px 0
+      border: none
+
+  .event-button 
+    opacity: 1
+
   .video-wrap,
   .video-bg p 
     display: block
@@ -551,8 +564,16 @@ h4
   .sponsor-img-wrap 
     flex: 0 0 33%  
 
+  .search 
+    input 
+      font-size: 2rem
+      padding: 10px
+
   .copy 
     font-size: 1.8rem
+
+  .product-button 
+    font-size: 2rem
 
 @media screen and ( max-width: 630px )
   .header-about 
@@ -604,11 +625,7 @@ h4
 
   .event
     img
-      object-fit: contain
       width: 90vw
-    figcaption 
-      padding: 15px 0
-      border: none
 
   .service-line 
     margin: 0 -15px
@@ -630,6 +647,14 @@ h4
       width: 100%
       img 
         width: calc( 90vw - 6px )
+
+  .balance 
+    font-size: 1.6rem
+    line-height: 2.5rem
+
+  .search input 
+    font-size: 1.6rem
+    padding: 5px 15px
 
   .copy 
     font-size: 1.2em
@@ -673,3 +698,8 @@ h4
     img 
       width: 25vw
       height: 25vw
+
+  .products-button 
+    font-size: 1.4rem
+    line-height: 1.8rem
+
