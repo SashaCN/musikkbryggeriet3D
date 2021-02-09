@@ -20,11 +20,6 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     events = document.querySelectorAll(".event"),
     eventWidthAUS = events[0].getBoundingClientRect().width + 30,
     widthAUS = Math.round(lineAUS.getBoundingClientRect().width),
-    //video slider (VS)
-    links = ["https://www.youtube.com/embed/qv714UBCVg4", "https://www.youtube.com/embed/2J8GMl8Tv0c"],
-    arrLeftVS = document.querySelector(".arrow-left-video"),
-    arrRightVS = document.querySelector(".arrow-right-video"),
-    video = document.querySelector(".yt-video"),
     //shop slider (SS)
     lineSS = document.querySelector(".shop-products"),
     arrLeftSS = document.querySelector(".arrow-left-shop"),
@@ -116,35 +111,6 @@ function rightAUS (event){
     lineAUS.scroll(0, 0)
   }else{
     lineAUS.scroll(lineAUS.scrollLeft+=eventWidthAUS, 0)
-  }
-}
-
-//video slider 
-
-arrLeftVS.onclick = leftVideo
-arrRightVS.onclick = rightVideo
-
-function leftVideo (){
-  for(i = 0; i < links.length; i++){
-    if(video.getAttribute("src") == links[i] && i > 0){
-      video.setAttribute("src", links[i-1])
-      break
-    }else if(video.getAttribute("src") == links[i] && i == 0){
-      video.setAttribute("src", links[links.length-1])
-      break
-    }
-  }
-}
-
-function rightVideo (){
-  for(i = 0; i < links.length; i++){
-    if(video.getAttribute("src") == links[i] && i < links.length-1){
-      video.setAttribute("src", links[i+1])
-      break
-    }else if(video.getAttribute("src") == links[i] && i == links.length-1){
-      video.setAttribute("src", links[0])
-      break
-    }
   }
 }
 
