@@ -5,7 +5,7 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     //burger menu
     burger = document.querySelector(".burger"),
     burgerMenu = document.querySelector(".header-menu"),
-    menuLine = document.querySelector(".header-line"),
+    menuLine = document.querySelector(".adaptive-header-line"),
     //header slider (HS)
     lineHS = document.querySelector(".photos"),
     arrLeftHS = document.querySelector(".arrow-left"),
@@ -13,13 +13,27 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     imgHS = document.querySelectorAll(".header-slider-img"),
     imgWidthHS = imgHS[0].getBoundingClientRect().width,
     widthHS = Math.round(lineHS.getBoundingClientRect().width),
-    //about us slider 
+    //about us slider (AUS)
     lineAUS = document.querySelector(".events-line"),
     arrLeftAUS = document.querySelector(".arrow-left-aus"),
     arrRightAUS = document.querySelector(".arrow-right-aus"),
     events = document.querySelectorAll(".event"),
     eventWidthAUS = events[0].getBoundingClientRect().width + 30,
     widthAUS = Math.round(lineAUS.getBoundingClientRect().width),
+    //gallery slider (GS)
+    /*lineGS = document.querySelector(".gallery-line"),
+    arrLeftGS = document.querySelector(".arrow-left-gallery"),
+    arrRightGS = document.querySelector(".arrow-right-gallery"),
+    pictures = document.querySelectorAll(".scrolled-picture"),
+    pictureWidthGS = pictures[0].getBoundingClientRect().width,
+    widthGS = Math.round(lineGS.getBoundingClientRect().width),*/
+    //sponsor slider (SPS)
+    lineSPS = document.querySelector(".sponsor"),
+    arrLeftSPS = document.querySelector(".arrow-left-sp"),
+    arrRightSPS = document.querySelector(".arrow-right-sp"),
+    sponsors = document.querySelectorAll(".sponsor-img-wrap"),
+    sponsorWidthSPS = sponsors[0].getBoundingClientRect().width,
+    widthSPS = Math.round(lineSPS.getBoundingClientRect().width),
     //shop slider (SS)
     lineSS = document.querySelector(".shop-products"),
     arrLeftSS = document.querySelector(".arrow-left-shop"),
@@ -111,6 +125,60 @@ function rightAUS (event){
     lineAUS.scroll(0, 0)
   }else{
     lineAUS.scroll(lineAUS.scrollLeft+=eventWidthAUS, 0)
+  }
+}
+
+//gallery slider (GS)
+
+/*arrLeftGS.onclick = leftGS
+arrRightGS.onclick = rightGS
+arrLeftGS.ondblclick = falseS
+arrRightGS.ondblclick = falseS
+
+function leftGS (event){
+  event.preventDefault()
+  widthGS = Math.floor(widthGS)
+  if(lineGS.scrollLeft == 0){
+    lineGS.scroll(lineGS.scrollWidth, 0)
+  }else{
+    lineGS.scroll(lineGS.scrollLeft-pictureWidthGS, 0)
+  }
+}
+
+function rightGS (event){
+  event.preventDefault()
+  widthGS = Math.floor(widthGS)
+  if(Math.round(lineGS.scrollLeft)-10 <= lineGS.scrollWidth - widthGS && Math.round(lineGS.scrollLeft)+10 >= lineGS.scrollWidth - widthGS){
+    lineGS.scroll(0, 0)
+  }else{
+    lineGS.scroll(lineGS.scrollLeft+=pictureWidthGS, 0)
+  }
+}*/
+
+//sponsor slider (SPS)
+
+arrLeftSPS.onclick = leftSPS
+arrRightSPS.onclick = rightSPS
+arrLeftSPS.ondblclick = falseS
+arrRightSPS.ondblclick = falseS
+
+function leftSPS (event){
+  event.preventDefault()
+  widthSPS = Math.floor(widthSPS)
+  if(lineSPS.scrollLeft == 0){
+    lineSPS.scroll(lineSPS.scrollWidth, 0)
+  }else{
+    lineSPS.scroll(lineSPS.scrollLeft-sponsorWidthSPS*2, 0)
+  }
+}
+
+function rightSPS (event){
+  event.preventDefault()
+  widthSPS = Math.floor(widthSPS)
+  if(Math.round(lineSPS.scrollLeft)-10 <= lineSPS.scrollWidth - widthSPS && Math.round(lineSPS.scrollLeft)+10 >= lineSPS.scrollWidth - widthSPS){
+    lineSPS.scroll(0, 0)
+  }else{
+    lineSPS.scroll(lineSPS.scrollLeft+=sponsorWidthSPS*2, 0)
   }
 }
 
