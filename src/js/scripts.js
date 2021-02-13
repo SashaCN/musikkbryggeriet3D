@@ -1,7 +1,7 @@
 let screenWidth = document.body.getBoundingClientRect().width,      //screen width for adaptive
     //profile
     profile = document.querySelector(".profile"),
-    profileMenu = document.querySelector(".sing-up"),
+    profileMenu = document.querySelector(".sing-menu"),
     //burger menu
     burger = document.querySelector(".burger"),
     burgerMenu = document.querySelector(".header-menu"),
@@ -40,7 +40,15 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     arrRightSS = document.querySelector(".arrow-right-shop"),
     products = document.querySelectorAll(".shop-product"),
     productWidthSS = products[0].getBoundingClientRect().width + 30,
-    widthSS = Math.round(lineSS.getBoundingClientRect().width)
+    widthSS = Math.round(lineSS.getBoundingClientRect().width),
+    //popups 
+    popupBg = document.querySelector(".popup-bg"),
+    singUpButton = document.querySelectorAll(".sing-up-button"),
+    singUpPopup = document.querySelector(".sing-up"),
+    singInButton = document.querySelectorAll(".sing-in-button"),
+    singInPopup = document.querySelector(".sing-in"),
+    closeButtons = document.querySelectorAll(".close"),
+    activePopup
 
 burger.dataset.activeCheck = "false"
 
@@ -208,3 +216,55 @@ function rightSS (event){
     lineSS.scroll(lineSS.scrollLeft+=productWidthSS, 0)
   }
 }
+
+//popups 
+
+closeButtons.forEach(element => {
+  element.onclick = closePopup
+});
+
+function closePopup (){
+  activePopup.classList.remove("active-popup")
+  popupBg.style.display = "none"
+}
+
+function checkClick (e){
+  if(!popupBg.contains(e.target)){
+    popupBg.style.display = "none"
+    activePopup.classList.remove("active-popup")
+  } 
+}
+
+singUpButton.forEach((elem)=>{
+  elem.onclick = singUpOpen
+})
+
+singInButton.forEach((elem)=>{
+  elem.onclick = singInOpen
+})
+
+function singUpOpen (event){
+  event.preventDefault()
+  console.log("1")
+  if(activePopup != undefined){
+    activePopup.classList.remove("active-popup")
+  }
+  singUpPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  activePopup.onclick = checkClick
+}
+
+function singInOpen (event){
+  event.preventDefault()
+  console.log("2")
+  if(activePopup != undefined){
+    activePopup.classList.remove("active-popup")
+  }
+  singInPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  activePopup.onclick = checkClick
+}
+
+

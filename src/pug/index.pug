@@ -12,6 +12,52 @@ html(lang="no")
 		include helper/mixin
 		include components/header
 		main
+			.popup-bg 
+				form.popup.sing-up(action="index.php")
+					span.close 
+					p.popup-title SIGN UP
+					p.mini-inputs.input-line
+						label(for="first-name")
+							span First name
+							input#first-name(type="text", name="first-name")
+						label(for="last-name")
+							span Last name
+							input#last-name(type="text", name="last-name")
+					p.input-line 
+						label(for="username")
+							span Username
+							input#username(type="text", name="username")
+					p.input-line
+						label(for="email")
+							span E-mail
+							input#email-sing-up(type="email", name="email")
+					p.input-line 
+						label(for="password")
+							span Pasword
+							input#password-sing-up(type="password", name="password")
+					p.have-account 
+						a.sing-in-button(href="#") Already have an account? <span> Join </span>
+					p.input-line 
+						input#sing-up.button(type="submit", value="SIGN UP")
+						label(for="sing-up")
+				form.popup.sing-in(action="index.php")
+					span.close 
+					p.popup-title SIGN IN
+					p.input-line
+						label(for="email")
+							span E-mail
+							input#email-sing-in(type="email", name="email")
+					p.input-line 
+						label.password-label(for="password")
+							span Pasword
+							a.forgot-password(href="#") Forgot your password?
+							input#password-sing-in(type="password", name="password")
+					p.have-account 
+						a.sing-up-button(href="#") Dont have a account? <span> Join </span>
+					p.input-line 
+						input#sing-in.button(type="submit", value="SIGN IN")
+						label(for="sing-up")
+					
 			.bg-orange
 				.wrapper 
 					section.about-us
