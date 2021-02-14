@@ -50,14 +50,38 @@ html(lang="no")
 					p.input-line 
 						label.password-label(for="password")
 							span Pasword
-							a.forgot-password(href="#") Forgot your password?
+							a.forgot-password-button(href="#") Forgot your password?
 							input#password-sing-in(type="password", name="password")
 					p.have-account 
 						a.sing-up-button(href="#") Dont have a account? <span> Join </span>
 					p.input-line 
 						input#sing-in.button(type="submit", value="SIGN IN")
 						label(for="sing-up")
-					
+				form.popup.forgot-password(action="index.php")
+					span.close 
+					p.popup-title FORGOT YOUR PASSWORD?
+					p.input-line
+						label(for="email-forgot-password")
+							span E-mail
+							input#email-forgot-password(type="email", name="email-forgot-password")
+					p.input-line 
+						input#send-password.button(type="submit", value="SEND PASSWORD")
+						label(for="send-password")
+				.popup.grey-popup.printer-popup
+					span.close 
+					p.popup-title.printer-popup-title 3D Printer
+					.grey-popup-content 
+						.popup-images
+							img(src="img/3d_printer_popup.jpg", alt="3D printer")
+							img(src="img/3d_printer_popup.jpg", alt="3D printer")
+							img(src="img/3d_printer_popup.jpg", alt="3D printer")
+							img(src="img/3d_printer_popup.jpg", alt="3D printer")
+						.popup-text
+							p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia. 
+							p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia. 
+							p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia.
+							p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia.
+							p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia. 			
 			.bg-orange
 				.wrapper 
 					section.about-us
@@ -167,7 +191,7 @@ html(lang="no")
 						.button-line 
 							a.button.transparent-button(href="#") View more
 					.services-line
-						.service
+						.service.service-3d-printer
 							img(src="img/3d_printer.png", alt="3D Printer")
 							p 3D Printer
 						.service

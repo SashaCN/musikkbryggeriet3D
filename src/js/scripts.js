@@ -47,6 +47,10 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     singUpPopup = document.querySelector(".sing-up"),
     singInButton = document.querySelectorAll(".sing-in-button"),
     singInPopup = document.querySelector(".sing-in"),
+    forgotPasswordButton = document.querySelector(".forgot-password-button"),
+    forgotPasswordPopup = document.querySelector(".forgot-password"),
+    printerButton = document.querySelector(".service-3d-printer"),
+    printerPopup = document.querySelector(".printer-popup"),
     closeButtons = document.querySelectorAll(".close"),
     activePopup
 
@@ -118,7 +122,6 @@ arrRightAUS.ondblclick = falseS
 
 function leftAUS (event){
   event.preventDefault()
-  widthAUS = Math.floor(widthAUS)
   if(lineAUS.scrollLeft == 0){
     lineAUS.scroll(lineAUS.scrollWidth, 0)
   }else{
@@ -128,7 +131,6 @@ function leftAUS (event){
 
 function rightAUS (event){
   event.preventDefault()
-  widthAUS = Math.floor(widthAUS)
   if(Math.round(lineAUS.scrollLeft)-10 <= lineAUS.scrollWidth - widthAUS && Math.round(lineAUS.scrollLeft)+10 >= lineAUS.scrollWidth - widthAUS){
     lineAUS.scroll(0, 0)
   }else{
@@ -228,8 +230,14 @@ function closePopup (){
   popupBg.style.display = "none"
 }
 
+function checkActivePopup (){
+  if(activePopup != undefined){
+    activePopup.classList.remove("active-popup")
+  }
+}
+
 function checkClick (e){
-  if(!popupBg.contains(e.target)){
+  if(e.target == popupBg){
     popupBg.style.display = "none"
     activePopup.classList.remove("active-popup")
   } 
@@ -245,26 +253,41 @@ singInButton.forEach((elem)=>{
 
 function singUpOpen (event){
   event.preventDefault()
-  console.log("1")
-  if(activePopup != undefined){
-    activePopup.classList.remove("active-popup")
-  }
+  checkActivePopup()
   singUpPopup.classList.add("active-popup")
   popupBg.style.display = "block"
   activePopup = document.querySelector(".active-popup")
-  activePopup.onclick = checkClick
+  popupBg.onclick = checkClick
 }
 
 function singInOpen (event){
   event.preventDefault()
-  console.log("2")
-  if(activePopup != undefined){
-    activePopup.classList.remove("active-popup")
-  }
+  checkActivePopup()
   singInPopup.classList.add("active-popup")
   popupBg.style.display = "block"
   activePopup = document.querySelector(".active-popup")
-  activePopup.onclick = checkClick
+  popupBg.onclick = checkClick
 }
 
+forgotPasswordButton.onclick = forgotPasswordOpen
+
+function forgotPasswordOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  forgotPasswordPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
+
+printerButton.onclick = printerOpen
+
+function printerOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  printerPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
 

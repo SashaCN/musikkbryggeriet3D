@@ -7,6 +7,7 @@
 .photos,
 .mini-inputs,
 .password-label,
+.grey-popup-content,
 .events-line,  
 .gallery-line,  
 .services-line,
@@ -23,7 +24,7 @@ figure .bg-orange
 .popup-bg 
   display: none
   position: fixed
-  z-index: 4
+  z-index: 16
   top: 0
   left: 0
   width: 100vw
@@ -43,6 +44,12 @@ figure .bg-orange
   background-color: #fff
   transform: translate(-50%, -50%)
   overflow-y: scroll
+  &::-webkit-scrollbar
+    width: 2px
+    height: 100%
+    background-color: #fff
+  &::-webkit-scrollbar-thumb
+    background-color: $primary
   input 
     position: relative
     width: 100%
@@ -91,7 +98,8 @@ figure .bg-orange
     color: #ffcd00
 
 #sing-up,
-#sing-in 
+#sing-in,
+#send-password 
   border: 3px solid $primary
   color: #fff
   &:hover 
@@ -122,13 +130,46 @@ figure .bg-orange
 .password-label
   flex-wrap: wrap
 
-.forgot-password
+.forgot-password-button
   font-size: 1.8rem
   line-height: 3.6rem
   color: $second-primary 
   text-decoration: none
   &:hover 
     text-decoration: underline
+
+.grey-popup 
+  padding: 30px 40px 60px
+  color: #fff
+  background-color: #555
+  overflow: hidden
+  .popup-title 
+    color: #fff
+  img 
+    width: 100%
+    object-fit: cover
+    margin-bottom: 10px
+
+.grey-popup-content 
+  max-height: 50vh
+  text-align: left
+  overflow-y: scroll  
+  margin: 0 -10px
+  &::-webkit-scrollbar 
+    width: 5px
+    border: 1px solid #ffc122
+  &::-webkit-scrollbar-thumb
+    background-color: #ffc122
+  div 
+    margin: 0 10px
+  p:first-child 
+    margin-top: 0
+  .close 
+    width: 30px
+    height: 30px
+
+.printer-popup-title
+  font-size: 26px
 
 main,
 footer 
@@ -166,9 +207,6 @@ h2
   .slider-arrows
     display: none
 
-.events-line
-  margin: 0 -15px
-
 .event
   position: relative
   margin: 0 15px 70px
@@ -184,7 +222,10 @@ h2
   &:hover 
     .event-button
       opacity: 1
-
+  &:first-child
+    margin-left: 0
+  &:last-child
+    margin-right: 0
 
 .event-info 
   position: absolute
@@ -213,9 +254,9 @@ h3
 .event-button 
   position: absolute
   z-index: 1
-  left: -3px
+  left: 0
   bottom: -50px
-  width: calc(100% + 6px)
+  width: calc(100% - 6px)
   padding: 5px 0
   font-size: 2.4rem
   text-align: center
@@ -355,6 +396,9 @@ h3
   justify-content: center
   flex-wrap: wrap
   margin: 50px -25px 0
+
+.service-3d-printer:hover 
+  cursor: pointer
 
 .service 
   text-align: center
@@ -616,11 +660,14 @@ h4
   .shop-products 
     flex-wrap: nowrap
     overflow: hidden
-    margin: 0 -15px
     figure 
       margin: 0 15px 70px
       img 
         width: calc( 30vw - 26px )
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
 
 @media screen and ( max-width: 880px )
   .search 
