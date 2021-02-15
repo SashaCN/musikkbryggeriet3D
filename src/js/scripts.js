@@ -51,6 +51,14 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     forgotPasswordPopup = document.querySelector(".forgot-password"),
     printerButton = document.querySelector(".service-3d-printer"),
     printerPopup = document.querySelector(".printer-popup"),
+    sittingButton = document.querySelector(".service-sitting"),
+    sittingPopup = document.querySelector(".sittig-popup"),
+    wifiButton = document.querySelector(".service-wifi"),
+    wifiPopup = document.querySelector(".wifi-popup"),
+    printButton = document.querySelector(".service-print"),
+    printPopup = document.querySelector(".print-popup"),
+    microwaveButton = document.querySelector(".service-microwave"),
+    microwavePopup = document.querySelector(".microwave-popup"),
     closeButtons = document.querySelectorAll(".close"),
     activePopup
 
@@ -291,3 +299,46 @@ function printerOpen (event){
   popupBg.onclick = checkClick
 }
 
+sittingButton.onclick = sittingOpen
+
+function sittingOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  sittingPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
+
+wifiButton.onclick = wifiOpen
+
+function wifiOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  wifiPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
+
+printButton.onclick = printOpen
+
+function printOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  printPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
+
+microwaveButton.onclick = microwaveOpen
+
+function microwaveOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  microwavePopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
