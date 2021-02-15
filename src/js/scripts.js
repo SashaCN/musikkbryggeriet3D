@@ -21,12 +21,12 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     eventWidthAUS = events[0].getBoundingClientRect().width + 30,
     widthAUS = Math.round(lineAUS.getBoundingClientRect().width),
     //gallery slider (GS)
-    /*lineGS = document.querySelector(".gallery-line"),
+    lineGS = document.querySelector(".gallery-line"),
     arrLeftGS = document.querySelector(".arrow-left-gallery"),
     arrRightGS = document.querySelector(".arrow-right-gallery"),
     pictures = document.querySelectorAll(".scrolled-picture"),
-    pictureWidthGS = pictures[0].getBoundingClientRect().width,
-    widthGS = Math.round(lineGS.getBoundingClientRect().width),*/
+    pictureWidthGS = pictures[0].getBoundingClientRect().width + 12,
+    widthGS = Math.round(lineGS.getBoundingClientRect().width),
     //sponsor slider (SPS)
     lineSPS = document.querySelector(".sponsor"),
     arrLeftSPS = document.querySelector(".arrow-left-sp"),
@@ -148,14 +148,13 @@ function rightAUS (event){
 
 //gallery slider (GS)
 
-/*arrLeftGS.onclick = leftGS
+arrLeftGS.onclick = leftGS
 arrRightGS.onclick = rightGS
 arrLeftGS.ondblclick = falseS
 arrRightGS.ondblclick = falseS
 
 function leftGS (event){
   event.preventDefault()
-  widthGS = Math.floor(widthGS)
   if(lineGS.scrollLeft == 0){
     lineGS.scroll(lineGS.scrollWidth, 0)
   }else{
@@ -165,13 +164,12 @@ function leftGS (event){
 
 function rightGS (event){
   event.preventDefault()
-  widthGS = Math.floor(widthGS)
   if(Math.round(lineGS.scrollLeft)-10 <= lineGS.scrollWidth - widthGS && Math.round(lineGS.scrollLeft)+10 >= lineGS.scrollWidth - widthGS){
     lineGS.scroll(0, 0)
   }else{
     lineGS.scroll(lineGS.scrollLeft+=pictureWidthGS, 0)
   }
-}*/
+}
 
 //sponsor slider (SPS)
 
@@ -182,7 +180,6 @@ arrRightSPS.ondblclick = falseS
 
 function leftSPS (event){
   event.preventDefault()
-  widthSPS = Math.floor(widthSPS)
   if(lineSPS.scrollLeft == 0){
     lineSPS.scroll(lineSPS.scrollWidth, 0)
   }else{
@@ -192,7 +189,6 @@ function leftSPS (event){
 
 function rightSPS (event){
   event.preventDefault()
-  widthSPS = Math.floor(widthSPS)
   if(Math.round(lineSPS.scrollLeft)-10 <= lineSPS.scrollWidth - widthSPS && Math.round(lineSPS.scrollLeft)+10 >= lineSPS.scrollWidth - widthSPS){
     lineSPS.scroll(0, 0)
   }else{
@@ -209,7 +205,6 @@ arrRightSS.ondblclick = falseS
 
 function leftSS (event){
   event.preventDefault()
-  widthSS = Math.floor(widthSS)
   if(lineSS.scrollLeft == 0){
     lineSS.scroll(lineSS.scrollWidth, 0)
   }else{
@@ -219,7 +214,6 @@ function leftSS (event){
 
 function rightSS (event){
   event.preventDefault()
-  widthSS = Math.floor(widthSS)
   if(Math.round(lineSS.scrollLeft)-10 <= lineSS.scrollWidth - widthSS && Math.round(lineSS.scrollLeft)+10 >= lineSS.scrollWidth - widthSS){
     lineSS.scroll(0, 0)
   }else{
