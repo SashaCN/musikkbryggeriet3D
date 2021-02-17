@@ -28,7 +28,7 @@ html(lang="no")
 							span Username
 							input#username(type="text", name="username")
 					p.input-line
-						label(for="email")
+						label(for="email-sing-up")
 							span E-mail
 							input#email-sing-up(type="email", name="email")
 					p.input-line 
@@ -106,6 +106,62 @@ html(lang="no")
 						img(src="img/microwave.png", alt="Microwave")
 					p.service-popup-title Microwave
 					p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, sint.
+				.popup.grey-popup.basket-popup
+					b.your-order Your order
+					.basket-products 
+						figure.product 
+							img.product-img(src="img/sweatshirt.jpg", alt="Sweatshirt") 
+							figcaption 
+								p.product-name Sweatshirt
+								.product-info
+									.product-description 
+										p size - L
+										p for women
+									.product-order-info 
+										form.product-quantity 
+											button.product-minus -
+											input#product-quantity(type="number", name="product-quantity", value="1")
+											label(for="product-quantity")
+											button.product-plus +
+										div.price-wrap 
+											p.product-price 15$
+											span.delete-product
+						figure.product 
+							img.product-img(src="img/sweatshirt.jpg", alt="Sweatshirt") 
+							figcaption 
+								p.product-name Sweatshirt
+								.product-info
+									.product-description 
+										p size - L
+										p for women
+									.product-order-info 
+										form.product-quantity 
+											button.product-minus -
+											input#product-quantity(type="number", name="product-quantity", value="1")
+											label(for="product-quantity")
+											button.product-plus +
+										div.price-wrap 
+											p.product-price 15$
+											span.delete-product
+					p.all-price To pay 
+						span.sum-price 30$
+					form.order-registration 
+						p.mini-inputs.input-line
+							label(for="pr-first-name")
+								input#pr-first-name(type="text", name="pr-first-name", placeholder="First name")
+							label(for="pr-last-name")
+								input#pr-last-name(type="text", name="pr-last-name", placeholder="Last name")
+						p.input-line 
+							label(for="pr-email")
+								input#pr-email(type="email", name="pr-email", placeholder="E-mail")
+						p.input-line
+							label(for="pr-tel")
+								input#pr-tel(type="tel", name="pr-tel", placeholder="Phone number")
+						p.input-line 
+							label(for="pr-city")
+								input#pr-city(type="text", name="city", placeholder="City")
+						//- label.pr-submit(for="pr-submit")
+						//- 	input(type="submit", value="Confirm the order")
 			.bg-orange
 				.wrapper 
 					section.about-us

@@ -8,6 +8,7 @@
 .mini-inputs,
 .password-label,
 .grey-popup-content,
+.product-info,
 .events-line,  
 .gallery-line,  
 .services-line,
@@ -81,10 +82,14 @@ figure .bg-orange
   position: absolute
   top: 10px
   right: 10px
+
+.close,
+.delete-product
   width: 40px
   height: 40px
   border: 3px solid $second-primary
   border-radius: 5px
+  transition: all .5s ease
   &::before,
   &::after
     content: ''
@@ -94,6 +99,7 @@ figure .bg-orange
     width: 28px
     height: 3px
     background-color: $second-primary
+    transition: all .5s ease
   &::before
     transform: translate(-50%, -50%) rotate(45deg)
   &::after
@@ -188,6 +194,142 @@ figure .bg-orange
 
 .printer-popup-title
   font-size: 26px
+
+.basket-popup 
+  position: relative
+  overflow-y: scroll
+  padding: 30px 25px
+  border: 3px solid $second-primary
+
+.your-order
+  display: block
+  font-size: 3rem
+  letter-spacing: 1px
+  margin-bottom: 40px
+
+.product 
+  display: flex
+  margin: 0
+  margin-bottom: 20px
+  .product-img 
+    width: 20%
+  figcaption 
+    width: 80%
+    padding-left: 10px
+    text-align: left
+    box-sizing: border-box
+
+.product-name 
+  font-weight: 400
+  font-size: 1.8rem
+  margin: 0 0 20px
+
+.product-description 
+  width: 20%
+  p 
+    font-size: 1.2rem
+    line-height: 1.8rem
+    margin: 0
+
+.product-order-info
+  display: flex
+  justify-content: flex-end
+  width: 80%
+
+.product-quantity 
+  text-align: right
+  input 
+    width: 20%
+    padding: 0 5px
+    margin: 0 5px
+    font-size: 1.2rem
+    line-height: 18px
+    color: #fff
+    vertical-align: top
+    text-align: center
+    background-color: transparent
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button 
+    display: none
+    -webkit-appearance: none
+    margin: 0
+  button 
+    font-size: 1.8rem
+    line-height: 1.8rem
+    width: 15%
+    padding: 0 5px
+    color: #fff
+    background-color: transparent 
+    border: 3px solid $second-primary
+    transition: all .5s ease
+    &:hover 
+      cursor: pointer
+      background-color: $second-primary
+
+.price-wrap
+  display: flex
+  justify-content: flex-end
+  margin-left: 10%
+
+.product-price
+  margin: 0
+  margin-right: 30%
+  font-size: 1.8em
+  font-weight: 400
+
+.delete-product 
+  position: relative
+  min-width: 21px
+  height: 21px
+  border: 2px solid $second-primary
+  border-radius: 2px
+  &::before,
+  &::after
+    width: 14px
+    height: 1px
+  &:hover 
+    background-color: $second-primary 
+    &::before,
+    &::after
+      background-color: #fff
+    
+.all-price 
+  font-size: 1.8rem 
+  letter-spacing: 1px
+  line-height: 2.5rem
+  text-align: right
+  margin: 0 10%
+
+.sum-price 
+  margin: 0 10%
+
+.order-registration 
+  width: 60%
+  margin: 25px auto
+  .mini-inputs 
+    margin: 10px -10px
+  p 
+    margin: 10px 0
+  input 
+    font-size: 1.4rem
+    line-height: 1.8rem
+    padding: 5px 15px
+    color: #fff
+    background-color: transparent
+    &::-webkit-input-placeholder
+      color: #fff
+
+.pr-submit
+  position: absolute
+  left: 50%
+  bottom: 0
+  width: 60%
+  font-weight: 400
+  font-size: 1.8rem
+  line-height: 2.4rem
+  color: #000
+  background-color: $second-primary
+  transform: translateX(-50%)
 
 main,
 footer 
@@ -567,6 +709,9 @@ h4
     font-size: 4.4rem
     margin-bottom: 40px
 
+  .popup 
+    width: 60%
+
 @media screen and ( max-width: 990px )
   h1 
     font-size: 6rem
@@ -612,6 +757,9 @@ h4
     padding: 3% 7.5%
     box-sizing: border-box
     background-color: rgba(49,48,48,0.9)
+
+  .popup 
+    width: 70%
 
   .about-us 
     .slider-arrows
@@ -696,6 +844,9 @@ h4
         width: calc( 45vw - 21px )
 
 @media screen and ( max-width: 768px )
+  .popup 
+    width: 80%
+
   section 
     padding: 37.5px 0
 
@@ -746,14 +897,22 @@ h4
 
   .gallery-line 
     max-height: 90vh
+    margin: 30px 0
     overflow: hidden
     img 
-      width: 90vw
-      
+      width: 90vw 
+      height: 90vh     
+
+  .scrolled-picture:first-child 
+    margin-left: 0
+  .scrolled-picture:last-child  
+    margin-right: 0
 
   .big-photo,
   .small-photo 
     max-height: 90vh
+    .img-hover
+      height: 40%
 
   .img-hover 
     opacity: 1
@@ -793,6 +952,12 @@ h4
     font-size: 2rem
 
 @media screen and ( max-width: 630px )
+  .popup 
+    width: 90%
+
+  .your-order 
+    margin-bottom: 20px
+
   .header-about 
     display: block
 
@@ -811,6 +976,17 @@ h4
       margin: 0
       &:first-child
         margin-right: 40px
+
+  .gallery-line 
+    max-height: 80vh
+    overflow: hidden
+    img 
+      width: 90vw 
+      height: 80vh     
+
+  .big-photo,
+  .small-photo 
+    max-height: 80vh
 
   .photos 
     order: 1
@@ -835,6 +1011,16 @@ h4
 
   .header-content
     padding: 25px 0
+
+  .product-info
+    flex-wrap: wrap
+
+  .product-description,
+  .product-order-info 
+    width: 100%
+
+  .order-registration
+    width: 90%
 
   .event
     img

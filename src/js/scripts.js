@@ -59,6 +59,8 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     printPopup = document.querySelector(".print-popup"),
     microwaveButton = document.querySelector(".service-microwave"),
     microwavePopup = document.querySelector(".microwave-popup"),
+    basketButton = document.querySelector(".basket"),
+    basketPopup = document.querySelector(".basket-popup"),
     closeButtons = document.querySelectorAll(".close"),
     activePopup
 
@@ -332,6 +334,17 @@ function microwaveOpen (event){
   event.preventDefault()
   checkActivePopup()
   microwavePopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
+
+basketButton.onclick = basketOpen
+
+function basketOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  basketPopup.classList.add("active-popup")
   popupBg.style.display = "block"
   activePopup = document.querySelector(".active-popup")
   popupBg.onclick = checkClick
