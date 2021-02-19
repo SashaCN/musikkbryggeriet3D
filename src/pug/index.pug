@@ -120,8 +120,8 @@ html(lang="no")
 									.product-order-info 
 										form.product-quantity 
 											button.product-minus -
-											input#product-quantity(type="number", name="product-quantity", value="1")
-											label(for="product-quantity")
+											label
+												input(type="number", name="product-quantity", value="1")
 											button.product-plus +
 										div.price-wrap 
 											p.product-price 15$
@@ -137,9 +137,9 @@ html(lang="no")
 									.product-order-info 
 										form.product-quantity 
 											button.product-minus -
-											input#product-quantity(type="number", name="product-quantity", value="1")
-											label(for="product-quantity")
-											button.product-plus +
+											label
+												input(type="number", name="product-quantity", value="1")
+											button.product-plus.df +
 										div.price-wrap 
 											p.product-price 15$
 											span.delete-product
@@ -168,7 +168,7 @@ html(lang="no")
 						.section-content 
 							h2 INFORMATION ABOUT US 
 							p.subtitle You can read more detailed information about us by clicking on the button. 
-							a.button.transparent-button(href="#") Read more
+							a.button.transparent-button(href="contact.html") Read more
 						.slider-arrows 
 							.arrow-left.arrow-left-aus
 							.arrow-right.arrow-right-aus

@@ -62,7 +62,15 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
     closeButtons = document.querySelectorAll(".close"),
-    activePopup
+    activePopup,
+    //order menu
+    orderProducts = document.querySelectorAll(".product"),
+    productPlus = document.querySelectorAll(".product-plus"),
+    productMinus = document.querySelectorAll(".product-minus"),
+    productQuantify = document.querySelectorAll(".product-quantify"),
+    productPrice = document.querySelectorAll(".product-price"),
+    deleteProduct = document.querySelectorAll(".delete-product"),
+    productOrderInfo = document.querySelectorAll(".product-order-info")
 
 burger.dataset.activeCheck = "false"
 
@@ -349,3 +357,35 @@ function basketOpen (event){
   activePopup = document.querySelector(".active-popup")
   popupBg.onclick = checkClick
 }
+
+//order menu 
+
+for(i = 0; i < orderProducts.length; i++){
+  orderProducts[i].dataset.productNumber = i
+  productOrderInfo[i].dataset.productNumber = i
+}
+
+productMinus.forEach((elem)=>{
+  elem.onclick = prMinus
+})
+
+function prMinus (event){
+  event.preventDefault()
+  console.log(this.nextElementSibling.children.value)
+  this.nextElementSibling.children.value = this.nextElementSibling.children.value - 1
+}
+
+for(i = 0; i < productPlus.length; i++){
+  productPlus[i].onclick = (event)=>{
+    event.preventDefault()
+    let peremena = event.target.toString
+    console.log(peremena)
+  }
+}
+
+// productPlus.forEach((elem)=>{
+//   elem.onclick = (event)=>{
+//     event.preventDefault()
+//     productPlus.indexOf(elem)
+//   }
+// })
