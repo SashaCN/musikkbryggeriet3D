@@ -47,35 +47,46 @@ html(lang="no")
     main
       hr.primary-line
       .wrapper 
-        section.about-us 
-          h2 INFORMATION ABOUT US 
-          .flex-wrap 
-            .text-description 
-              p.about-us-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-              p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-              p.about-us-text Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum f  
+        section.product-section
+          h2 NAME OF PRODUCT
+          .flex-wrap
+            div.half
+              .product-menu-line.flex-wrap
+                form.search 
+                  input#shop-search(type="search", name="shop-search" placeholder="Search")
+                  label(for="shop-search")
+                  input.search-submit#event-search(type="submit")
+                  label(for="search-submit")
+                .shop-cabinet
+                  span.balance 15$
+                  button.basket 
+                    img(src="img/basket.png", alt="Basket")
+              .text-description 
+                p.about-us-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                p.about-us-text Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum f  
+              form.product-order 
+                button.button.button-plus 
+                label.score
+                  input(type="number", name="product-quantity", value="1")
+                button.button.button-minus
+                label 
+                  input.button.donate-button(type="submit", value="Donate")
             .slider.contact-slider
               .arrow-left-contact
                 img(src="img/arrow_black.png", alt="arrow left")
-              .contact-img-line 
-                img(src="img/contacts_slider_1.jpg", alt="3D")
-                img(src="img/contacts_slider_2.jpg", alt="Lorem")
-                img(src="img/contacts_slider_3.jpg", alt="Lorem")
+              .product-slider-line 
+                .collage 
+                  .main-photo 
+                    img(src="img/shop_product.jpg", alt="Product")
+                    .product-price
+                      span 15$
+                  .additional-photo 
+                    img(src="img/shop_product.jpg", alt="Product")
+                    img(src="img/shop_product.jpg", alt="Product")
+                    img(src="img/shop_product.jpg", alt="Product")
               .arrow-right-contact
                 img(src="img/arrow_black.png", alt="arrow right")
-      hr.primary-line
-      .wrapper
-        section.contact 
-          h2 KONTAKT OSS
-          .flex-wrap 
-            .contact-information 
-              strong
-                a(href="tel:+38xxxxxxxxxx") +38(XXX)XXXXXXX
-              strong
-                address Storgata 15A, Oslo
-              strong
-                a(href="mailto:yourmail@gmail.com") yourmail@gmail.com
-            .map
     footer 
       .social-line.flex-wrap 
         a(href="#")

@@ -61,6 +61,8 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     microwavePopup = document.querySelector(".microwave-popup"),
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
+    registrButton = document.querySelector(".registr"),
+    registrPopup = document.querySelector(".registr-popup"),
     closeButtons = document.querySelectorAll(".close"),
     activePopup,
     //order menu
@@ -353,6 +355,17 @@ function basketOpen (event){
   event.preventDefault()
   checkActivePopup()
   basketPopup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
+
+registrButton.onclick = registrOpen
+
+function registrOpen (event){
+  event.preventDefault()
+  checkActivePopup()
+  registrPopup.classList.add("active-popup")
   popupBg.style.display = "block"
   activePopup = document.querySelector(".active-popup")
   popupBg.onclick = checkClick

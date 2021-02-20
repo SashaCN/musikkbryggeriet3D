@@ -18,7 +18,9 @@
 figure .bg-orange,
 .flex-wrap,
 .slider,
-.contact-img-line  
+.contact-img-line,
+.event-description,
+.additional-photo  
   display: flex
   justify-content: space-between
 
@@ -382,6 +384,7 @@ h2
     padding: 15px 20px
     border: 3px solid #000000
     border-top: none
+    box-sizing: border-box
   &:hover 
     .event-button
       opacity: 1
@@ -417,9 +420,9 @@ h3
 .event-button 
   position: absolute
   z-index: 1
-  left: 0
+  left: -3px
   bottom: -50px
-  width: calc(100% - 6px)
+  width: calc(100% + 6px)
   padding: 5px 0
   font-size: 2.4rem
   text-align: center
@@ -639,7 +642,7 @@ h3
     &::-webkit-input-placeholder
       color: #fff
 
-#search-submit 
+.search-submit 
   display: none
   &+label 
     position: absolute
@@ -724,6 +727,23 @@ h4
     background-color: #fff
     p
       color: #000
+  .one-event
+    figure 
+      img 
+        vertical-align: bottom
+    figcaption 
+      padding: 0
+      border: none
+  .search 
+    margin: 0
+    margin-bottom: 50px
+    input 
+      color: $primary
+      border-color: $primary 
+      &::-webkit-input-placeholder
+        color: $primary
+  .search-submit + label 
+    background-image: url(../img/search_event.png)
 
 .primary-line 
   height: 10px
@@ -746,7 +766,9 @@ h4
   align-items: center
 
 .arrow-left-contact,
-.arrow-right-contact 
+.arrow-right-contact,
+.arrow-left-event,
+.arrow-right-event 
   padding: 5px
   border: 3px solid $primary
   transition: all .5s ease
@@ -754,7 +776,8 @@ h4
     cursor: pointer
     background-color: $primary
 
-.arrow-right-contact
+.arrow-right-contact,
+.arrow-right-event
   transform: rotate(180deg)
 
 .contact-img-line
@@ -795,6 +818,115 @@ h4
   width: 70%
   height: 340px
   background-color: #555
+
+.registr 
+  font-size: 1.8rem
+  font-weight: 700
+  padding: 15px 20px
+
+.cell
+  width: 100%
+  padding: 15px 0
+  font-weight: 600
+  font-size: 1.8rem
+  line-height: 2.4rem
+  text-align: center 
+  border: 1px solid $primary
+  box-sizing: border-box
+  address 
+    font-style: normal
+
+.arrow-line 
+  display: flex
+  justify-content: center
+  div 
+    margin: 0 5%
+.balance 
+  font-size: 3rem
+  line-height: 3rem
+  letter-spacing: 2px
+
+.product-menu-line
+  align-items: center
+  margin-bottom: 50px
+
+.half 
+  width: 60%
+  .search
+    width: 60%
+    margin: 0
+  .text-description 
+    width: 100%
+    margin-bottom: 50px
+  .shop-cabinet
+    height: 100%
+
+.product-section
+  .slider 
+    width: 40%
+
+.product-order
+  display: flex
+  align-items: center
+  .score 
+    width: 15%
+    margin: 0 25px
+  input 
+    width: 100%
+    font-size: 1.8rem
+    line-height: 2.5rem
+    border: 3px solid $primary
+    text-align: center
+    box-sizing: border-box
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button 
+      display: none
+      -webkit-appearance: none
+      margin: 0
+  .button-plus,
+  .button-minus 
+    position: relative
+    padding: 0
+    width: 30px
+    height: 30px
+    &::before
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+  .button-plus:before 
+    content: '+'
+  .button-minus:before 
+    content: '-'
+  .donate-button 
+    font-size: 1.6rem
+    line-height: 2.4rem
+    padding: 0 15px
+    margin-left: 35px
+
+.product-slider-line 
+  margin: 0 20px
+
+.main-photo 
+  margin-bottom: 15px
+  position: relative
+  img 
+    width: 100%
+  .product-price
+    position: absolute
+    top: 0
+    right: 0
+    padding: 0 10px
+    margin: 0
+    border: 3px solid $primary
+    background-color: #fff
+    span 
+      font-size: 2.5rem 
+      line-height: 2.8rem 
+
+.additional-photo
+  img 
+    width: 30%
 
 @media screen and ( max-width: 1200px )
   h1 
@@ -974,6 +1106,8 @@ h4
       border: none
 
   .event-button 
+    left: 3px
+    width: calc( 100% - 6px )
     opacity: 1
 
   .video-wrap,
