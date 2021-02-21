@@ -61,18 +61,20 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     microwavePopup = document.querySelector(".microwave-popup"),
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
-    registrButton = document.querySelector(".registr"),
-    registrPopup = document.querySelector(".registr-popup"),
     closeButtons = document.querySelectorAll(".close"),
     activePopup,
     //order menu
     orderProducts = document.querySelectorAll(".product"),
     productPlus = document.querySelectorAll(".product-plus"),
     productMinus = document.querySelectorAll(".product-minus"),
-    productQuantify = document.querySelectorAll(".product-quantify"),
-    productPrice = document.querySelectorAll(".product-price"),
+    productQuantify = document.querySelectorAll(".product-amount"),
+    price = document.querySelectorAll(".price"),
+    productPrice = document.querySelectorAll(".product-price"), // in popup
     deleteProduct = document.querySelectorAll(".delete-product"),
-    productOrderInfo = document.querySelectorAll(".product-order-info")
+    productOrderInfo = document.querySelectorAll(".product-order-info"),
+    sumPrice = document.querySelector(".sum-price"),
+    totalPrice = 0,
+    productNumber
 
 burger.dataset.activeCheck = "false"
 
@@ -110,27 +112,33 @@ arrLeftHS.ondblclick = falseS
 arrRightHS.ondblclick = falseS
 
 function leftHS (event){
-  event.preventDefault()
-  widthHS = Math.floor(widthHS)
-  if(lineHS.scrollLeft == 0){
-    lineHS.scroll(lineHS.scrollWidth, 0)
-  }else{
-    lineHS.scroll(lineHS.scrollLeft-imgWidthHS, 0)
-  }
+  lineLeft(event, lineHS, imgWidthHS)
 }
 
 function rightHS (event){
-  event.preventDefault()
-  widthHS = Math.floor(widthHS)
-  if(Math.round(lineHS.scrollLeft)-10 <= lineHS.scrollWidth - widthHS && Math.round(lineHS.scrollLeft)+10 >= lineHS.scrollWidth - widthHS){
-    lineHS.scroll(0, 0)
-  }else{
-    lineHS.scroll(lineHS.scrollLeft+=imgWidthHS, 0)
-  }
+  lineRight(event, lineHS, widthHS, imgWidthHS)
 }
 
 function falseS (){
   return false;
+}
+
+function lineLeft (event, line, scrollWidth){
+  event.preventDefault()
+  if(line.scrollLeft == 0){
+    line.scroll(line.scrollWidth, 0)
+  }else{
+    line.scroll(line.scrollLeft-scrollWidth, 0)
+  }
+}
+
+function lineRight (event, line, lineShowedWidth, scrollWidth){
+  event.preventDefault()
+  if(Math.round(line.scrollLeft)-10 <= line.scrollWidth - lineShowedWidth && Math.round(line.scrollLeft)+10 >= line.scrollWidth - lineShowedWidth){
+    line.scroll(0, 0)
+  }else{
+    line.scroll(line.scrollLeft+=scrollWidth, 0)
+  }
 }
 
 //about us slider (AUS)
@@ -141,21 +149,11 @@ arrLeftAUS.ondblclick = falseS
 arrRightAUS.ondblclick = falseS
 
 function leftAUS (event){
-  event.preventDefault()
-  if(lineAUS.scrollLeft == 0){
-    lineAUS.scroll(lineAUS.scrollWidth, 0)
-  }else{
-    lineAUS.scroll(lineAUS.scrollLeft-eventWidthAUS, 0)
-  }
+  lineLeft(event, lineAUS, eventWidthAUS)
 }
 
 function rightAUS (event){
-  event.preventDefault()
-  if(Math.round(lineAUS.scrollLeft)-10 <= lineAUS.scrollWidth - widthAUS && Math.round(lineAUS.scrollLeft)+10 >= lineAUS.scrollWidth - widthAUS){
-    lineAUS.scroll(0, 0)
-  }else{
-    lineAUS.scroll(lineAUS.scrollLeft+=eventWidthAUS, 0)
-  }
+  lineRight(event, lineAUS, widthAUS, eventWidthAUS)
 }
 
 //gallery slider (GS)
@@ -166,21 +164,11 @@ arrLeftGS.ondblclick = falseS
 arrRightGS.ondblclick = falseS
 
 function leftGS (event){
-  event.preventDefault()
-  if(lineGS.scrollLeft == 0){
-    lineGS.scroll(lineGS.scrollWidth, 0)
-  }else{
-    lineGS.scroll(lineGS.scrollLeft-pictureWidthGS, 0)
-  }
+  lineLeft(event, lineGS, pictureWidthGS)
 }
 
 function rightGS (event){
-  event.preventDefault()
-  if(Math.round(lineGS.scrollLeft)-10 <= lineGS.scrollWidth - widthGS && Math.round(lineGS.scrollLeft)+10 >= lineGS.scrollWidth - widthGS){
-    lineGS.scroll(0, 0)
-  }else{
-    lineGS.scroll(lineGS.scrollLeft+=pictureWidthGS, 0)
-  }
+  lineRight(event, lineGS, widthGS, pictureWidthGS)
 }
 
 //sponsor slider (SPS)
@@ -191,21 +179,11 @@ arrLeftSPS.ondblclick = falseS
 arrRightSPS.ondblclick = falseS
 
 function leftSPS (event){
-  event.preventDefault()
-  if(lineSPS.scrollLeft == 0){
-    lineSPS.scroll(lineSPS.scrollWidth, 0)
-  }else{
-    lineSPS.scroll(lineSPS.scrollLeft-sponsorWidthSPS*2, 0)
-  }
+  lineLeft(event, lineSPS, sponsorWidthSPS)
 }
 
 function rightSPS (event){
-  event.preventDefault()
-  if(Math.round(lineSPS.scrollLeft)-10 <= lineSPS.scrollWidth - widthSPS && Math.round(lineSPS.scrollLeft)+10 >= lineSPS.scrollWidth - widthSPS){
-    lineSPS.scroll(0, 0)
-  }else{
-    lineSPS.scroll(lineSPS.scrollLeft+=sponsorWidthSPS*2, 0)
-  }
+  lineRight(event, lineSPS, widthSPS, sponsorWidthSPS)
 }
 
 //shop slider (SS)
@@ -216,24 +194,23 @@ arrLeftSS.ondblclick = falseS
 arrRightSS.ondblclick = falseS
 
 function leftSS (event){
-  event.preventDefault()
-  if(lineSS.scrollLeft == 0){
-    lineSS.scroll(lineSS.scrollWidth, 0)
-  }else{
-    lineSS.scroll(lineSS.scrollLeft-productWidthSS, 0)
-  }
+  lineLeft(event, lineSS, productWidthSS)
 }
 
 function rightSS (event){
-  event.preventDefault()
-  if(Math.round(lineSS.scrollLeft)-10 <= lineSS.scrollWidth - widthSS && Math.round(lineSS.scrollLeft)+10 >= lineSS.scrollWidth - widthSS){
-    lineSS.scroll(0, 0)
-  }else{
-    lineSS.scroll(lineSS.scrollLeft+=productWidthSS, 0)
-  }
+  lineRight(event, lineSS, widthSS, productWidthSS)
 }
 
 //popups 
+
+function popupOpen (event, popup){
+  event.preventDefault()
+  checkActivePopup()
+  popup.classList.add("active-popup")
+  popupBg.style.display = "block"
+  activePopup = document.querySelector(".active-popup")
+  popupBg.onclick = checkClick
+}
 
 closeButtons.forEach(element => {
   element.onclick = closePopup
@@ -261,114 +238,58 @@ singUpButton.forEach((elem)=>{
   elem.onclick = singUpOpen
 })
 
+function singUpOpen (event){
+  popupOpen (event, singUpPopup)
+}
+
 singInButton.forEach((elem)=>{
   elem.onclick = singInOpen
 })
 
-function singUpOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  singUpPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
-}
-
 function singInOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  singInPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, singInPopup)
 }
 
 forgotPasswordButton.onclick = forgotPasswordOpen
 
 function forgotPasswordOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  forgotPasswordPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, forgotPasswordPopup)
 }
 
 printerButton.onclick = printerOpen
 
 function printerOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  printerPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, printerPopup)
 }
 
 sittingButton.onclick = sittingOpen
 
 function sittingOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  sittingPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, sittingPopup)
 }
 
 wifiButton.onclick = wifiOpen
 
 function wifiOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  wifiPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, wifiPopup)
 }
 
 printButton.onclick = printOpen
 
 function printOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  printPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, printPopup)
 }
 
 microwaveButton.onclick = microwaveOpen
 
 function microwaveOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  microwavePopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, microwavePopup)
 }
 
 basketButton.onclick = basketOpen
 
 function basketOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  basketPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
-}
-
-registrButton.onclick = registrOpen
-
-function registrOpen (event){
-  event.preventDefault()
-  checkActivePopup()
-  registrPopup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
+  popupOpen (event, basketPopup)
 }
 
 //order menu 
@@ -376,6 +297,8 @@ function registrOpen (event){
 for(i = 0; i < orderProducts.length; i++){
   orderProducts[i].dataset.productNumber = i
   productOrderInfo[i].dataset.productNumber = i
+  productPrice[i].dataset.productStartingPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
+  productPrice[i].dataset.productPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
 }
 
 productMinus.forEach((elem)=>{
@@ -384,21 +307,35 @@ productMinus.forEach((elem)=>{
 
 function prMinus (event){
   event.preventDefault()
-  console.log(this.nextElementSibling.children.value)
-  this.nextElementSibling.children.value = this.nextElementSibling.children.value - 1
-}
-
-for(i = 0; i < productPlus.length; i++){
-  productPlus[i].onclick = (event)=>{
-    event.preventDefault()
-    let peremena = event.target.toString
-    console.log(peremena)
+  productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
+  if(this.nextElementSibling.firstChild.value > 0){
+    productQuantify[productNumber].value = productQuantify[productNumber].value - 1
+    productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-price")) - parseInt(productPrice[productNumber].getAttribute("data-product-starting-price"))}$`
+    productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
+    totalPriceCount()
+  }else{
+    return false
   }
 }
 
-// productPlus.forEach((elem)=>{
-//   elem.onclick = (event)=>{
-//     event.preventDefault()
-//     productPlus.indexOf(elem)
-//   }
-// })
+productPlus.forEach((elem)=>{
+  elem.onclick = prPlus
+})
+
+function prPlus (event){
+  event.preventDefault()
+  productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
+  productQuantify[productNumber].value = parseInt(productQuantify[productNumber].value) + 1
+  productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-starting-price")) + parseInt(productPrice[productNumber].getAttribute("data-product-price"))}$`
+  productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
+  totalPriceCount()
+}
+
+function totalPriceCount (){
+  productPrice.forEach((elem)=>{
+    totalPrice = totalPrice + parseInt(elem.getAttribute("data-product-price"))
+    console.log(parseInt(elem.getAttribute("data-product-price")))
+  })
+  sumPrice.innerHTML = `${totalPrice}$`
+  totalPrice = 0
+}

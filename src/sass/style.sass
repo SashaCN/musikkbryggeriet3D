@@ -203,7 +203,7 @@ figure .bg-orange,
 .basket-popup 
   position: relative
   overflow-y: scroll
-  padding: 30px 25px
+  padding: 30px 25px 0
   border: 3px solid $second-primary
 
 .your-order
@@ -243,14 +243,17 @@ figure .bg-orange,
 
 .product-quantity 
   text-align: right
-  input 
+  label 
+    display: inline-block
     width: 20%
-    padding: 0 5px
+    vertical-align: top
     margin: 0 5px
+  input 
+    width: 100%
+    padding: 0 5px
     font-size: 1.2rem
     line-height: 18px
     color: #fff
-    vertical-align: top
     text-align: center
     background-color: transparent
   input::-webkit-outer-spin-button,
@@ -310,7 +313,7 @@ figure .bg-orange,
 
 .order-registration 
   width: 60%
-  margin: 25px auto
+  margin: 25px auto 0
   .mini-inputs 
     margin: 10px -10px
   p 
@@ -325,16 +328,16 @@ figure .bg-orange,
       color: #fff
 
 .pr-submit
-  position: absolute
-  left: 50%
-  bottom: 0
-  width: 60%
-  font-weight: 400
-  font-size: 1.8rem
-  line-height: 2.4rem
-  color: #000
+  display: block
+  width: 100%
   background-color: $second-primary
-  transform: translateX(-50%)
+  box-sizing: border-box
+  input 
+    font-weight: 400
+    font-size: 1.8rem
+    line-height: 2.4rem
+    color: #000
+    
 
 main,
 footer 
@@ -781,13 +784,13 @@ h4
   transform: rotate(180deg)
 
 .contact-img-line
-  width: 100%
   overflow-x: hidden
   margin: 1rem 20px
   img 
     width: 100%
     height: 100%
     object-fit: cover
+    flex: 1 0 100%
 
 .contact 
   .flex-wrap
@@ -816,8 +819,10 @@ h4
 
 .map 
   width: 70%
-  height: 340px
-  background-color: #555
+  iframe 
+    width: 100%
+    height: 340px
+    border: none
 
 .registr 
   font-size: 1.8rem
@@ -1244,6 +1249,12 @@ h4
   .product-info
     flex-wrap: wrap
 
+  .product-quantity 
+    text-align: left
+
+  .product-description 
+    margin-bottom: 10px
+
   .product-description,
   .product-order-info 
     width: 100%
@@ -1277,12 +1288,38 @@ h4
     font-size: 1.6rem
     line-height: 2.5rem
 
+  .product 
+    flex-wrap: wrap
+    .product-img,
+    figcaption 
+      width: 100%
+      padding: 0
+
+  .product-quantity 
+    width: 100%
+    button 
+      width: 25%
+    label 
+      width: 30%
+
+  .order-registration 
+    .mini-inputs 
+      flex-wrap: wrap 
+      margin: 10px 0
+      label 
+        width: 100%
+        padding: 0
+        margin-bottom: 10px
+        &:last-child
+          margin: 0
+
   .search input 
     font-size: 1.6rem
     padding: 5px 15px
 
   .copy 
     font-size: 1.2em
+
 
 @media screen and ( max-width: 425px )
   h1 
