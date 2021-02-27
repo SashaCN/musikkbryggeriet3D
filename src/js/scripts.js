@@ -1,25 +1,10 @@
-let screenWidth = document.body.getBoundingClientRect().width,      //screen width for adaptive
-    //profile
-    profile = document.querySelector(".profile"),
-    profileMenu = document.querySelector(".sing-menu"),
-    //burger menu
-    burger = document.querySelector(".burger"),
-    burgerMenu = document.querySelector(".header-menu"),
-    menuLine = document.querySelector(".adaptive-header-line"),
-    //header slider (HS)
+let //header slider (HS)
     lineHS = document.querySelector(".photos"),
     arrLeftHS = document.querySelector(".arrow-left"),
     arrRightHS = document.querySelector(".arrow-right"),
     imgHS = document.querySelectorAll(".header-slider-img"),
     imgWidthHS = imgHS[0].getBoundingClientRect().width,
     widthHS = Math.round(lineHS.getBoundingClientRect().width),
-    //about us slider (AUS)
-    lineAUS = document.querySelector(".events-line"),
-    arrLeftAUS = document.querySelector(".arrow-left-aus"),
-    arrRightAUS = document.querySelector(".arrow-right-aus"),
-    events = document.querySelectorAll(".event"),
-    eventWidthAUS = events[0].getBoundingClientRect().width + 30,
-    widthAUS = Math.round(lineAUS.getBoundingClientRect().width),
     //gallery slider (GS)
     lineGS = document.querySelector(".gallery-line"),
     arrLeftGS = document.querySelector(".arrow-left-gallery"),
@@ -42,13 +27,6 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     productWidthSS = products[0].getBoundingClientRect().width + 30,
     widthSS = Math.round(lineSS.getBoundingClientRect().width),
     //popups 
-    popupBg = document.querySelector(".popup-bg"),
-    singUpButton = document.querySelectorAll(".sing-up-button"),
-    singUpPopup = document.querySelector(".sing-up"),
-    singInButton = document.querySelectorAll(".sing-in-button"),
-    singInPopup = document.querySelector(".sing-in"),
-    forgotPasswordButton = document.querySelector(".forgot-password-button"),
-    forgotPasswordPopup = document.querySelector(".forgot-password"),
     printerButton = document.querySelector(".service-3d-printer"),
     printerPopup = document.querySelector(".printer-popup"),
     sittingButton = document.querySelector(".service-sitting"),
@@ -61,8 +39,6 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     microwavePopup = document.querySelector(".microwave-popup"),
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
-    closeButtons = document.querySelectorAll(".close"),
-    activePopup,
     //order menu
     orderProducts = document.querySelectorAll(".product"),
     productPlus = document.querySelectorAll(".product-plus"),
@@ -73,36 +49,15 @@ let screenWidth = document.body.getBoundingClientRect().width,      //screen wid
     deleteProduct = document.querySelectorAll(".delete-product"),
     productOrderInfo = document.querySelectorAll(".product-order-info"),
     sumPrice = document.querySelector(".sum-price"),
+    addProductButton = document.querySelectorAll(".product-button"),
+    productName = document.querySelectorAll(".product-name"),
+    basketProducts = document.querySelector(".basket-products"),
+    shopProducts = document.querySelectorAll(".shop-product"),
+    productImg = document.querySelectorAll(".shop-product img"),
+    balance = document.querySelector(".balance"),
+    innerString = "",
     totalPrice = 0,
     productNumber
-
-burger.dataset.activeCheck = "false"
-
-burger.onclick = menu
-
-function menu (){
-  if(burger.getAttribute("data-active-check") == "false"){
-    burger.dataset.activeCheck = "true"
-    menuLine.classList.add("burger-menu-active")
-    burgerMenu.style.display = "block"
-  }else if(burger.getAttribute("data-active-check") == "true"){
-    burger.dataset.activeCheck = "false"
-    menuLine.classList.remove("burger-menu-active")
-    burgerMenu.style.display = "none"
-    burgerMenu.removeAttribute("style")
-  }
-} 
-
-profile.onclick = (event) => {
-  event.preventDefault()
-  if(profile.classList.contains("profile-menu-active")){
-    profile.classList.remove("profile-menu-active")
-    profileMenu.style.display = "none"
-  }else{
-    profile.classList.add("profile-menu-active")
-    profileMenu.style.display = "flex"
-  }
-}
 
 //header slider (HS)
 
@@ -117,43 +72,6 @@ function leftHS (event){
 
 function rightHS (event){
   lineRight(event, lineHS, widthHS, imgWidthHS)
-}
-
-function falseS (){
-  return false;
-}
-
-function lineLeft (event, line, scrollWidth){
-  event.preventDefault()
-  if(line.scrollLeft == 0){
-    line.scroll(line.scrollWidth, 0)
-  }else{
-    line.scroll(line.scrollLeft-scrollWidth, 0)
-  }
-}
-
-function lineRight (event, line, lineShowedWidth, scrollWidth){
-  event.preventDefault()
-  if(Math.round(line.scrollLeft)-10 <= line.scrollWidth - lineShowedWidth && Math.round(line.scrollLeft)+10 >= line.scrollWidth - lineShowedWidth){
-    line.scroll(0, 0)
-  }else{
-    line.scroll(line.scrollLeft+=scrollWidth, 0)
-  }
-}
-
-//about us slider (AUS)
-
-arrLeftAUS.onclick = leftAUS
-arrRightAUS.onclick = rightAUS
-arrLeftAUS.ondblclick = falseS
-arrRightAUS.ondblclick = falseS
-
-function leftAUS (event){
-  lineLeft(event, lineAUS, eventWidthAUS)
-}
-
-function rightAUS (event){
-  lineRight(event, lineAUS, widthAUS, eventWidthAUS)
 }
 
 //gallery slider (GS)
@@ -203,59 +121,6 @@ function rightSS (event){
 
 //popups 
 
-function popupOpen (event, popup){
-  event.preventDefault()
-  checkActivePopup()
-  popup.classList.add("active-popup")
-  popupBg.style.display = "block"
-  activePopup = document.querySelector(".active-popup")
-  popupBg.onclick = checkClick
-}
-
-closeButtons.forEach(element => {
-  element.onclick = closePopup
-});
-
-function closePopup (){
-  activePopup.classList.remove("active-popup")
-  popupBg.style.display = "none"
-}
-
-function checkActivePopup (){
-  if(activePopup != undefined){
-    activePopup.classList.remove("active-popup")
-  }
-}
-
-function checkClick (e){
-  if(e.target == popupBg){
-    popupBg.style.display = "none"
-    activePopup.classList.remove("active-popup")
-  } 
-}
-
-singUpButton.forEach((elem)=>{
-  elem.onclick = singUpOpen
-})
-
-function singUpOpen (event){
-  popupOpen (event, singUpPopup)
-}
-
-singInButton.forEach((elem)=>{
-  elem.onclick = singInOpen
-})
-
-function singInOpen (event){
-  popupOpen (event, singInPopup)
-}
-
-forgotPasswordButton.onclick = forgotPasswordOpen
-
-function forgotPasswordOpen (event){
-  popupOpen (event, forgotPasswordPopup)
-}
-
 printerButton.onclick = printerOpen
 
 function printerOpen (event){
@@ -293,17 +158,14 @@ function basketOpen (event){
 }
 
 //order menu 
-
-for(i = 0; i < orderProducts.length; i++){
-  orderProducts[i].dataset.productNumber = i
-  productOrderInfo[i].dataset.productNumber = i
-  productPrice[i].dataset.productStartingPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
-  productPrice[i].dataset.productPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
+function attributeAdd (){
+  for(let i = 0; i < orderProducts.length; i++){
+    orderProducts[i].dataset.productNumber = i
+    productOrderInfo[i].dataset.productNumber = i
+    productPrice[i].dataset.productStartingPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
+    productPrice[i].dataset.productPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
+  }
 }
-
-productMinus.forEach((elem)=>{
-  elem.onclick = prMinus
-})
 
 function prMinus (event){
   event.preventDefault()
@@ -318,10 +180,6 @@ function prMinus (event){
   }
 }
 
-productPlus.forEach((elem)=>{
-  elem.onclick = prPlus
-})
-
 function prPlus (event){
   event.preventDefault()
   productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
@@ -331,11 +189,82 @@ function prPlus (event){
   totalPriceCount()
 }
 
+function valueChange (){
+  productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
+  productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-starting-price")) * this.value}$`
+  productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
+  totalPriceCount()
+}
+
 function totalPriceCount (){
+  productPrice = document.querySelectorAll(".product-price")
   productPrice.forEach((elem)=>{
-    totalPrice = totalPrice + parseInt(elem.getAttribute("data-product-price"))
-    console.log(parseInt(elem.getAttribute("data-product-price")))
+    totalPrice += parseInt(elem.getAttribute("data-product-price"))
   })
   sumPrice.innerHTML = `${totalPrice}$`
+  balance.innerHTML = `${totalPrice}$`
   totalPrice = 0
+}
+
+addProductButton.forEach((elem)=>{
+  elem.onclick = addProduct
+})
+
+for(let i = 0; i < shopProducts.length; i++){
+  shopProducts[i].dataset.productNumber = i
+}
+
+function addProduct (event){
+  event.preventDefault()
+  productNumber = this.closest(".shop-product").getAttribute("data-product-number")
+  
+  refreshProducts()
+
+  orderProducts = document.querySelectorAll(".product")
+  productPlus = document.querySelectorAll(".product-plus")
+  productMinus = document.querySelectorAll(".product-minus")
+  productQuantify = document.querySelectorAll(".product-amount")
+  productPrice = document.querySelectorAll(".product-price") // in popup
+  deleteProduct = document.querySelectorAll(".delete-product")
+  productOrderInfo = document.querySelectorAll(".product-order-info")
+  deleteProduct = document.querySelectorAll(".delete-product")
+
+  attributeAdd()
+  totalPriceCount()
+
+  productPlus.forEach((elem)=>{
+    elem.onclick = prPlus
+  })
+  productMinus.forEach((elem)=>{
+    elem.onclick = prMinus
+  })
+  productQuantify.forEach((elem)=>{
+    elem.onchange = valueChange
+  })
+  deleteProduct.forEach((elem)=>{
+    elem.onclick = (event)=>{
+      event.preventDefault()
+      basketProducts.removeChild(orderProducts[elem.closest(".product").getAttribute("data-product-number")])
+      attributeAdd()
+      totalPriceCount()
+      orderProducts = document.querySelectorAll(".product")
+      innerString = ""
+      attributeAdd()
+      totalPriceCount()
+    }
+  })
+}
+
+
+function refreshProducts (){
+  basketProducts.innerHTML = ""
+  if(orderProducts[0] === undefined){
+    basketProducts.innerHTML = `<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+  }else{
+    for(let i = 0; i < orderProducts.length; i++){
+      innerString = `${innerString}${orderProducts[i].outerHTML}`
+    }
+    basketProducts.innerHTML = `${innerString}<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    innerString = ""
+  }
 }

@@ -20,6 +20,7 @@ figure .bg-orange,
 .slider,
 .contact-img-line,
 .event-description,
+.product-slider-line,
 .additional-photo  
   display: flex
   justify-content: space-between
@@ -223,11 +224,15 @@ figure .bg-orange,
     padding-left: 10px
     text-align: left
     box-sizing: border-box
+  img 
+    width: 20%
+    height: 15vh
+    object-fit: cover
 
 .product-name 
   font-weight: 400
   font-size: 1.8rem
-  margin: 0 0 20px
+  margin: 10px
 
 .product-description 
   width: 20%
@@ -676,7 +681,9 @@ h3
     border: 3px solid $second-primary
     img 
       width: 100%
+      height: 50vh
       padding: 15px 0
+      object-fit: cover
     p 
       font-size: 1.4rem
       line-height: 1.8rem
@@ -713,6 +720,8 @@ h4
   header 
     padding: 50px 0 15px
     background: #fff
+  .burger-menu-active
+    background-color: rgba(180, 180, 180, .9)
   .header-line 
     margin: 0
     a
@@ -720,10 +729,28 @@ h4
       &:hover 
         text-shadow: 0 0 5px #999
   .profile 
+    position: relative
+    z-index: 2
     background-position: 34px 0
+  .profile-menu-active
+    background-position: 0 0
+  .sing-menu 
+    top: -10px
+    padding-top: 35px
+    background-color: $primary
+    border: 3px solid $second-primary
+    a 
+      color: $second-primary
+      &:hover 
+        color: $second-primary
+        text-shadow: 0 0 5px $second-primary
   main, 
   section 
     background-color: #fff
+  .popup 
+    border: 3px solid $primary
+    &::-webkit-scrollbar-thumb
+      background-color: $second-primary
   h2 
     margin-bottom: 30px
   footer 
@@ -767,6 +794,9 @@ h4
 
 .slider 
   align-items: center
+  img 
+    width: 100%
+    object-fit: cover
 
 .arrow-left-contact,
 .arrow-right-contact,
@@ -775,9 +805,12 @@ h4
   padding: 5px
   border: 3px solid $primary
   transition: all .5s ease
+  background-size: cover
   &:hover 
     cursor: pointer
     background-color: $primary
+  img 
+    min-width: 26px
 
 .arrow-right-contact,
 .arrow-right-event
@@ -910,7 +943,11 @@ h4
     margin-left: 35px
 
 .product-slider-line 
+  overflow-x: scroll
   margin: 0 20px
+
+.collage 
+  flex: 0 0 100%
 
 .main-photo 
   margin-bottom: 15px
@@ -1065,6 +1102,25 @@ h4
       &:last-child
         margin-right: 0
 
+  .text-description,
+  .event-img-line,
+  .half
+    width: 100%
+    margin-bottom: 20px
+
+  .one-event,
+  .about-us,
+  .product-section 
+    .flex-wrap 
+      flex-wrap: wrap
+    .slider 
+      width: 100%
+
+  .map
+    text-align: center 
+    iframe 
+      width: 90%
+
 @media screen and ( max-width: 880px )
   .search 
     width: calc( 45vw - 15px )
@@ -1074,6 +1130,11 @@ h4
       width: 50%
       img 
         width: calc( 45vw - 21px )
+
+  .map
+    text-align: center 
+    iframe 
+      width: 80%
 
 @media screen and ( max-width: 768px )
   .popup 
@@ -1185,6 +1246,19 @@ h4
   .product-button 
     font-size: 2rem
 
+  .contact  
+    .flex-wrap 
+      flex-wrap: wrap
+
+  .contact-information 
+    text-align: center
+
+  .contact-information,
+  .map 
+    width: 100%
+    iframe
+      width: 100%
+
 @media screen and ( max-width: 630px )
   .popup 
     width: 90%
@@ -1283,6 +1357,12 @@ h4
       width: 100%
       img 
         width: calc( 90vw - 6px )
+
+  .product 
+    img 
+      display: block
+      width: 60%
+      margin: 0 auto 15px
 
   .balance 
     font-size: 1.6rem

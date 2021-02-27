@@ -1,148 +1,203 @@
 <!DOCTYPE html>
 html(lang="no")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
-    title Musikkbryggeriet3d
-    link(rel="stylesheet", href="css/style.css")
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-  body.second-page
-    include helper/vars
-    include helper/mixin
-    header 
-      .wrapper
-        .adaptive-header-line
-          .header-line 
-            .logo
-              a(href="index.html")
-                img(src="img/logo_black.png", alt="Musikkbryggeriet3d logo")
-            nav.header-menu
-              ul 
-                li
-                  a(href="index.html") Hjem
-                li
-                  a(href="contact.html") Om oss
-                li
-                  a(href="#") Fellesskap
-                li
-                  a(href="#") Booking
-                li
-                  a(href="event.html") Eventer
-                li
-                  a(href="#") Samarbeid
-                li
-                  a(href="shop.html") Shop
-                li
-                  a(href="#") Kontakt oss
-            .right-part
-              .profile
-                ul.sing-menu 
-                  li
-                    a.sing-up-button(href="#") SIGN&nbsp;UP
-                  li
-                    a.sing-in-button(href="#") SIGN&nbsp;IN
-              .burger
-                span
-    main
-      .popup-bg 
-        form.registr-popup.popup
-          span.close 
-          p.popup-title HVA KAN VI HJELPE DEG MED?
-          p.mini-inputs
-            label(for="registr-name")
-              input#registr-name(type="text", name="registr-name", placeholder="Fornavn")
-            label(for="registr-surname")
-              input#registr-surname(type="text", name="registr-surname", placeholder="Etternavn")
-          p.mini-inputs
-            label(for="registr-tif")
-              input#registr-tif(type="text", name="registr-tif", placeholder="Tif.nr.")
-            label(for="registr-mail")
-              input#registr-mail(type="email", name="registr-mail", placeholder="E-post")
-          p.input-line 
-            label
-              textarea#request(name="request", cols="30", rows="10")
-          p.input-line 
-            label(for="registr-submit")
-              input#registr-submit.button(type="submit", value="Send inn")
-      hr.primary-line
-      .wrapper 
-        section.one-event 
-          .flex-wrap 
-            .text-description 
-              h2 NAME OF EVENT
-              p.about-us-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-              p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-              p.about-us-text Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum f  
-              p 
-                a.button.transparent-button.registr(href="#") Registreringen
-            .slider.event-slider
-              .event-img-line 
-                figure 
-                  img(src="img/event_slider_1.jpg", alt="Event")
-                  figcaption.event-description 
-                    .cell
-                      time Feb 18
-                    .cell
-                      time 18:30
-                    .cell
-                      address Stokata 18
-      hr.primary-line
-      .wrapper
-        section.more-event.event 
-          h2 MORE EVENT
-          form.search 
-            input#shop-search(type="search", name="shop-search" placeholder="Search")
-            label(for="shop-search")
-            input.search-submit#event-search(type="submit")
-            label(for="search-submit")
-          .events-line 
-            figure.event
-              .event-info
-                address San-Francisco 
-                time Feb 01
-              img(src="img/event.jpg", alt="Event")
-              figcaption
-                h3 NAME OF EVENT
-                p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
-            figure.event
-              .event-info
-                address San-Francisco 
-                time Feb 02
-              img(src="img/event.jpg", alt="Event")
-              figcaption
-                h3 NAME OF EVENT
-                p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel 
-            figure.event
-              .event-info
-                address San-Francisco 
-                time Feb 03
-              img(src="img/event.jpg", alt="Event")
-              figcaption
-                h3 NAME OF EVENT
-                p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
-            figure.event
-              .event-info
-                address San-Francisco 
-                time Feb 04
-              img(src="img/event.jpg", alt="Event")
-              figcaption
-                h3 NAME OF EVENT
-                p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
-          .arrow-line 
-            .arrow-left-contact
-              img(src="img/arrow_black.png", alt="arrow left")
-            .arrow-right-event
-              img(src="img/arrow_black.png", alt="arrow right")
-    footer 
-      .social-line.flex-wrap 
-        a(href="#")
-          img(src="", alt="")
-        a(href="#")
-          img(src="", alt="")
-        a(href="#")
-          img(src="", alt="")
-        a(href="#")
-          img(src="", alt="")
-      p.copy Copyricht © 2020 All rights reserved
-    script(src="js/scripts.js")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+		title Musikkbryggeriet3d
+		link(rel="stylesheet", href="css/style.css")
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+	body.second-page
+		include helper/vars
+		include helper/mixin
+		header 
+			.wrapper
+				.adaptive-header-line
+					.header-line 
+						.logo
+							a(href="index.html")
+								img(src="img/logo_black.png", alt="Musikkbryggeriet3d logo")
+						nav.header-menu
+							ul 
+								li
+									a(href="index.html") Hjem
+								li
+									a(href="contact.html") Om oss
+								li
+									a(href="#") Fellesskap
+								li
+									a(href="#") Booking
+								li
+									a(href="event.html") Eventer
+								li
+									a(href="#") Samarbeid
+								li
+									a(href="shop.html") Shop
+								li
+									a(href="#") Kontakt oss
+						.right-part
+							.profile
+								ul.sing-menu 
+									li
+										a.sing-up-button(href="#") SIGN&nbsp;UP
+									li
+										a.sing-in-button(href="#") SIGN&nbsp;IN
+							.burger
+								span
+		main
+			.popup-bg 
+				form.registr-popup.popup
+					span.close 
+					p.popup-title HVA KAN VI HJELPE DEG MED?
+					p.mini-inputs
+						label(for="registr-name")
+							input#registr-name(type="text", name="registr-name", placeholder="Fornavn")
+						label(for="registr-surname")
+							input#registr-surname(type="text", name="registr-surname", placeholder="Etternavn")
+					p.mini-inputs
+						label(for="registr-tif")
+							input#registr-tif(type="text", name="registr-tif", placeholder="Tif.nr.")
+						label(for="registr-mail")
+							input#registr-mail(type="email", name="registr-mail", placeholder="E-post")
+					p.input-line 
+						label
+							textarea#request(name="request", cols="30", rows="10")
+					p.input-line 
+						label(for="registr-submit")
+							input#registr-submit.button(type="submit", value="Send inn")
+				form.popup.sing-up(action="index.php")
+					span.close 
+					p.popup-title SIGN UP
+					p.mini-inputs.input-line
+						label(for="first-name")
+							span First name
+							input#first-name(type="text", name="first-name")
+						label(for="last-name")
+							span Last name
+							input#last-name(type="text", name="last-name")
+					p.input-line 
+						label(for="username")
+							span Username
+							input#username(type="text", name="username")
+					p.input-line
+						label(for="email-sing-up")
+							span E-mail
+							input#email-sing-up(type="email", name="email")
+					p.input-line 
+						label(for="password")
+							span Pasword
+							input#password-sing-up(type="password", name="password")
+					p.have-account 
+						a.sing-in-button(href="#") Already have an account? <span> Join </span>
+					p.input-line 
+						input#sing-up.button(type="submit", value="SIGN UP")
+						label(for="sing-up")
+				form.popup.sing-in(action="index.php")
+					span.close 
+					p.popup-title SIGN IN
+					p.input-line
+						label(for="email")
+							span E-mail
+							input#email-sing-in(type="email", name="email")
+					p.input-line 
+						label.password-label(for="password")
+							span Pasword
+							a.forgot-password-button(href="#") Forgot your password?
+							input#password-sing-in(type="password", name="password")
+					p.have-account 
+						a.sing-up-button(href="#") Dont have a account? <span> Join </span>
+					p.input-line 
+						input#sing-in.button(type="submit", value="SIGN IN")
+						label(for="sing-up")
+				form.popup.forgot-password(action="index.php")
+					span.close 
+					p.popup-title FORGOT YOUR PASSWORD?
+					p.input-line
+						label(for="email-forgot-password")
+							span E-mail
+							input#email-forgot-password(type="email", name="email-forgot-password")
+					p.input-line 
+						input#send-password.button(type="submit", value="SEND PASSWORD")
+						label(for="send-password")
+			hr.primary-line
+			.wrapper 
+				section.one-event 
+					.flex-wrap 
+						.text-description 
+							h2 NAME OF EVENT
+							p.about-us-text This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+							p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non	mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+							p.about-us-text Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum f	
+							p 
+								a.button.transparent-button.registr(href="#") Registreringen
+						.slider.event-slider
+							.event-img-line 
+								figure 
+									img(src="img/event_slider_1.jpg", alt="Event")
+									figcaption.event-description 
+										.cell
+											time Feb 18
+										.cell
+											time 18:30
+										.cell
+											address Stokata 18
+			hr.primary-line
+			.wrapper
+				section.more-event 
+					h2 MORE EVENT
+					form.search 
+						input#shop-search(type="search", name="shop-search" placeholder="Search")
+						label(for="shop-search")
+						input.search-submit#event-search(type="submit")
+						label(for="search-submit")
+					.events-line 
+						figure.event
+							.event-info
+								address San-Francisco 
+								time Feb 01
+							img(src="img/event.jpg", alt="Event")
+							figcaption
+								h3 NAME OF EVENT
+								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel
+						figure.event
+							.event-info
+								address San-Francisco 
+								time Feb 02
+							img(src="img/event.jpg", alt="Event")
+							figcaption
+								h3 NAME OF EVENT
+								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel 
+						figure.event
+							.event-info
+								address San-Francisco 
+								time Feb 03
+							img(src="img/event.jpg", alt="Event")
+							figcaption
+								h3 NAME OF EVENT
+								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel
+						figure.event
+							.event-info
+								address San-Francisco 
+								time Feb 04
+							img(src="img/event.jpg", alt="Event")
+							figcaption
+								h3 NAME OF EVENT
+								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel
+					.arrow-line 
+						.arrow-left-event
+							img(src="img/arrow_black.png", alt="arrow left")
+						.arrow-right-event
+							img(src="img/arrow_black.png", alt="arrow right")
+		footer 
+			.social-line.flex-wrap 
+				a(href="#")
+					img(src="", alt="")
+				a(href="#")
+					img(src="", alt="")
+				a(href="#")
+					img(src="", alt="")
+				a(href="#")
+					img(src="", alt="")
+			p.copy Copyricht © 2020 All rights reserved
+		script(src="js/header.js")
+		script(src="js/event.js")

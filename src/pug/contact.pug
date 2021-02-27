@@ -1,91 +1,147 @@
 <!DOCTYPE html>
 html(lang="no")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
-    title Musikkbryggeriet3d
-    link(rel="stylesheet", href="css/style.css")
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-  body.second-page
-    include helper/vars
-    include helper/mixin
-    header 
-      .wrapper
-        .adaptive-header-line
-          .header-line 
-            .logo
-              a(href="index.html")
-                img(src="img/logo_black.png", alt="Musikkbryggeriet3d logo")
-            nav.header-menu
-              ul 
-                li
-                  a(href="index.html") Hjem
-                li
-                  a(href="contact.html") Om oss
-                li
-                  a(href="#") Fellesskap
-                li
-                  a(href="#") Booking
-                li
-                  a(href="event.html") Eventer
-                li
-                  a(href="#") Samarbeid
-                li
-                  a(href="shop.html") Shop
-                li
-                  a(href="#") Kontakt oss
-            .right-part
-              .profile
-                ul.sing-menu 
-                  li
-                    a.sing-up-button(href="#") SIGN&nbsp;UP
-                  li
-                    a.sing-in-button(href="#") SIGN&nbsp;IN
-              .burger
-                span
-    main
-      hr.primary-line
-      .wrapper 
-        section.about-us 
-          h2 INFORMATION ABOUT US 
-          .flex-wrap 
-            .text-description 
-              p.about-us-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-              p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-              p.about-us-text Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum f  
-            .slider.contact-slider
-              .arrow-left-contact
-                img(src="img/arrow_black.png", alt="arrow left")
-              .contact-img-line 
-                img(src="img/contacts_slider_1.jpg", alt="3D")
-                img(src="img/contacts_slider_2.jpg", alt="Lorem")
-                img(src="img/contacts_slider_3.jpg", alt="Lorem")
-              .arrow-right-contact
-                img(src="img/arrow_black.png", alt="arrow right")
-      hr.primary-line
-      .wrapper
-        section.contact 
-          h2 KONTAKT OSS
-          .flex-wrap 
-            .contact-information 
-              strong
-                a(href="tel:+38xxxxxxxxxx") +38(XXX)XXXXXXX
-              strong
-                address Storgata 15A, Oslo
-              strong
-                a(href="mailto:yourmail@gmail.com") yourmail@gmail.com
-            .map
-              <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fzyQDJk9dlUwyrcroYMC9DjzSY7vH8tn"></iframe>
-    footer 
-      .social-line.flex-wrap 
-        a(href="#")
-          img(src="", alt="")
-        a(href="#")
-          img(src="", alt="")
-        a(href="#")
-          img(src="", alt="")
-        a(href="#")
-          img(src="", alt="")
-      p.copy Copyricht © 2020 All rights reserved
-    script(src="js/scripts.js")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+		title Musikkbryggeriet3d
+		link(rel="stylesheet", href="css/style.css")
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+	body.second-page
+		include helper/vars
+		include helper/mixin
+		header 
+			.wrapper
+				.adaptive-header-line
+					.header-line 
+						.logo
+							a(href="index.html")
+								img(src="img/logo_black.png", alt="Musikkbryggeriet3d logo")
+						nav.header-menu
+							ul 
+								li
+									a(href="index.html") Hjem
+								li
+									a(href="contact.html") Om oss
+								li
+									a(href="#") Fellesskap
+								li
+									a(href="#") Booking
+								li
+									a(href="event.html") Eventer
+								li
+									a(href="#") Samarbeid
+								li
+									a(href="shop.html") Shop
+								li
+									a(href="#") Kontakt oss
+						.right-part
+							.profile
+								ul.sing-menu 
+									li
+										a.sing-up-button(href="#") SIGN&nbsp;UP
+									li
+										a.sing-in-button(href="#") SIGN&nbsp;IN
+							.burger
+								span
+		main
+			.popup-bg 
+				form.popup.sing-up(action="index.php")
+					span.close 
+					p.popup-title SIGN UP
+					p.mini-inputs.input-line
+						label(for="first-name")
+							span First name
+							input#first-name(type="text", name="first-name")
+						label(for="last-name")
+							span Last name
+							input#last-name(type="text", name="last-name")
+					p.input-line 
+						label(for="username")
+							span Username
+							input#username(type="text", name="username")
+					p.input-line
+						label(for="email-sing-up")
+							span E-mail
+							input#email-sing-up(type="email", name="email")
+					p.input-line 
+						label(for="password")
+							span Pasword
+							input#password-sing-up(type="password", name="password")
+					p.have-account 
+						a.sing-in-button(href="#") Already have an account? <span> Join </span>
+					p.input-line 
+						input#sing-up.button(type="submit", value="SIGN UP")
+						label(for="sing-up")
+				form.popup.sing-in(action="index.php")
+					span.close 
+					p.popup-title SIGN IN
+					p.input-line
+						label(for="email")
+							span E-mail
+							input#email-sing-in(type="email", name="email")
+					p.input-line 
+						label.password-label(for="password")
+							span Pasword
+							a.forgot-password-button(href="#") Forgot your password?
+							input#password-sing-in(type="password", name="password")
+					p.have-account 
+						a.sing-up-button(href="#") Dont have a account? <span> Join </span>
+					p.input-line 
+						input#sing-in.button(type="submit", value="SIGN IN")
+						label(for="sing-up")
+				form.popup.forgot-password(action="index.php")
+					span.close 
+					p.popup-title FORGOT YOUR PASSWORD?
+					p.input-line
+						label(for="email-forgot-password")
+							span E-mail
+							input#email-forgot-password(type="email", name="email-forgot-password")
+					p.input-line 
+						input#send-password.button(type="submit", value="SEND PASSWORD")
+						label(for="send-password")
+			hr.primary-line
+			.wrapper 
+				section.about-us 
+					h2 INFORMATION ABOUT US 
+					.flex-wrap 
+						.text-description 
+							p.about-us-text This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+							p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non	mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+							p.about-us-text Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum f	
+						.slider.contact-slider
+							.arrow-left-contact.js-arrow-left
+								img(src="img/arrow_black.png", alt="arrow left")
+							.contact-img-line.js-slider-line 
+								img.js-slider-object(src="img/contacts_slider_1.jpg", alt="3D")
+								img.js-slider-object(src="img/contacts_slider_2.jpg", alt="Lorem")
+								img.js-slider-object(src="img/contacts_slider_3.jpg", alt="Lorem")
+							.arrow-right-contact.js-arrow-right
+								img(src="img/arrow_black.png", alt="arrow right")
+			hr.primary-line
+			.wrapper
+				section.contact 
+					h2 KONTAKT OSS
+					.flex-wrap 
+						.contact-information 
+							strong
+								a(href="tel:+38xxxxxxxxxx") +38(XXX)XXXXXXX
+							strong
+								address Storgata 15A, Oslo
+							strong
+								a(href="mailto:yourmail@gmail.com") yourmail@gmail.com
+						.map
+							<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fzyQDJk9dlUwyrcroYMC9DjzSY7vH8tn"></iframe>
+		footer 
+			.social-line.flex-wrap 
+				a(href="#")
+					img(src="", alt="")
+				a(href="#")
+					img(src="", alt="")
+				a(href="#")
+					img(src="", alt="")
+				a(href="#")
+					img(src="", alt="")
+			p.copy Copyricht © 2020 All rights reserved
+		script(src="js/header.js")
+		script(src="js/slider.js")
