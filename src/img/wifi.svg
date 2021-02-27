@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Шар_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 175 165" style="enable-background:new 0 0 175 165;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#555555;}
+	.st1{fill:#FFFFFF;}
+</style>
+<rect x="0.42" class="st0" width="174.58" height="165"/>
+<g>
+	<path class="st1" d="M116.07,99.72l-8.15,7.06c-5.14-4.71-12.41-7.64-20.48-7.64c-7.68,0-14.65,2.66-19.73,6.99l-8.15-7.06
+		c7.17-6.13,17.01-9.91,27.88-9.91C98.7,89.16,108.85,93.21,116.07,99.72z"/>
+	<path class="st1" d="M134.38,80.32l-6.82,6.82C117.4,76.69,103.18,70.2,87.44,70.2c-15.35,0-29.26,6.18-39.37,16.19l-6.82-6.82
+		c11.85-11.76,28.18-19.02,46.19-19.02C105.84,60.55,122.47,68.12,134.38,80.32z"/>
+	<path class="st1" d="M153.75,60.96l-7.88,7.88C131.02,53.69,110.33,44.3,87.44,44.3c-22.51,0-42.89,9.08-57.68,23.78l-7.88-7.88
+		c16.81-16.71,39.98-27.04,65.56-27.04C113.41,33.16,136.89,43.8,153.75,60.96z"/>
+	<circle class="st1" cx="25.62" cy="64.37" r="5.59"/>
+	
+		<ellipse transform="matrix(0.7986 -0.6018 0.6018 0.7986 -8.5788 102.712)" class="st1" cx="149.2" cy="64.18" rx="5.57" ry="6.11"/>
+	
+		<ellipse transform="matrix(0.593 -0.8052 0.8052 0.593 -37.6166 132.3204)" class="st1" cx="112.09" cy="103.37" rx="5.27" ry="6.13"/>
+	
+		<ellipse transform="matrix(0.8226 -0.5687 0.5687 0.8226 -47.1634 54.2508)" class="st1" cx="63.35" cy="102.7" rx="6.13" ry="5.22"/>
+	
+		<ellipse transform="matrix(0.5479 -0.8366 0.8366 0.5479 -49.583 74.8102)" class="st1" cx="44.42" cy="83.28" rx="5.28" ry="4.81"/>
+	<ellipse transform="matrix(0.866 -0.5 0.5 0.866 -24.1452 76.4432)" class="st1" cx="130.57" cy="83.28" rx="4.81" ry="5.28"/>
+	<circle class="st1" cx="87.82" cy="122.16" r="9.68"/>
+</g>
+</svg>

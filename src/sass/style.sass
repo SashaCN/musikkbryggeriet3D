@@ -112,6 +112,10 @@ figure .bg-orange,
     transform: translate(-50%, -50%) rotate(-45deg)
   &:hover 
     cursor: pointer
+    background-color: $second-primary
+    &::before,
+    &::after 
+      background-color: #fff
 
 .have-account
   text-align-last: left
@@ -206,6 +210,9 @@ figure .bg-orange,
   overflow-y: scroll
   padding: 30px 25px 0
   border: 3px solid $second-primary
+  .close 
+    top: 5px
+    right: 5px
 
 .your-order
   display: block
@@ -215,6 +222,7 @@ figure .bg-orange,
 
 .product 
   display: flex
+  align-items: center
   margin: 0
   margin-bottom: 20px
   .product-img 
@@ -228,12 +236,13 @@ figure .bg-orange,
     width: 20%
     height: 15vh
     object-fit: cover
+    margin: 0
 
 .product-name 
   font-weight: 400
   font-size: 1.8rem
-  margin: 10px
-
+  margin: 0 
+  margin-bottom: 10px
 .product-description 
   width: 20%
   p 
@@ -300,21 +309,21 @@ figure .bg-orange,
   &::after
     width: 14px
     height: 1px
-  &:hover 
-    background-color: $second-primary 
-    &::before,
-    &::after
-      background-color: #fff
-    
-.all-price 
+
+.all-price,
+.basket-clear
   font-size: 1.8rem 
   letter-spacing: 1px
   line-height: 2.5rem
   text-align: right
-  margin: 0 10%
+  margin: 0
+
+.basket-clear
+  text-align: center
+  margin-bottom: 40px
 
 .sum-price 
-  margin: 0 10%
+  margin-left: 10%
 
 .order-registration 
   width: 60%
@@ -342,7 +351,9 @@ figure .bg-orange,
     font-size: 1.8rem
     line-height: 2.4rem
     color: #000
-    
+    transition: all .5s ease
+    &:hover 
+      color: #fff
 
 main,
 footer 
@@ -578,7 +589,7 @@ h3
   width: 15%
   text-align: center
   margin: 0 25px 25px
-  padding: 10px 20px
+  padding: 0 10px 10px
   box-sizing: border-box
   background-color: #555
   transition: all .5s ease
@@ -943,7 +954,6 @@ h4
     margin-left: 35px
 
 .product-slider-line 
-  overflow-x: scroll
   margin: 0 20px
 
 .collage 
@@ -1357,8 +1367,15 @@ h4
       width: 100%
       img 
         width: calc( 90vw - 6px )
+    
+  .close 
+    width: 30px
+    height: 30px
+    &::after,
+    &::before
+      width: 20px    
 
-  .product 
+  .product     
     img 
       display: block
       width: 60%

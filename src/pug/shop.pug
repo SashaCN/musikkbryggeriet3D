@@ -100,6 +100,29 @@ html(lang="no")
 					p.input-line 
 						input#send-password.button(type="submit", value="SEND PASSWORD")
 						label(for="send-password")
+				.popup.grey-popup.basket-popup
+					b.your-order Your order
+					.basket-products 
+						p.basket-clear Basket is clear
+					p.all-price To pay 
+						span.sum-price 0$
+					form.order-registration 
+						p.mini-inputs.input-line
+							label(for="pr-first-name")
+								input#pr-first-name(type="text", name="pr-first-name", placeholder="First name")
+							label(for="pr-last-name")
+								input#pr-last-name(type="text", name="pr-last-name", placeholder="Last name")
+						p.input-line 
+							label(for="pr-email")
+								input#pr-email(type="email", name="pr-email", placeholder="E-mail")
+						p.input-line
+							label(for="pr-tel")
+								input#pr-tel(type="tel", name="pr-tel", placeholder="Phone number")
+						p.input-line 
+							label(for="pr-city")
+								input#pr-city(type="text", name="city", placeholder="City")
+						label.pr-submit(for="pr-submit")
+							input(type="submit", value="Confirm the order")
 			hr.primary-line
 			.wrapper 
 				section.product-section

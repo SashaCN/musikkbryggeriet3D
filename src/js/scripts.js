@@ -158,10 +158,10 @@ function basketOpen (event){
 }
 
 //order menu 
+
 function attributeAdd (){
   for(let i = 0; i < orderProducts.length; i++){
     orderProducts[i].dataset.productNumber = i
-    productOrderInfo[i].dataset.productNumber = i
     productPrice[i].dataset.productStartingPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
     productPrice[i].dataset.productPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
   }
@@ -169,8 +169,8 @@ function attributeAdd (){
 
 function prMinus (event){
   event.preventDefault()
-  productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
-  if(this.nextElementSibling.firstChild.value > 0){
+  productNumber = this.closest(".product").getAttribute("data-product-number")
+  if(productQuantify[productNumber].value > 0){
     productQuantify[productNumber].value = productQuantify[productNumber].value - 1
     productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-price")) - parseInt(productPrice[productNumber].getAttribute("data-product-starting-price"))}$`
     productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
@@ -182,7 +182,7 @@ function prMinus (event){
 
 function prPlus (event){
   event.preventDefault()
-  productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
+  productNumber = this.closest(".product").getAttribute("data-product-number")
   productQuantify[productNumber].value = parseInt(productQuantify[productNumber].value) + 1
   productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-starting-price")) + parseInt(productPrice[productNumber].getAttribute("data-product-price"))}$`
   productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
@@ -190,7 +190,7 @@ function prPlus (event){
 }
 
 function valueChange (){
-  productNumber = this.closest(".product-order-info").getAttribute("data-product-number")
+  productNumber = this.closest(".product").getAttribute("data-product-number")
   productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-starting-price")) * this.value}$`
   productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
   totalPriceCount()
@@ -218,7 +218,16 @@ function addProduct (event){
   event.preventDefault()
   productNumber = this.closest(".shop-product").getAttribute("data-product-number")
   
-  refreshProducts()
+  basketProducts.innerHTML = ""
+  if(orderProducts[0] === undefined){
+    basketProducts.innerHTML = `<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+  }else{
+    for(let i = 0; i < orderProducts.length; i++){
+      innerString = `${innerString}${orderProducts[i].outerHTML}`
+    }
+    basketProducts.innerHTML = `${innerString}<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    innerString = ""
+  }
 
   orderProducts = document.querySelectorAll(".product")
   productPlus = document.querySelectorAll(".product-plus")
@@ -245,26 +254,13 @@ function addProduct (event){
     elem.onclick = (event)=>{
       event.preventDefault()
       basketProducts.removeChild(orderProducts[elem.closest(".product").getAttribute("data-product-number")])
-      attributeAdd()
-      totalPriceCount()
       orderProducts = document.querySelectorAll(".product")
+      if(orderProducts[0] === undefined){
+        basketProducts.innerHTML = `<p class="basket-clear">Basket is clear</p>`
+      }
       innerString = ""
       attributeAdd()
       totalPriceCount()
     }
   })
-}
-
-
-function refreshProducts (){
-  basketProducts.innerHTML = ""
-  if(orderProducts[0] === undefined){
-    basketProducts.innerHTML = `<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
-  }else{
-    for(let i = 0; i < orderProducts.length; i++){
-      innerString = `${innerString}${orderProducts[i].outerHTML}`
-    }
-    basketProducts.innerHTML = `${innerString}<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
-    innerString = ""
-  }
 }
