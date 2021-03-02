@@ -40,24 +40,11 @@ let //header slider (HS)
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
     //order menu
-    orderProducts = document.querySelectorAll(".product"),
-    productPlus = document.querySelectorAll(".product-plus"),
-    productMinus = document.querySelectorAll(".product-minus"),
-    productQuantify = document.querySelectorAll(".product-amount"),
     price = document.querySelectorAll(".price"),
-    productPrice = document.querySelectorAll(".product-price"), // in popup
-    deleteProduct = document.querySelectorAll(".delete-product"),
-    productOrderInfo = document.querySelectorAll(".product-order-info"),
-    sumPrice = document.querySelector(".sum-price"),
     addProductButton = document.querySelectorAll(".product-button"),
     productName = document.querySelectorAll(".product-name"),
-    basketProducts = document.querySelector(".basket-products"),
     shopProducts = document.querySelectorAll(".shop-product"),
-    productImg = document.querySelectorAll(".shop-product img"),
-    balance = document.querySelector(".balance"),
-    innerString = "",
-    totalPrice = 0,
-    productNumber
+    productImg = document.querySelectorAll(".shop-product img")
 
 //header slider (HS)
 
@@ -159,52 +146,6 @@ function basketOpen (event){
 
 //order menu 
 
-function attributeAdd (){
-  for(let i = 0; i < orderProducts.length; i++){
-    orderProducts[i].dataset.productNumber = i
-    productPrice[i].dataset.productStartingPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
-    productPrice[i].dataset.productPrice = productPrice[i].textContent.slice(0, productPrice[i].textContent.length-1)
-  }
-}
-
-function prMinus (event){
-  event.preventDefault()
-  productNumber = this.closest(".product").getAttribute("data-product-number")
-  if(productQuantify[productNumber].value > 0){
-    productQuantify[productNumber].value = productQuantify[productNumber].value - 1
-    productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-price")) - parseInt(productPrice[productNumber].getAttribute("data-product-starting-price"))}$`
-    productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
-    totalPriceCount()
-  }else{
-    return false
-  }
-}
-
-function prPlus (event){
-  event.preventDefault()
-  productNumber = this.closest(".product").getAttribute("data-product-number")
-  productQuantify[productNumber].value = parseInt(productQuantify[productNumber].value) + 1
-  productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-starting-price")) + parseInt(productPrice[productNumber].getAttribute("data-product-price"))}$`
-  productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
-  totalPriceCount()
-}
-
-function valueChange (){
-  productNumber = this.closest(".product").getAttribute("data-product-number")
-  productPrice[productNumber].innerHTML = `${parseInt(productPrice[productNumber].getAttribute("data-product-starting-price")) * this.value}$`
-  productPrice[productNumber].dataset.productPrice = productPrice[productNumber].textContent.slice(0, productPrice[productNumber].textContent.length-1)
-  totalPriceCount()
-}
-
-function totalPriceCount (){
-  productPrice = document.querySelectorAll(".product-price")
-  productPrice.forEach((elem)=>{
-    totalPrice += parseInt(elem.getAttribute("data-product-price"))
-  })
-  sumPrice.innerHTML = `${totalPrice}$`
-  balance.innerHTML = `${totalPrice}$`
-  totalPrice = 0
-}
 
 addProductButton.forEach((elem)=>{
   elem.onclick = addProduct
@@ -228,39 +169,6 @@ function addProduct (event){
     basketProducts.innerHTML = `${innerString}<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
     innerString = ""
   }
-
-  orderProducts = document.querySelectorAll(".product")
-  productPlus = document.querySelectorAll(".product-plus")
-  productMinus = document.querySelectorAll(".product-minus")
-  productQuantify = document.querySelectorAll(".product-amount")
-  productPrice = document.querySelectorAll(".product-price") // in popup
-  deleteProduct = document.querySelectorAll(".delete-product")
-  productOrderInfo = document.querySelectorAll(".product-order-info")
-  deleteProduct = document.querySelectorAll(".delete-product")
-
-  attributeAdd()
-  totalPriceCount()
-
-  productPlus.forEach((elem)=>{
-    elem.onclick = prPlus
-  })
-  productMinus.forEach((elem)=>{
-    elem.onclick = prMinus
-  })
-  productQuantify.forEach((elem)=>{
-    elem.onchange = valueChange
-  })
-  deleteProduct.forEach((elem)=>{
-    elem.onclick = (event)=>{
-      event.preventDefault()
-      basketProducts.removeChild(orderProducts[elem.closest(".product").getAttribute("data-product-number")])
-      orderProducts = document.querySelectorAll(".product")
-      if(orderProducts[0] === undefined){
-        basketProducts.innerHTML = `<p class="basket-clear">Basket is clear</p>`
-      }
-      innerString = ""
-      attributeAdd()
-      totalPriceCount()
-    }
-  })
+  refreshProducts ()
+  
 }
