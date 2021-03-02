@@ -3,7 +3,10 @@ let lineAUS = document.querySelector(".events-line"),
     arrLeftAUS = document.querySelector(".arrow-left-event"),
     events = document.querySelectorAll(".event"),
     eventWidthAUS = events[0].getBoundingClientRect().width + 30,
-    widthAUS = Math.round(lineAUS.getBoundingClientRect().width)
+    widthAUS = Math.round(lineAUS.getBoundingClientRect().width),
+    //popup 
+    registrButton = document.querySelector(".registr"),
+    registrPopup = document.querySelector(".registr-popup")
 
 //about us slider (AUS)
 
@@ -18,4 +21,12 @@ function leftAUS (event){
 
 function rightAUS (event){
   lineRight(event, lineAUS, widthAUS, eventWidthAUS)
+}
+
+//Registreringen popup
+
+registrButton.onclick = registrOpen
+
+function registrOpen (event){
+  popupOpen (event, registrPopup)
 }

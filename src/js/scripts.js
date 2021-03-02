@@ -44,7 +44,8 @@ let //header slider (HS)
     addProductButton = document.querySelectorAll(".product-button"),
     productName = document.querySelectorAll(".product-name"),
     shopProducts = document.querySelectorAll(".shop-product"),
-    productImg = document.querySelectorAll(".shop-product img")
+    productImg = document.querySelectorAll(".shop-product img"),
+    productDescription = document.querySelectorAll(".product-card-description")
 
 //header slider (HS)
 
@@ -161,12 +162,12 @@ function addProduct (event){
   
   basketProducts.innerHTML = ""
   if(orderProducts[0] === undefined){
-    basketProducts.innerHTML = `<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    basketProducts.innerHTML = `<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description">${productDescription[productNumber].outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
   }else{
     for(let i = 0; i < orderProducts.length; i++){
       innerString = `${innerString}${orderProducts[i].outerHTML}`
     }
-    basketProducts.innerHTML = `${innerString}<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description"> <p>size - L</p><p>for women</p></div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    basketProducts.innerHTML = `${innerString}<figure class="product">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description">${productDescription[productNumber].outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
     innerString = ""
   }
   refreshProducts ()
