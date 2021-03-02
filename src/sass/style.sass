@@ -18,6 +18,7 @@
 figure .bg-orange,
 .flex-wrap,
 .slider,
+.contact-slider,
 .contact-img-line,
 .event-description,
 .product-slider-line,
@@ -812,14 +813,15 @@ h4
 .arrow-left-event,
 .arrow-right-event 
   padding: 5px
+  width: 26px
   border: 3px solid $primary
   transition: all .5s ease
   background-size: cover
+  img 
+    min-width: 26px
   &:hover 
     cursor: pointer
     background-color: $primary
-  img 
-    min-width: 26px
 
 .arrow-right-contact,
 .arrow-right-event
@@ -860,15 +862,11 @@ h4
       text-shadow: 0 0 5px #999
 
 .contact-slider 
-  display: inline-block
+  display: flex
 
 .arrow-left-contact,
 .arrow-right-contact
-  height: 10%
   margin: auto 0
-
-.contact-slider-line 
-
 
 .map 
   width: 70%
