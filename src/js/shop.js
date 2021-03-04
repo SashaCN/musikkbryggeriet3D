@@ -10,7 +10,15 @@ let line = document.querySelector(".js-slider-line"),
     innerStringImg = "",
     //basket popup 
     basketButton = document.querySelector(".basket"),
-    basketPopup = document.querySelector(".basket-popup")
+    basketPopup = document.querySelector(".basket-popup"),
+    productShopAdd = document.querySelector(".donate-button"),
+    productShopPlus = document.querySelector(".button-plus"),
+    productShopMinus = document.querySelector(".button-minus"),
+    productShopQuantify = document.querySelector(".score input"),
+    productShopPrice = document.querySelector(".product-price-on-img span"),
+    productShopImg = document.querySelector(".collage img"),
+    productShopName = document.querySelector(".product-section h2"),
+    productShopDescription = document.querySelector(".about-us-text")
 
 if(objects.length > 1){
   for(let i = 0; i < mainImg.length; i++){
@@ -87,4 +95,42 @@ basketButton.onclick = basketOpen
 
 function basketOpen (event){
   popupOpen (event, basketPopup)
+}
+
+
+
+productShopAdd.onclick = productAdd 
+
+function productAdd (event){
+  event.preventDefault()
+  if(orderProducts[0] === undefined){
+    basketProducts.innerHTML = `<figure class="product">${productShopImg.outerHTML}<figcaption> <p class="product-name">${productShopName.textContent}</p><div class="product-info"><div class="product-description">${productShopDescription.outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="${productShopQuantify.value}"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${productShopPrice.textContent.slice(0, productShopPrice.textContent.length-1)*productShopQuantify.value}$</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+  }else{
+    for(let i = 0; i < orderProducts.length; i++){
+      innerString = `${innerString}${orderProducts[i].outerHTML}`
+    }
+    basketProducts.innerHTML = `${innerString}<figure class="product">${productShopImg.outerHTML}<figcaption> <p class="product-name">${productShopName.textContent}</p><div class="product-info"><div class="product-description">${productShopDescription.outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="${productShopQuantify.value}"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${productShopPrice.textContent.slice(0, productShopPrice.textContent.length-1)*productShopQuantify.value}$</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    innerString = ""
+  }
+  refreshProducts ()
+}
+
+productShopMinus.onclick = prShopMinus
+
+function prShopMinus (event){
+  event.preventDefault()
+  if(productShopQuantify.value > 0){
+    productShopQuantify.value = productShopQuantify.value - 1
+    productShopQuantify.setAttribute("value", productShopQuantify.value) 
+  }else{
+    return false
+  }
+}
+
+productShopPlus.onclick = prShopPlus
+
+function prShopPlus (event){
+  event.preventDefault()
+  productShopQuantify.value = parseInt(productShopQuantify.value) + 1
+  productShopQuantify.setAttribute("value", productShopQuantify.value)
 }
