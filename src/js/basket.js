@@ -92,7 +92,7 @@ function refreshProducts (){
     elem.onclick = prMinus
   })
   productQuantify.forEach((elem)=>{
-    elem.onchange = valueChange
+    elem.oninput = valueChange
   })
   deleteProduct.forEach((elem)=>{
     elem.onclick = (event)=>{
