@@ -126,23 +126,13 @@ html(lang="no")
 					.flex-wrap 
 						.contact-information 
 							strong
-								a(href="tel:+38xxxxxxxxxx") +38(XXX)XXXXXXX
+								a.info-tel(href="tel:+38xxxxxxxxxx") +38(XXX)XXXXXXX
 							strong
-								address Storgata 15A, Oslo
+								address.info-address Storgata 15A, Oslo
 							strong
-								a(href="mailto:yourmail@gmail.com") yourmail@gmail.com
+								a.info-mail(href="mailto:yourmail@gmail.com") yourmail@gmail.com
 						.map
 							<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fzyQDJk9dlUwyrcroYMC9DjzSY7vH8tn"></iframe>
-		footer 
-			.social-line.flex-wrap 
-				a(href="#")
-					img(src="", alt="")
-				a(href="#")
-					img(src="", alt="")
-				a(href="#")
-					img(src="", alt="")
-				a(href="#")
-					img(src="", alt="")
-			p.copy Copyricht © 2020 All rights reserved
+		include components/footer_pages
 		script(src="js/header.js")
 		script(src="js/slider_about_us.js")
