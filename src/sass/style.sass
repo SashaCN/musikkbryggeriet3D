@@ -79,7 +79,8 @@ figure .bg-orange,
     background-color: #fff
   &::-webkit-scrollbar-thumb
     background-color: $primary
-  input 
+  input,
+  textarea 
     position: relative
     width: 100%
     padding: 10px
@@ -768,8 +769,6 @@ h4
       &:hover 
         text-shadow: 0 0 5px #999
   .profile 
-    position: relative
-    z-index: 2
     background-position: 34px 0
   .profile-menu-active
     background-position: 0 0
@@ -879,6 +878,7 @@ h4
     margin: 20px 0
   address,
   a
+    display: inline-block
     position: relative
     font-style: normal
     margin-left: 70px
@@ -931,6 +931,45 @@ h4
   font-size: 1.8rem
   font-weight: 700
   padding: 15px 20px
+
+.registr-popup 
+  .close 
+    top: 0
+    right: 0
+    width: 25px
+    height: 25px  
+    border-radius: 0
+    border: 3px solid $primary
+    &::after,
+    &::before
+      background-color: $primary
+      
+  label 
+    display: inline-block
+  .request,
+  textarea 
+    width: 100%
+  textarea,
+  input 
+    border: 3px solid $primary
+    box-sizing: border-box
+  textarea 
+    max-height: 150px
+    &::-webkit-scrollbar
+      width: 2px
+      height: 100%
+      background-color: #fff
+    &::-webkit-scrollbar-thumb
+      background-color: $second-primary
+  .button
+    color: #fff
+    letter-spacing: 2px
+    padding: 10px 25px
+    &:hover 
+      color: $primary
+
+.registr-submit-line 
+  text-align: right
 
 .cell
   width: 100%
@@ -1448,6 +1487,7 @@ h4
   .popup 
     .mini-inputs 
       flex-wrap: wrap 
+      margin: 25px 0
       label 
         width: 100%
         padding: 0
@@ -1532,6 +1572,13 @@ h4
   .copy 
     font-size: 1.2em
 
+  .event-img-line 
+    figure 
+      margin: 0
+
+  .cell 
+    font-size: 1.4rem
+    line-height: 1.8rem
 
 @media screen and ( max-width: 425px )
   .popup-bg .service-popup 

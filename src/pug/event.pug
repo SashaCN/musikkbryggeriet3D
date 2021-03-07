@@ -60,9 +60,9 @@ html(lang="no")
 						label(for="registr-mail")
 							input#registr-mail(type="email", name="registr-mail", placeholder="E-post")
 					p.input-line 
-						label
-							textarea#request(name="request", cols="30", rows="10")
-					p.input-line 
+						label.request
+							textarea#request(name="request", cols="30", rows="10", placeholder="Scriv inn din henvendelse her...")
+					p.input-line.registr-submit-line 
 						label(for="registr-submit")
 							input#registr-submit.button(type="submit", value="Send inn")
 				form.popup.sing-up(action="index.php")
