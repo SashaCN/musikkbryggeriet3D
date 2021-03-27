@@ -39,6 +39,8 @@ let //header slider (HS)
     microwavePopup = document.querySelector(".microwave-popup"),
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
+    imgButton = document.querySelectorAll(".scrolled-picture img"),
+    imgPopup = document.querySelector(".full-img-popup"),
     //order menu
     price = document.querySelectorAll(".price"),
     addProductButton = document.querySelectorAll(".product-button"),
@@ -108,6 +110,13 @@ function rightSS (event){
 }
 
 //popups 
+
+imgButton.forEach((elem)=>{
+  elem.onclick = function (){
+    popupOpen(event, imgPopup)
+    imgPopup.innerHTML = `<img src="${this.getAttribute('src')}" alt="${this.getAttribute('alt')}">`
+  }
+})
 
 printerButton.onclick = printerOpen
 

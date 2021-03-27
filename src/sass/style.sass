@@ -542,6 +542,14 @@ h3
     .img-hover
       opacity: 1
 
+.full-img-popup 
+  width: auto
+  padding: 0
+  background-color: transparent
+  overflow: hidden
+  img 
+    object-fit: contain
+
 .img-hover 
   position: absolute
   left: 0
@@ -813,11 +821,6 @@ h4
   .search-submit + label 
     background-image: url(../img/search_event.png)
 
-.primary-line 
-  height: 10px
-  background-color: $primary
-  border: none
-
 .about-us-text 
   font-size: 1.6rem
   line-height: 2.4rem
@@ -889,7 +892,7 @@ h4
       content: ''
       position: absolute
       top: -10px
-      background-image: url(../img/sprite.png)
+      background-size: cover
   a 
     color: #000
     text-decoration: none 
@@ -898,20 +901,21 @@ h4
   left: -50px
   width: 26px
   height: 40px
-  background-position: 0 -50px
+  background-image: url(../img/tel.svg)
+  
 
 .info-address:before 
   left: -52px
   width: 31px
-  height: 40px
-  background-position: -28px -50px
+  height: 42px
+  background-image: url(../img/gps.svg)
 
 .contact-information .info-mail:before 
   top: -2px
   left: -60px
-  width: 47px
-  height: 32px
-  background-position: -61px -50px
+  width: 48px
+  height: 34px
+  background-image: url(../img/mail.svg)
 
 .goods-slider 
   display: inline-block
