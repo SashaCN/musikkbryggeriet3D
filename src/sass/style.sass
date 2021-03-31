@@ -511,6 +511,8 @@ h3
     display: none
 
 .gallery-line 
+  height: 70vh
+  padding: 40px 0
   align-items: center
   margin: 30px -6px
   img 
@@ -519,7 +521,12 @@ h3
     vertical-align: bottom
     object-fit: cover   
 
+.small-photo-wrap 
+  height: 100%
+
 .small-photo 
+  max-height: 50%
+  overflow: hidden
   .img-hover
     height: 50%
   .text 
@@ -537,10 +544,13 @@ h3
   box-sizing: border-box 
   transition: all .5s ease
   &:hover
-    box-shadow: -1px 10px 20px rgba(49,48,48,0.3)       
+    box-shadow: -1px 10px 15px rgba(49,48,48,0.2)       
     transform: scale(1.05)
     .img-hover
       opacity: 1
+
+.big-photo 
+  height: 100%
 
 .full-img-popup 
   width: auto
@@ -906,14 +916,14 @@ h4
 
 .info-address:before 
   left: -52px
-  width: 31px
-  height: 42px
+  width: 32px
+  height: 41px
   background-image: url(../img/gps.svg)
 
 .contact-information .info-mail:before 
   top: -2px
   left: -60px
-  width: 48px
+  width: 48.5px
   height: 34px
   background-image: url(../img/mail.svg)
 

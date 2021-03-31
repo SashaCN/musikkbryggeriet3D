@@ -99,8 +99,11 @@ function forgotPasswordOpen (event){
 
 //sliders scroll
 
-function lineLeft (event, line, scrollWidth){
+function lineLeft (event, lineName, objName, pixels){
   event.preventDefault()
+  let line = document.querySelector(`${lineName}`),
+      obj = document.querySelectorAll(`${objName}`),
+      scrollWidth = obj[0].getBoundingClientRect().width + pixels
   if(line.scrollLeft == 0){
     line.scroll(line.scrollWidth, 0)
   }else{
@@ -108,8 +111,12 @@ function lineLeft (event, line, scrollWidth){
   }
 }
 
-function lineRight (event, line, lineShowedWidth, scrollWidth){
+function lineRight (event, lineName, objName, pixels){
   event.preventDefault()
+  let line = document.querySelector(`${lineName}`),
+      obj = document.querySelectorAll(`${objName}`),
+      lineShowedWidth = Math.round(line.getBoundingClientRect().width),
+      scrollWidth = obj[0].getBoundingClientRect().width + pixels
   if(Math.round(line.scrollLeft)-10 <= line.scrollWidth - lineShowedWidth && Math.round(line.scrollLeft)+10 >= line.scrollWidth - lineShowedWidth){
     line.scroll(0, 0)
   }else{

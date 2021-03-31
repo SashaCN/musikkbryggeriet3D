@@ -54,16 +54,15 @@ if(objects.length > 1){
   arrRightS.ondblclick = falseS
 
   function leftS (event){
-    lineLeft(event, lineS, switchWidth)
+    lineLeft(event, ".additional-photo", ".js-slider-object", 0)
   }
 
   function rightS (event){
-    lineRight(event, lineS, lineSWidth, switchWidth)
+    lineRight(event, ".additional-photo", ".js-slider-object", 0)
   }
 
   switches.forEach((elem)=>{
     elem.onclick = ()=>{
-      console.log(objects[elem.getAttribute("data-switch-number")].offsetLeft)
       line.scrollTo(objects[elem.getAttribute("data-switch-number")].scrollWidth * elem.getAttribute("data-switch-number"), 0)
     }
   })
@@ -83,11 +82,11 @@ arrLeftMain.ondblclick = falseS
 arrRightMain.ondblclick = falseS
 
 function left (event){
-  lineLeft(event, line, objectWidth)
+  lineLeft(event, ".js-slider-line", ".js-slider-object", 0)
 }
 
 function right (event){
-  lineRight(event, line, lineWidth, objectWidth)
+  lineRight(event, ".js-slider-line", ".js-slider-object", 0)
 }
 
 //basket popup 

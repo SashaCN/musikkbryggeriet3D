@@ -1,31 +1,15 @@
 let //header slider (HS)
-    lineHS = document.querySelector(".photos"),
     arrLeftHS = document.querySelector(".arrow-left"),
     arrRightHS = document.querySelector(".arrow-right"),
-    imgHS = document.querySelectorAll(".header-slider-img"),
-    imgWidthHS = imgHS[0].getBoundingClientRect().width,
-    widthHS = Math.round(lineHS.getBoundingClientRect().width),
     //gallery slider (GS)
-    lineGS = document.querySelector(".gallery-line"),
     arrLeftGS = document.querySelector(".arrow-left-gallery"),
     arrRightGS = document.querySelector(".arrow-right-gallery"),
-    pictures = document.querySelectorAll(".scrolled-picture"),
-    pictureWidthGS = pictures[0].getBoundingClientRect().width + 12,
-    widthGS = Math.round(lineGS.getBoundingClientRect().width),
     //sponsor slider (SPS)
-    lineSPS = document.querySelector(".sponsor"),
     arrLeftSPS = document.querySelector(".arrow-left-sp"),
     arrRightSPS = document.querySelector(".arrow-right-sp"),
-    sponsors = document.querySelectorAll(".sponsor-img-wrap"),
-    sponsorWidthSPS = sponsors[0].getBoundingClientRect().width,
-    widthSPS = Math.round(lineSPS.getBoundingClientRect().width),
     //shop slider (SS)
-    lineSS = document.querySelector(".shop-products"),
     arrLeftSS = document.querySelector(".arrow-left-shop"),
     arrRightSS = document.querySelector(".arrow-right-shop"),
-    products = document.querySelectorAll(".shop-product"),
-    productWidthSS = products[0].getBoundingClientRect().width + 30,
-    widthSS = Math.round(lineSS.getBoundingClientRect().width),
     //popups 
     printerButton = document.querySelector(".service-3d-printer"),
     printerPopup = document.querySelector(".printer-popup"),
@@ -57,11 +41,11 @@ arrLeftHS.ondblclick = falseS
 arrRightHS.ondblclick = falseS
 
 function leftHS (event){
-  lineLeft(event, lineHS, imgWidthHS)
+  lineLeft(event, ".photos", ".header-slider-img", 0)
 }
 
 function rightHS (event){
-  lineRight(event, lineHS, widthHS, imgWidthHS)
+  lineRight(event, ".photos", ".header-slider-img", 0)
 }
 
 //gallery slider (GS)
@@ -72,11 +56,11 @@ arrLeftGS.ondblclick = falseS
 arrRightGS.ondblclick = falseS
 
 function leftGS (event){
-  lineLeft(event, lineGS, pictureWidthGS)
+  lineLeft(event, ".gallery-line", ".scrolled-picture", 12)
 }
 
 function rightGS (event){
-  lineRight(event, lineGS, widthGS, pictureWidthGS)
+  lineRight(event, ".gallery-line", ".scrolled-picture", 12)
 }
 
 //sponsor slider (SPS)
@@ -87,11 +71,11 @@ arrLeftSPS.ondblclick = falseS
 arrRightSPS.ondblclick = falseS
 
 function leftSPS (event){
-  lineLeft(event, lineSPS, sponsorWidthSPS)
+  lineLeft(event, ".sponsor", ".sponsor-img-wrap", 0)
 }
 
 function rightSPS (event){
-  lineRight(event, lineSPS, widthSPS, sponsorWidthSPS)
+  lineRight(event, ".sponsor", ".sponsor-img-wrap", 0)
 }
 
 //shop slider (SS)
@@ -102,11 +86,11 @@ arrLeftSS.ondblclick = falseS
 arrRightSS.ondblclick = falseS
 
 function leftSS (event){
-  lineLeft(event, lineSS, productWidthSS)
+  lineLeft(event, ".shop-products", ".shop-product", 30)
 }
 
 function rightSS (event){
-  lineRight(event, lineSS, widthSS, productWidthSS)
+  lineRight(event, ".shop-products", ".shop-product", 30)
 }
 
 //popups 

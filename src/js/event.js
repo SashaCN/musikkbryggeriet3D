@@ -1,9 +1,5 @@
-let lineAUS = document.querySelector(".events-line"),
-    arrRightAUS = document.querySelector(".arrow-right-event"),
-    arrLeftAUS = document.querySelector(".arrow-left-event"),
-    events = document.querySelectorAll(".event"),
-    eventWidthAUS = events[0].getBoundingClientRect().width + 30,
-    widthAUS = Math.round(lineAUS.getBoundingClientRect().width)    
+let arrRightAUS = document.querySelector(".arrow-right-event"),
+    arrLeftAUS = document.querySelector(".arrow-left-event")
 
 //about us slider (AUS)
 
@@ -13,9 +9,9 @@ arrLeftAUS.ondblclick = falseS
 arrRightAUS.ondblclick = falseS
 
 function leftAUS (event){
-  lineLeft(event, lineAUS, eventWidthAUS)
+  lineLeft(event, ".events-line", ".event", 30)
 }
 
 function rightAUS (event){
-  lineRight(event, lineAUS, widthAUS, eventWidthAUS)
+  lineRight(event, ".events-line", ".event", 30)
 }
