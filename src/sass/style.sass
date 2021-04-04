@@ -526,7 +526,7 @@ h3
 
 .small-photo 
   max-height: 50%
-  overflow: hidden
+  height: 100%
   .img-hover
     height: 50%
   .text 
@@ -535,13 +535,12 @@ h3
 .small-photo:first-child  
   margin-bottom: 10px
 
-
-
 .big-photo,
 .small-photo
   position: relative
   margin: 0 6px
   box-sizing: border-box 
+  overflow: hidden
   transition: all .5s ease
   &:hover
     box-shadow: -1px 10px 15px rgba(49,48,48,0.2)       
@@ -550,15 +549,24 @@ h3
       opacity: 1
 
 .big-photo 
-  height: 100%
+  height: 97%
+  margin-top: 10px
 
-.full-img-popup 
+.popup.full-img-popup 
   width: auto
   padding: 0
   background-color: transparent
-  overflow: hidden
+  overflow: visible
   img 
     object-fit: contain
+    height: 70vh
+
+
+.popup-img-wrap 
+  position: relative
+  .close 
+    top: -50px
+    right: -100px
 
 .img-hover 
   position: absolute
@@ -1259,6 +1267,10 @@ h4
     width: 60vw
     margin: 0 auto
 
+  .product-slider-line,
+  .additional-photo 
+    width: 80%
+
 @media screen and ( max-width: 880px )
   .search 
     width: calc( 45vw - 15px )
@@ -1342,7 +1354,10 @@ h4
     overflow: hidden
     img 
       width: 90vw 
-      height: 90vh     
+      height: 90vh    
+    .small-photo-wrap, 
+    .small-photo-wrap:last-child
+      display: flex
 
   .scrolled-picture:first-child 
     margin-left: 0
@@ -1358,8 +1373,7 @@ h4
   .img-hover 
     opacity: 1
 
-  .small-photo-wrap 
-    display: flex
+  
 
   .slider-arrows-sp
     display: flex

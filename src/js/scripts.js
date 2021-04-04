@@ -98,7 +98,11 @@ function rightSS (event){
 imgButton.forEach((elem)=>{
   elem.onclick = function (){
     popupOpen(event, imgPopup)
-    imgPopup.innerHTML = `<img src="${this.getAttribute('src')}" alt="${this.getAttribute('alt')}">`
+    imgPopup.innerHTML = `<div class="popup-img-wrap"><span class="close"></span><img src="${this.getAttribute('src')}" alt="${this.getAttribute('alt')}"></div>`
+    closeButtons = document.querySelectorAll(".close")
+    closeButtons.forEach(element => {
+      element.onclick = closePopup
+    })
   }
 })
 
