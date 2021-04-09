@@ -692,6 +692,14 @@ h3
   border: none
   margin: 0 15px
   cursor: pointer
+  svg 
+    fill: $primary
+    width: 43px
+    height: 41px
+    transition: all .3s ease
+    &:hover 
+      fill: $second-primary
+
 .search 
   position: relative
   width: 30%
@@ -716,7 +724,7 @@ h3
     right: 22px
     width: 22px
     height: 22px
-    background-image: url(../img/search.png)
+    background-image: url(../img/search.svg)
     background-size: cover
     transform: translateY(-50%)
     &:hover

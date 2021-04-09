@@ -86,25 +86,25 @@ html(lang="no")
 				.popup.grey-popup.service-popup.sittig-popup
 					span.close 
 					div
-						img(src="img/chair.svg", alt="Free sitting")
+						+call_svg("img/sprite.svg#printer")
 					p.service-popup-title Free sitting
 					p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, sint.
 				.popup.grey-popup.service-popup.wifi-popup
 					span.close 
 					div
-						img(src="img/wifi.svg", alt="Free wifi")
+						+call_svg("img/sprite.svg#wifi")
 					p.service-popup-title Free wifi
 					p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, sint.
 				.popup.grey-popup.service-popup.print-popup
 					span.close 
 					div
-						img(src="img/printer.svg", alt="Printer")
+						+call_svg("img/sprite.svg#printer")
 					p.service-popup-title Printer
 					p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, sint.
 				.popup.grey-popup.service-popup.microwave-popup
 					span.close 
 					div
-						img(src="img/microwave.svg", alt="Microwave")
+						+call_svg("img/sprite.svg#microwave")
 					p.service-popup-title Microwave
 					p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, sint.
 				.popup.grey-popup.basket-popup
@@ -252,10 +252,10 @@ html(lang="no")
 							+call_svg("img/sprite.svg#wifi")
 							p Free wifi
 						.service.service-print
-							img(src="img/printer.svg", alt="Print")
+							+call_svg("img/sprite.svg#printer")
 							p Print
 						.service.service-microwave
-							img(src="img/microwave.svg", alt="Microwave")
+							+call_svg("img/sprite.svg#microwave")
 							p Microwave
 			.slider-arrows.slider-arrows-sp 
 				.arrow-left.arrow-left-sp
@@ -277,7 +277,7 @@ html(lang="no")
 						.shop-cabinet
 							span.balance 0$
 							button.basket 
-								img(src="img/basket.png", alt="Basket")
+								+call_svg("img/sprite.svg#basket")
 						form.search(action="index.php")
 							input#shop-search(type="search", name="shop-search" placeholder="Search")
 							label(for="shop-search")
