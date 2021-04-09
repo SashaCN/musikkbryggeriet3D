@@ -93,15 +93,20 @@ section
 .profile
   z-index: 2
   position: relative
-  width: 34px
-  height: 31px
-  img 
-    width: 100%
-  &:hover
-    cursor: pointer
-
-.profile-menu-active img 
-
+  svg
+    width: 34px
+    height: 31px
+    fill: $second-primary
+    transition: all .3s ease
+    &:hover
+      cursor: pointer
+      fill: $primary
+  
+.profile-menu-active
+  svg 
+    fill: $primary
+  .sing-menu  
+    display: flex
 
 .sing-menu 
   position: absolute
@@ -194,3 +199,7 @@ h1
 
 .logo 
   text-align: center
+  svg 
+    width: 107px
+    height: 60px
+    fill: #fff 

@@ -35,13 +35,7 @@ function menu (){
 
 profile.onclick = (event) => {
   event.preventDefault()
-  if(profile.classList.contains("profile-menu-active")){
-    profile.classList.remove("profile-menu-active")
-    profileMenu.style.display = "none"
-  }else{
-    profile.classList.add("profile-menu-active")
-    profileMenu.style.display = "flex"
-  }
+  profile.classList.toggle("profile-menu-active")
 }
 
 function popupOpen (event, popup){

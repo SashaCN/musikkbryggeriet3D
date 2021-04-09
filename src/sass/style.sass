@@ -519,7 +519,9 @@ h3
     width: 100%
     height: 100%
     vertical-align: bottom
-    object-fit: cover   
+    object-fit: cover 
+  & > div 
+    flex: 0 0 calc(25% - 12px)
 
 .small-photo-wrap 
   height: 100%
@@ -537,10 +539,8 @@ h3
 
 .big-photo,
 .small-photo
-  position: relative
   margin: 0 6px
   box-sizing: border-box 
-  overflow: hidden
   transition: all .5s ease
   &:hover
     box-shadow: -1px 10px 15px rgba(49,48,48,0.2)       
@@ -548,7 +548,12 @@ h3
     .img-hover
       opacity: 1
 
-.big-photo 
+.big-photo>div,
+.small-photo
+  position: relative
+  overflow: hidden
+
+.big-photo > div
   height: 97%
   margin-top: 10px
 
@@ -630,17 +635,19 @@ h3
   width: 15%
   text-align: center
   margin: 0 25px 25px
-  padding: 0 10px 10px
+  padding: 10px
   box-sizing: border-box
   background-color: #555
   transition: all .5s ease
   p 
     font-size: 1.8rem
     color: #fff
-  img 
+    margin: 0
+    margin-bottom: 5px
+  svg
     width: 10vw
     height: 10vw
-    object-fit: contain
+    fill: #fff
 
 .service:hover
   transform: scale(1.05)
@@ -1351,24 +1358,32 @@ h4
   .gallery-line 
     max-height: 90vh
     margin: 30px 0
-    overflow: hidden
+    overflow-x: scroll
     img 
       width: 90vw 
-      height: 90vh    
+      // height: 90vh    
     .small-photo-wrap, 
     .small-photo-wrap:last-child
       display: flex
 
-  .scrolled-picture:first-child 
+  .gallery-line > .scrolled-picture:first-child 
     margin-left: 0
-  .scrolled-picture:last-child  
+  .gallery-line > .scrolled-picture:last-child  
     margin-right: 0
 
+  .big-photo > div,
+  .small-photo-wrap,
   .big-photo,
-  .small-photo 
+  .small-photo  
     max-height: 90vh
+    height: 100%
+     margin: 0
     .img-hover
       height: 40%
+
+  .big-photo > div,
+  .small-photo-wrap
+    margin: 0
 
   .img-hover 
     opacity: 1

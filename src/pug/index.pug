@@ -194,12 +194,13 @@ html(lang="no")
 							.arrow-right.arrow-right-gallery
 						.gallery-line 
 							.big-photo.scrolled-picture
-								img(src="img/gallery_small.jpg", alt="Description")
-								.img-hover 
-									.text 
-										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
-										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
-									a.more(href="#") more
+								div 
+									img(src="img/gallery_small.jpg", alt="Description")
+									.img-hover 
+										.text 
+											p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+											p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										a.more(href="#") more
 							.small-photo-wrap
 								.small-photo.scrolled-picture
 									img(src="img/gallery_big.jpg", alt="Description")
@@ -216,12 +217,13 @@ html(lang="no")
 											p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
 										a.more(href="#") more
 							.big-photo.scrolled-picture
-								img(src="img/gallery_big.jpg", alt="Description")
-								.img-hover 
-									.text
-										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
-										p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
-									a.more(href="#") more
+								div 
+									img(src="img/gallery_small.jpg", alt="Description")
+									.img-hover 
+										.text 
+											p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+											p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+										a.more(href="#") more
 							.small-photo-wrap
 								.small-photo.scrolled-picture
 									img(src="img/gallery_small.jpg", alt="Description")
@@ -241,13 +243,13 @@ html(lang="no")
 							a.button.transparent-button(href="#") View more
 					.services-line
 						.service.service-3d-printer
-							img(src="img/3d.svg", alt="3D Printer")
+							+call_svg("img/sprite.svg#3d")
 							p 3D Printer
 						.service.service-sitting
-							img(src="img/chair.svg", alt="Free sitting")
+							+call_svg("img/sprite.svg#chair")
 							p Free sitting
 						.service.service-wifi
-							img(src="img/wifi.svg", alt="Free wifi")
+							+call_svg("img/sprite.svg#wifi")
 							p Free wifi
 						.service.service-print
 							img(src="img/printer.svg", alt="Print")

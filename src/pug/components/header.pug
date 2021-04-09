@@ -4,7 +4,7 @@ header
       .header-line 
         .logo
           a(href="index.html")
-            img(src="img/logo.png", alt="Musikkbryggeriet3d logo")
+            +call_svg("img/sprite.svg#logo")
         nav.header-menu
           ul 
             li
@@ -25,7 +25,7 @@ header
               a(href="#") Kontakt oss
         .right-part
           .profile
-            img(src="img/profile.svg", alt="Profile")
+            +call_svg("img/sprite.svg#profile")
             ul.sing-menu 
               li
                 a.sing-up-button(href="#") SIGN&nbsp;UP
