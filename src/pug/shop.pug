@@ -16,7 +16,7 @@ html(lang="no")
 					.header-line 
 						.logo
 							a(href="index.html")
-								img(src="img/logo_black.png", alt="Musikkbryggeriet3d logo")
+								+call_svg("img/sprite.svg#logo")
 						nav.header-menu
 							ul 
 								li
@@ -37,6 +37,7 @@ html(lang="no")
 									a(href="#") Kontakt oss
 						.right-part
 							.profile
+								+call_svg("img/sprite.svg#profile")
 								ul.sing-menu 
 									li
 										a.sing-up-button(href="#") SIGN&nbsp;UP
@@ -137,7 +138,7 @@ html(lang="no")
 								.shop-cabinet
 									span.balance 0$
 									button.basket 
-										img(src="img/basket.png", alt="Basket")
+										+call_svg("img/sprite.svg#basket")
 							.text-description 
 								p.about-us-text This is Photoshop's version	of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
 								p.about-us-text Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non	mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.

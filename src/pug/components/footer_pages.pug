@@ -1,13 +1,7 @@
 footer 
   .social-line
     a.soc-inst(href="#")
-      img(src="img/inst.svg", alt="Instagram")
+      +call_svg("img/sprite.svg#inst")
     a.soc-fb(href="#")
-      svg.fb-img 
-        use(xlink:href="img/sprite.svg#fb")
-    a.soc-tw(href="#")
-      img(src="img/tw.svg", alt="Twitter")
-    a.soc-yt(href="#")
-      svg 
-        use(xlink:href="img/sprite.svg#yt")
+      +call_svg("img/sprite.svg#fb")
   p.copy Copyricht © 2020 All rights reserved Musikkbryggeriet

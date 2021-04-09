@@ -804,6 +804,15 @@ h4
   header 
     padding: 50px 0 15px
     background: #fff
+  .logo 
+    svg 
+      fill: #000
+  .profile svg 
+    fill: $primary 
+    &:hover 
+      fill: $second-primary
+  .profile-menu-active svg 
+    fill: $second-primary
   .burger-menu-active
     background-color: rgba(180, 180, 180, .9)
   .header-line 
@@ -818,8 +827,8 @@ h4
     background-position: 0 0
   .sing-menu 
     top: -10px
-    padding-top: 35px
-    background-color: $primary
+    padding-top: 45px
+    background-color: transparent
     border: 3px solid $second-primary
     a 
       color: $second-primary
@@ -841,6 +850,7 @@ h4
       color: #000
   .one-event
     figure 
+      margin: 50px 0
       img 
         vertical-align: bottom
     figcaption 
@@ -855,7 +865,7 @@ h4
       &::-webkit-input-placeholder
         color: $primary
   .search-submit + label 
-    background-image: url(../img/search_event.png)
+    background-image: url(../img/search_black.svg)
 
 .about-us-text 
   font-size: 1.6rem
@@ -943,7 +953,7 @@ h4
 .info-address:before 
   left: -52px
   width: 32px
-  height: 41px
+  height: 43px
   background-image: url(../img/gps.svg)
 
 .contact-information .info-mail:before 
@@ -1012,14 +1022,29 @@ h4
   text-align: right
 
 .cell
+  position: relative
   width: 100%
-  padding: 15px 0
+  padding: 15px 12px
   font-weight: 600
   font-size: 1.8rem
   line-height: 2.4rem
   text-align: center 
   border: 1px solid $primary
   box-sizing: border-box
+  svg 
+    position: absolute 
+    top: 50%
+    left: 12px
+    transform: translateY(-50%)
+  &.date svg
+    width: 23px
+    height: 22px
+  &.time svg
+    width: 22px
+    height: 22px
+  &.place svg 
+    width: 22px
+    height: 26px
   address 
     font-style: normal
 
@@ -1171,7 +1196,7 @@ h4
     display: block
 
   .profile 
-    margin: 0 15px
+    margin: 0 25px
 
   .burger-menu-active 
     position: fixed
@@ -1428,6 +1453,7 @@ h4
 
   .copy 
     font-size: 1.8rem
+    line-height: 2.4rem
 
   .product-button 
     font-size: 2rem
@@ -1625,6 +1651,7 @@ h4
 
   .copy 
     font-size: 1.2em
+    line-height: 1.8rem
 
   .event-img-line 
     figure 
