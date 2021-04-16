@@ -23,8 +23,6 @@ let //header slider (HS)
     microwavePopup = document.querySelector(".microwave-popup"),
     basketButton = document.querySelector(".basket"),
     basketPopup = document.querySelector(".basket-popup"),
-    imgButton = document.querySelectorAll(".scrolled-picture img"),
-    imgPopup = document.querySelector(".full-img-popup"),
     //order menu
     price = document.querySelectorAll(".price"),
     addProductButton = document.querySelectorAll(".product-button"),
@@ -32,7 +30,7 @@ let //header slider (HS)
     shopProducts = document.querySelectorAll(".shop-product"),
     productImg = document.querySelectorAll(".shop-product img"),
     productDescription = document.querySelectorAll(".product-card-description")
-
+    
 //header slider (HS)
 
 arrLeftHS.onclick = leftHS
@@ -95,16 +93,7 @@ function rightSS (event){
 
 //popups 
 
-imgButton.forEach((elem)=>{
-  elem.onclick = function (){
-    popupOpen(event, imgPopup)
-    imgPopup.innerHTML = `<div class="popup-img-wrap"><span class="close"></span><img src="${this.getAttribute('src')}" alt="${this.getAttribute('alt')}"></div>`
-    closeButtons = document.querySelectorAll(".close")
-    closeButtons.forEach(element => {
-      element.onclick = closePopup
-    })
-  }
-})
+
 
 printerButton.onclick = printerOpen
 

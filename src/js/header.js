@@ -13,6 +13,8 @@ let //profile
     singInPopup = document.querySelector(".sing-in"),
     forgotPasswordButton = document.querySelector(".forgot-password-button"),
     forgotPasswordPopup = document.querySelector(".forgot-password"),
+    imgButton = document.querySelectorAll(".opened-img"),
+    imgPopup = document.querySelector(".full-img-popup"),
     closeButtons = document.querySelectorAll(".close"),
     activePopup
 
@@ -69,6 +71,17 @@ function checkClick (e){
   } 
 }
 
+imgButton.forEach((elem)=>{
+  elem.onclick = function (){
+    popupOpen(event, imgPopup)
+    imgPopup.innerHTML = `<div class="popup-img-wrap"><span class="close"></span><img src="${this.getAttribute('src')}" alt="${this.getAttribute('alt')}"></div>`
+    closeButtons = document.querySelectorAll(".close")
+    closeButtons.forEach(element => {
+      element.onclick = closePopup
+    })
+  }
+})
+
 singUpButton.forEach((elem)=>{
   elem.onclick = singUpOpen
 })
@@ -97,11 +110,13 @@ function lineLeft (event, lineName, objName, pixels){
   event.preventDefault()
   let line = document.querySelector(`${lineName}`),
       obj = document.querySelectorAll(`${objName}`),
-      scrollWidth = obj[0].getBoundingClientRect().width + pixels
+      scrollWidth = obj[1].getBoundingClientRect().width + pixels
   console.log(obj[1])
   if(line.scrollLeft == 0){
+    console.log(line.scrollWidth)
     line.scroll(line.scrollWidth, 0)
   }else{
+    console.log(scrollWidth)
     line.scroll(line.scrollLeft-scrollWidth, 0)
   }
 }
@@ -111,8 +126,8 @@ function lineRight (event, lineName, objName, pixels){
   let line = document.querySelector(`${lineName}`),
       obj = document.querySelectorAll(`${objName}`),
       lineShowedWidth = Math.round(line.getBoundingClientRect().width),
-      scrollWidth = obj[0].getBoundingClientRect().width + pixels
-  if(Math.round(line.scrollLeft)-10 <= line.scrollWidth - lineShowedWidth && Math.round(line.scrollLeft)+10 >= line.scrollWidth - lineShowedWidth){
+      scrollWidth = obj[1].getBoundingClientRect().width + pixels
+  if(Math.round(line.scrollLeft)-30 <= line.scrollWidth - lineShowedWidth && Math.round(line.scrollLeft)+30 >= line.scrollWidth - lineShowedWidth){
     line.scroll(0, 0)
   }else{
     line.scroll(line.scrollLeft+=scrollWidth, 0)

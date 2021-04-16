@@ -9,9 +9,9 @@ arrLeftAUS.ondblclick = falseS
 arrRightAUS.ondblclick = falseS
 
 function leftAUS (event){
-  lineLeft(event, ".events-line", ".event", 30)
+  lineLeft(event, ".events-line", ".event", 0)
 }
 
 function rightAUS (event){
-  lineRight(event, ".events-line", ".event", 30)
+  lineRight(event, ".events-line", ".event", 0)
 }

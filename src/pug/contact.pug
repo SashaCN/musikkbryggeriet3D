@@ -46,7 +46,8 @@ html(lang="no")
 							.burger
 								span
 		main
-			.popup-bg 
+			.popup-bg
+				.popup.full-img-popup 
 				form.popup.sing-up(action="index.php")
 					span.close 
 					p.popup-title SIGN UP
@@ -113,9 +114,9 @@ html(lang="no")
 							.arrow-left-contact.js-arrow-left
 								img(src="img/arrow_black.png", alt="arrow left")
 							.contact-img-line.js-slider-line 
-								img.js-slider-object(src="img/contacts_slider_1.jpg", alt="3D")
-								img.js-slider-object(src="img/contacts_slider_2.jpg", alt="Lorem")
-								img.js-slider-object(src="img/contacts_slider_3.jpg", alt="Lorem")
+								img.js-slider-object.opened-img(src="img/contacts_slider_1.jpg", alt="3D")
+								img.js-slider-object.opened-img(src="img/contacts_slider_2.jpg", alt="Lorem")
+								img.js-slider-object.opened-img(src="img/contacts_slider_3.jpg", alt="Lorem")
 							.arrow-right-contact.js-arrow-right
 								img(src="img/arrow_black.png", alt="arrow right")
 			.wrapper
@@ -129,8 +130,24 @@ html(lang="no")
 								address.info-address Storgata 15A, Oslo
 							strong
 								a.info-mail(href="mailto:yourmail@gmail.com") yourmail@gmail.com
-						.map
-							<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fzyQDJk9dlUwyrcroYMC9DjzSY7vH8tn"></iframe>
+						.registr-form 
+							p.left-part
+								label(for="registr-name")
+									input#registr-name(type="text", name="registr-name", placeholder="Fornavn")
+								label(for="registr-surname")
+									input#registr-surname(type="text", name="registr-surname", placeholder="Etternavn")
+							p.middle-part
+								label(for="registr-tif")
+									input#registr-tif(type="text", name="registr-tif", placeholder="Tif.nr.")
+								label(for="registr-mail")
+									input#registr-mail(type="email", name="registr-mail", placeholder="E-post")
+							p.input-line.right-part 
+								label.request
+									textarea#request(name="request", cols="30", rows="5", placeholder="Scriv inn din henvendelse her...")
+							p.input-line.registr-submit-line.submit-part 
+								label(for="registr-submit")
+									input#registr-submit.button(type="submit", value="Send inn")
+							
 		include components/footer_pages
 		script(src="js/header.js")
 		script(src="js/slider_about_us.js")
