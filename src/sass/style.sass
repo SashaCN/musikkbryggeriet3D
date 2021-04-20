@@ -739,7 +739,8 @@ h3
     height: 22px
     background-image: url(../img/search.svg)
     background-size: cover
-    transform: translateY(-50%)
+    transform: translate(0, -50%)
+    transition: all .3s ease
     &:hover
       cursor: pointer
   
@@ -870,9 +871,8 @@ h4
       border: none
   .event 
     margin-bottom: 0
-  .search 
-    margin: 0
-    margin-bottom: 50px
+  .search
+    margin: 0 30px 50px 0
     input 
       color: $primary
       border-color: $primary 
@@ -880,6 +880,9 @@ h4
         color: $primary
   .search-submit + label 
     background-image: url(../img/search_black.svg)
+
+#shop-search:focus ~ .search-submit + label
+  transform: translate(250%, -50%) 
 
 .about-us-text 
   font-size: 1.6rem
@@ -1112,6 +1115,7 @@ p.middle-part
 
 .product-menu-line
   align-items: center
+  justify-content: flex-start
   margin-bottom: 50px
 
 .half 
@@ -1119,6 +1123,7 @@ p.middle-part
   .search
     width: 60%
     margin: 0
+    margin-right: 30px
   .text-description 
     width: 100%
     margin-bottom: 50px

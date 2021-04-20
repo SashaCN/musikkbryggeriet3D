@@ -68,6 +68,11 @@ section
 
 .burger 
   display: none
+  &[data-active-check="true"] 
+    span,
+    span:before,
+    span:after
+      background-color: $second-primary
   span
     position: relative
     display: inline-block
