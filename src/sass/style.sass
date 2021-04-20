@@ -22,6 +22,7 @@ figure .bg-orange,
 .flex-wrap,
 .slider,
 .contact-slider,
+.contact-slider-line,
 .contact-img-line,
 .event-description,
 .product-slider-line,
@@ -1720,6 +1721,24 @@ p.middle-part
   .middle-part 
     grid-column: 1
 
+  .contact-slider-line
+    flex-wrap: wrap
+
+  .arrow-right-contact,
+  .arrow-left-contact 
+    order: 1
+    margin: 0 auto 10px
+
+  .additional-photo 
+    width: 100%
+    margin: 10px 0
+
+  .product-slider-line
+    width: 100%
+    order: 2
+    margin: 0
+
+
 @media screen and ( max-width: 425px )
   .popup-bg .service-popup 
     width: 80vw
@@ -1779,3 +1798,18 @@ p.middle-part
     .donate-button 
       padding: 5px 15px
       margin: 10px 0
+
+  .product-menu-line 
+    margin-bottom: 20px
+    
+  .shop-cabinet 
+    margin: 0 auto
+
+  .half .search 
+    width: 100%
+    margin: 0
+    margin-bottom: 20px
+
+    #shop-search
+      width: 100%
+
