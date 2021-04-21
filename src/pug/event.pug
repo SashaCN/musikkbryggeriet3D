@@ -208,10 +208,10 @@ html(lang="no")
 								h3 NAME OF EVENT
 								p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
 					.arrow-line 
-						.arrow-left-event
-							img(src="img/arrow_black.png", alt="arrow left")
-						.arrow-right-event
-							img(src="img/arrow_black.png", alt="arrow right")
+						.arrow-left.arrow-left-event.arr-hov-white
+							+call_svg("img/sprite.svg#arr-l")
+						.arrow-right.arrow-right-event.arr-hov-white
+							+call_svg("img/sprite.svg#arr-r")
 		include components/footer_pages
 		script(src="js/header.js")
 		script(src="js/event.js")

@@ -188,16 +188,35 @@ h1
 
 .arrow-left,
 .arrow-right 
-  width: 26px
-  height: 18px
   margin: 0 10%
-  background-image: url(../img/arrow_blue.png)
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: all .3s ease
   &:hover 
-    background-image: url(../img/arrow_orange.png)
     cursor: pointer
+  svg 
+    transition: all .3s ease
+    width: 26px
+    height: 26px
 
-.arrow-right
-  transform: rotate(180deg)
+.arr-black svg
+  fill: #000 
+  &:hover
+    fill: $primary
+
+.arr-primary svg
+  fill: $primary 
+  &:hover
+    fill: $second-primary
+
+.arr-sec-primary svg
+  fill: $second-primary 
+  &:hover
+    fill: $primary
+
+.arr-hov-white:hover svg
+  fill: #fff
 
 .burger-menu 
   background-color: #000

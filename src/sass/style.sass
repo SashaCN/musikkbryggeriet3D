@@ -406,7 +406,12 @@ h2
 .title-mb 
   margin-bottom: 25px
 
-.about-us
+.slider-arrows 
+  margin-bottom: 20px
+
+.about-us,
+.gallery,
+.shop
   .slider-arrows
     display: none   
 
@@ -424,6 +429,7 @@ h2
     object-fit: cover
     vertical-align: bottom
   figcaption 
+    height: 30%
     position: relative
     padding: 15px 20px
     border: 3px solid #000000
@@ -461,6 +467,13 @@ h3
   font-size: 1.6rem
   line-height: 24px
   color: #555 
+  max-height: 50%
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    width: 2px
+    background-color: #555
+  &::-webkit-scrollbar-thumb
+    background-color: #000
 
 .event-button 
   position: absolute
@@ -493,12 +506,6 @@ h3
     display: inline-block
     width: 55%
     vertical-align: top
-        
-.arrow-right-shop,
-.arrow-left-shop 
-  background-image: url(../img/arrow_orange.png)
-  &:hover 
-    background-image: url(../img/arrow_blue.png)
 
 .video-wrap
   display: inline-block
@@ -517,15 +524,11 @@ h3
     width: 100%
     height: 100%
 
-.gallery 
-  .slider-arrows
-    display: none
-
 .gallery-line 
   height: 70vh
   padding: 40px 0
   align-items: center
-  margin: 30px -6px
+  margin: 0 -6px
   img 
     width: 100%
     height: 100%
@@ -690,10 +693,6 @@ h3
 
 .bg-black 
   color: #fff
-
-.shop 
-  .slider-arrows
-    display: none
 
 .shop-info 
   display: flex
@@ -905,22 +904,12 @@ h4
 
 .arrow-left-contact,
 .arrow-right-contact,
-.arrow-left-event,
-.arrow-right-event 
-  padding: 5px
-  width: 26px
+.second-page .arrow-left-event,
+.second-page .arrow-right-event 
+  padding: 0 5px
   border: 3px solid $primary
-  transition: all .5s ease
-  background-size: cover
-  img 
-    min-width: 26px
   &:hover 
-    cursor: pointer
     background-color: $primary
-
-.arrow-right-contact,
-.arrow-right-event
-  transform: rotate(180deg)
 
 .contact-img-line
   overflow-x: hidden
@@ -1287,11 +1276,6 @@ p.middle-part
         margin: 0
         &:first-child
           margin-right: 40px
-    .arrow-right,
-    .arrow-left 
-      background-image: url(../img/arrow_black.png)
-      &:hover 
-        background-image: url(../img/arrow_blue.png)
 
   .event
     img 
@@ -1448,6 +1432,10 @@ p.middle-part
   .gallery 
     .slider-arrows 
       display: flex
+    svg 
+      fill: #000
+      &:hover
+        fill: $primary
 
   .gallery-line 
     max-height: 90vh
@@ -1455,7 +1443,6 @@ p.middle-part
     overflow-x: scroll
     img 
       width: 90vw 
-      // height: 90vh    
     .small-photo-wrap, 
     .small-photo-wrap:last-child
       display: flex
@@ -1464,6 +1451,9 @@ p.middle-part
     margin-left: 0
   .gallery-line > .scrolled-picture:last-child  
     margin-right: 0
+
+  .big-photo 
+    padding: 0
 
   .big-photo > div,
   .small-photo-wrap,
@@ -1482,8 +1472,6 @@ p.middle-part
   .img-hover 
     opacity: 1
 
-  
-
   .slider-arrows-sp
     display: flex
     justify-content: flex-end
@@ -1493,11 +1481,6 @@ p.middle-part
       margin: 0
       &:first-child
         margin-right: 40px
-    .arrow-right,
-    .arrow-left 
-      background-image: url(../img/arrow_orange.png)
-      &:hover 
-        background-image: url(../img/arrow_blue.png)
 
   .sponsor 
     margin: 0 -10px
@@ -1543,7 +1526,6 @@ p.middle-part
   .slider-arrows 
     justify-content: flex-end
     order: 0
-    margin-bottom: 20px
     div 
       margin: 0
       &:first-child
@@ -1712,6 +1694,16 @@ p.middle-part
   .cell 
     font-size: 1.4rem
     line-height: 1.8rem
+    &.date svg
+      width: 20px
+      height: 19px
+    &.time svg
+      width: 20px
+      height: 20px
+    &.place svg 
+      width: 18px
+      height: 22px
+
 
   .registr-form 
     grid-template-columns: 100%
@@ -1733,11 +1725,14 @@ p.middle-part
     width: 100%
     margin: 10px 0
 
-  .product-slider-line
+  .product-slider-line,
+  .contact-img-line
     width: 100%
     order: 2
     margin: 0
 
+  .about-us .contact-slider 
+    flex-wrap: wrap
 
 @media screen and ( max-width: 425px )
   .popup-bg .service-popup 
@@ -1812,4 +1807,15 @@ p.middle-part
 
     #shop-search
       width: 100%
+
+  .cell 
+    padding: 10px
+    time,
+    address 
+      display: block
+      margin-top: 25px
+    svg 
+      top: 10px
+      left: 50%
+      transform: translateX(-50%)
 

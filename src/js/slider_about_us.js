@@ -1,9 +1,5 @@
-let line = document.querySelector(".js-slider-line"),
-    arrRight = document.querySelector(".js-arrow-right"),
-    arrLeft = document.querySelector(".js-arrow-left"),
-    objects = document.querySelectorAll(".js-slider-object"),
-    objectWidth = objects[0].getBoundingClientRect().width,
-    lineWidth = Math.round(line.getBoundingClientRect().width)
+let arrRight = document.querySelector(".js-arrow-right"),
+    arrLeft = document.querySelector(".js-arrow-left")
 
 //about us slider ()
 
@@ -13,9 +9,9 @@ arrLeft.ondblclick = falseS
 arrRight.ondblclick = falseS
 
 function left (event){
-  lineLeft(event, line, objectWidth)
+  lineLeft(event, ".js-slider-line", ".js-slider-object", 0)
 }
 
 function right (event){
-  lineRight(event, line, lineWidth, objectWidth)
+  lineRight(event, ".js-slider-line", ".js-slider-object", 0)
 }

@@ -113,10 +113,8 @@ function lineLeft (event, lineName, objName, pixels){
       scrollWidth = obj[1].getBoundingClientRect().width + pixels
   console.log(obj[1])
   if(line.scrollLeft == 0){
-    console.log(line.scrollWidth)
     line.scroll(line.scrollWidth, 0)
   }else{
-    console.log(scrollWidth)
     line.scroll(line.scrollLeft-scrollWidth, 0)
   }
 }

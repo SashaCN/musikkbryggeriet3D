@@ -45,5 +45,7 @@ header
           img.header-slider-img(src="img/head_slide2.jpg", alt="Slider second photo")
           img.header-slider-img(src="img/head_slide3.jpg", alt="Slider third photo")
         .slider-arrows 
-          .arrow-left
-          .arrow-right
+          .arrow-left.arr-primary
+            +call_svg("img/sprite.svg#arr-l")
+          .arrow-right.arr-primary
+            +call_svg("img/sprite.svg#arr-r")

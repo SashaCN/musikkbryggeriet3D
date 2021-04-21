@@ -138,10 +138,12 @@ html(lang="no")
 							h2 INFORMATION ABOUT US 
 							p.subtitle You can read more detailed information about us by clicking on the button. 
 							a.button.transparent-button(href="contact.html") Read more
-						.slider-arrows 
+						.slider-arrows.event-arrows.arr-black
 							.arrow-left.arrow-left-event
+								+call_svg("img/sprite.svg#arr-l")
 							.arrow-right.arrow-right-event
-						.events-line 
+								+call_svg("img/sprite.svg#arr-r")
+						.events-line
 							figure.event
 								.event-wrap 
 									img(src="img/event.jpg", alt="Event")
@@ -150,7 +152,17 @@ html(lang="no")
 										time Feb 01
 								figcaption
 									h3 NAME OF EVENT
-									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
+									p.event-subtitle INFO ABOUT EVENT. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vitae hic cupiditate!
+									a.button.transparent-button.event-button(href="event.html") Read more  
+							figure.event
+								.event-wrap 
+									img(src="img/event.jpg", alt="Event")
+									.event-info
+										address San-Francisco 
+										time Feb 01
+								figcaption
+									h3 NAME OF EVENT
+									p.event-subtitle INFO ABOUT EVENT. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vitae hic cupiditate!
 									a.button.transparent-button.event-button(href="event.html") Read more 
 							figure.event
 								.event-wrap 
@@ -160,7 +172,7 @@ html(lang="no")
 										time Feb 01
 								figcaption
 									h3 NAME OF EVENT
-									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
+									p.event-subtitle INFO ABOUT EVENT. Lorem ipsum dolor sit, amet consectetur adipisicing.
 									a.button.transparent-button.event-button(href="event.html") Read more 
 							figure.event
 								.event-wrap 
@@ -170,7 +182,7 @@ html(lang="no")
 										time Feb 01
 								figcaption
 									h3 NAME OF EVENT
-									p.event-subtitle INFO ABOUT EVENT. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel
+									p.event-subtitle INFO ABOUT EVENT. Lorem ipsum dolor sit amet.
 									a.button.transparent-button.event-button(href="event.html") Read more 
 							figure.event
 								.event-wrap 
@@ -195,7 +207,9 @@ html(lang="no")
 						h2.title-mb PHOTO GALLERY 
 						.slider-arrows 
 							.arrow-left.arrow-left-gallery
+								+call_svg("img/sprite.svg#arr-l")
 							.arrow-right.arrow-right-gallery
+								+call_svg("img/sprite.svg#arr-r")
 						.gallery-line 
 							.big-photo.scrolled-picture
 								div 
@@ -261,9 +275,11 @@ html(lang="no")
 						.service.service-microwave
 							+call_svg("img/sprite.svg#microwave")
 							p Microwave
-			.slider-arrows.slider-arrows-sp 
+			.slider-arrows.arr-sec-primary.slider-arrows-sp 
 				.arrow-left.arrow-left-sp
+					+call_svg("img/sprite.svg#arr-l")
 				.arrow-right.arrow-right-sp
+					+call_svg("img/sprite.svg#arr-r")
 			.sponsor-wrap
 				.sponsor
 					.sponsor-img-wrap 
@@ -287,9 +303,11 @@ html(lang="no")
 							label(for="shop-search")
 							input#search-submit.search-submit(type="submit")
 							label(for="search-submit")
-					.slider-arrows 
+					.slider-arrows.arr-sec-primary 
 						.arrow-left.arrow-left-shop
+							+call_svg("img/sprite.svg#arr-l")
 						.arrow-right.arrow-right-shop
+							+call_svg("img/sprite.svg#arr-r")
 					.shop-products 
 						figure.shop-product 
 							a.product-link(href="shop.html")

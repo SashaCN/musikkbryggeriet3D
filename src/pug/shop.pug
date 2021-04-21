@@ -153,8 +153,8 @@ html(lang="no")
 									input.button.donate-button(type="submit", value="Donate")
 						.slider.goods-slider
 							.contact-slider-line
-								.arrow-left-contact.js-arrow-left
-									img(src="img/arrow_black.png", alt="arrow left")
+								.arrow-left.arrow-left-contact.arr-hov-white.js-arrow-left
+									+call_svg("img/sprite.svg#arr-l")
 								.product-slider-line.js-slider-line 
 									.collage.js-slider-object 
 										img.opened-img(src="img/shop_product.jpg", alt="Product")
@@ -172,15 +172,15 @@ html(lang="no")
 										img.opened-img(src="img/shop_product.jpg", alt="Product")
 										.product-price-on-img
 											span 15$
-								.arrow-right-contact.js-arrow-right
-									img(src="img/arrow_black.png", alt="arrow right")
+								.arrow-right.arrow-right-contact.arr-hov-white.js-arrow-right
+									+call_svg("img/sprite.svg#arr-r")
 							.switch-slider-line.flex-wrap
-								.arrow-left-contact.switch-arrow-left
-									img(src="img/arrow_black.png", alt="arrow left")
+								.arrow-left.arrow-left-contact.arr-hov-white.switch-arrow-left
+									+call_svg("img/sprite.svg#arr-l")
 								.additional-photo 
 									
-								.arrow-right-contact.switch-arrow-right
-									img(src="img/arrow_black.png", alt="arrow right")
+								.arrow-right.arrow-right-contact.arr-hov-white.switch-arrow-right
+									+call_svg("img/sprite.svg#arr-r")
 		include components/footer_pages
 		script(src="js/header.js")
 		script(src="js/basket.js")

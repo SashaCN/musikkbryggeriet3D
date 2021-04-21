@@ -30,6 +30,17 @@ let //header slider (HS)
     shopProducts = document.querySelectorAll(".shop-product"),
     productImg = document.querySelectorAll(".shop-product img"),
     productDescription = document.querySelectorAll(".product-card-description")
+
+//slider objects count, toggle slider arrows 
+
+function toggleArrows (array, arrows){
+  if (array.length > 4){
+    arrows.style.display = "flex"
+  }
+}
+
+toggleArrows(document.querySelectorAll(`.event`), document.querySelector(`.event-arrows`))
+toggleArrows(document.querySelectorAll(`.sponsor-img-wrap`), document.querySelector(`.slider-arrows-sp`))
     
 //header slider (HS)
 
