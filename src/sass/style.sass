@@ -417,10 +417,20 @@ h2
 
 .events-line
   margin: 0 -15px
+  align-items: stretch
+
+.event-slide 
+  text-decoration: none
+  &:hover
+    figcaption
+      border-color: $primary
+    h3 
+      color: $primary
 
 .event
   padding: 0 15px
   margin: 0
+  margin-bottom: 50px
   box-sizing: border-box
   img 
     height: 100%
@@ -428,19 +438,24 @@ h2
     object-fit: cover
     vertical-align: bottom
   figcaption 
-    height: 30%
+    height: 40%
     position: relative
     padding: 15px 20px
     border: 3px solid #000000
     border-top: none
     box-sizing: border-box
+    overflow: hidden
+    transition: all .3s ease
   &:hover 
     .event-button
       opacity: 1
+  h3 
+    transition: all .3s ease
+    color: #000
 
 .event-wrap 
   position: relative
-  height: 50%
+  height: 60%
   
 
 .event-info 
@@ -866,7 +881,10 @@ h4
     figcaption 
       padding: 0
       border: none
+  .events-line
+    margin-bottom: 15px
   .event 
+    height: 100%
     margin-bottom: 0
   .search
     margin: 0 30px 50px 0
