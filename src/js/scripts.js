@@ -156,17 +156,15 @@ for(let i = 0; i < shopProducts.length; i++){
 function addProduct (event){
   event.preventDefault()
   productNumber = this.closest(".shop-product").getAttribute("data-product-number")
-  
   basketProducts.innerHTML = ""
   if(orderProducts[0] === undefined){
-    basketProducts.innerHTML = `<figure class="product product-for-js">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description">${productDescription[productNumber].outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    basketProducts.innerHTML = `<figure class="product product-for-js" data-id="${this.getAttribute("data-id")}">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description">${productDescription[productNumber].outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
   }else{
     for(let i = 0; i < orderProducts.length; i++){
       innerString = `${innerString}${orderProducts[i].outerHTML}`
     }
-    basketProducts.innerHTML = `${innerString}<figure class="product product-for-js">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description">${productDescription[productNumber].outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
+    basketProducts.innerHTML = `${innerString}<figure class="product product-for-js" data-id="${this.getAttribute("data-id")}">${productImg[productNumber].outerHTML}<figcaption> <p class="product-name">${productName[productNumber].textContent}</p><div class="product-info"><div class="product-description">${productDescription[productNumber].outerHTML}</div><div class="product-order-info"> <form class="product-quantity"> <button class="product-minus">-</button><label><input class="product-amount" type="number" name="product-quantity" value="1"/></label><button class="product-plus">+</button></form><div class="price-wrap"> <p class="product-price">${price[productNumber].textContent}</p><span class="delete-product"></span></div></div></div></figcaption></figure>`
     innerString = ""
   }
   refreshProducts ()
-  
 }
